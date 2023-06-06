@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form input,
+form label,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+form button:hover {
+  background: var(--primary-color-darker);
+}
+
+.resultado-ok,
+.resultado-bad {
+  background-color: rgb(24, 168, 67);
+  padding: 10px 20px;
+}
+
+.resultado-bad {
+  background-color: rgb(168, 24, 24);
+}
+
+.caixa {
+  float: right;
+  width: 50%;
+  font-size: small;
+}
+
+.exemplos,
+.anotacoes {
+  border: 1px solid;
+  color: brown;
+  font-size: medium;
+  padding: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.anotacoes {
+  color: rgb(43, 114, 78);
+  padding-left: 6px;
+}
+
+input {
+  caret-color: aqua;
+}
+
+.btnTimer {
+  width: 10px;
+  height: 15px;
+}
+
+.timer {
+  font-size: 4em;
+  margin-bottom: 50px;
+}
+
+.pausado {
+  color: red;
+}
+
+
+/**calculadora */
+.calculadora {
+  margin: auto;
+  width: 460px;
+
+}
+
+.display {
+  font-size: 2em;
+  width: 100%;
+  text-align: right;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  font-size: 1em;
+  border: none;
+  background: #75b8d3;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4e8196;
+}
+
+.btn-eq {
+  background: rgb(79, 112, 209);
+}
+
+.btn-eq:hover {
+  background: rgb(47, 74, 156);
+}
+
+.btn-clear {
+  background: rgb(85, 201, 85);
+}
+
+.btn-clear:hover {
+  background: rgb(55, 133, 55);
+}
+
+.btn-del {
+  background: rgb(201, 85, 85);
+}
+
+.btn-del:hover {
+  background: rgb(151, 61, 61);
+}
+
+/** zoom em foto */
+
+.zoom {
+  overflow: hidden;
+}
+
+.zoom img {
+  max-width: 100%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.zoom:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.text-item {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/** ########################## FORMULARIO ################################### **/
+
+.mensagemErro {
+  color: red;
+  font-size: 12px;
+}
+
+/*#################################c##################################################*/
+.imagem {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*------------------------------------cor da primeira letra no h1--------------------------------------------------*/
+h1::first-letter {
+  color: #00D1FF;
+  font-size: 54px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: red -2px 0, cyan 2px 0;
+}
+
+/*------------------------------espaço do paragrafo----------------------------------------------------*/
+.esp {
+  margin-left: 18px;
+  color: red;
+}
+
+/*------------------------------espaço do paragrafo----------------------------------------------------*/
+
+.ckbox {
+  margin-top: -10px;
+  border: solid;
+  border-radius: 1px;
+  border-color: #00D1FF;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.senhaGerada {
+  margin-top: -40px;
+  margin-bottom: -40px;
+  color: green;
+  background-color: yellow;
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+.observacao {
+  text-align: center;
+  font-size: xx-small;
+  color: red;
+  background-color: yellow;
+}
+
+.imgM {
+  width: 100%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/** zoom em foto */
+
+.zoomImg {
+  overflow: hidden;
+  width: 100%;  
+  justify-content: center;
+  align-items: center;
+}
+
+.zoomImg::before {
+  max-width: 200%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.zoomImg:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*##########################FIM do zoom###############################*/
+.lembrete{
+  margin: 0.67em 0;
+  font-size: smaller;
+  color: red;
+  background-color: yellow;
+}
+.cyber{
+  text-shadow: red -2px 0, cyan 2px 0;
+}
+/*##################################-SETA-#########################################*/
+#arrowAnim {
+  width: 100%;
+  height: 100px;
+  margin-bottom: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  width: 5vw;
+  height: 5vw;
+  border: 2.5vw solid;
+  border-color: black transparent transparent black;
+  transform: rotate(45deg);
+}
+
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 4s linear infinite; 
+          animation: slide 4s linear infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s; 
+    animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s; 
+    animation-delay: 2s;
+}
+.delay3 {
+  -webkit-animation-delay: 3s; 
+    animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+    0% { opacity:0; transform: translateX(15vw); }	
+   20% { opacity:1; transform: translateX(9vw); }	
+   80% { opacity:1; transform: translateX(-9vw); }	
+  100% { opacity:0; transform: translateX(-15vw); }	
+}
+@keyframes slide {
+    0% { opacity:0; transform: translateX(15vw); }	
+   20% { opacity:1; transform: translateX(9vw); }	
+   80% { opacity:1; transform: translateX(-9vw); }	
+  100% { opacity:0; transform: translateX(-15vw); }	
+}
+/*##################################-SETA-#########################################*/

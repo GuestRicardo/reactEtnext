@@ -1,2 +1,3 @@
-node_mods
-.ejs
+node_modules
+.env
+README.md
