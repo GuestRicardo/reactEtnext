@@ -12,10 +12,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",//startar o projeto e assistir ao mesmo tempo
+    "build": "react-scripts build",//consolidar tudo, salvando em uma pasta separada, para colocar em modo produção (publicar)
+    "test": "react-scripts test",//testar
+    "eject": "react-scripts eject"//ele vai ejetar os arquivos de configuração,se caso preccise edita-lo
   },
   "eslintConfig": {
     "extends": [
