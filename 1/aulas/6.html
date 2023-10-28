@@ -26,9 +26,12 @@
                     class App extends Component{ <br>
                     constructor(<mark>props</mark>){ <br>
                     <mark>super</mark>(props); <br>
-                    this.state = {
-                     name: "Jose"   <br>
-                    } <br>
+                    <div style="background-color: aquamarine;">
+                        this.state = { <br>
+                        name: "Jose"<br>
+
+                        } <br>
+                    </div>
                     } <br>
                     } <br>
                 </div>
@@ -37,8 +40,8 @@
                         <li><strong>props</strong> é uma forma reduzida de dizer propriedades. Elas são usadas
                             para passar dados entre componentes. O fluxo de dados do React entre componentes é
                             unidirecional (somente do componente pai para o componente filho). </li>
-                       <hr>
-                            <li><strong>super</strong> No JavaScript, o super refere-se ao construtor da classe pai. (No
+                        <hr>
+                        <li><strong>super</strong> No JavaScript, o super refere-se ao construtor da classe pai. (No
                             nosso exemplo, ele refere-se à implementação de React.Component.)
                             <mark>
                                 É importante lembrar que você não pode usar o this em um construtor até que você tenha
@@ -46,7 +49,9 @@
                     </ul>
                 </div>
             </li>
-            <li><strong>constructor: </strong></li>
+            <li><strong>states: </strong>
+                É o estado odo componente, e qualquer componente pode usar, nao importa qual seja.
+            </li>
             <li><strong>constructor: </strong></li>
         </ul>
     </section>
