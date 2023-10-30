@@ -196,28 +196,55 @@
             Esse comportamento difere de usar no construtor.this.field = …
         </p>
         <div class="exemplos">
-            class Base {
-                set field(val) {
-                  console.log(val);
-                }
-              }
-              
-              class DerivedWithField extends Base {
-                field = 1;
-              }
-              
-              const instance = new DerivedWithField(); // No log
-              
-              class DerivedWithConstructor extends Base {
-                constructor() {
-                  super();
-                  this.field = 1;
-                }
-              }
-              
-              const instance2 = new DerivedWithConstructor(); // Logs 1
-              
+            class Base { <br>
+            set field(val) {<br>
+            console.log(val);<br>
+            }<br>
+            }<br>
+            <br>
+            class DerivedWithField extends Base {<br>
+            field = 1;<br>
+            }<br>
+            <br>
+            const instance = new DerivedWithField(); // No log<br>
+            <br>
+            class DerivedWithConstructor extends Base {<br>
+            constructor() {<br>
+            super();<br>
+            this.field = 1;<br>
+            }<br>
+            }<br>
+            <br>
+            const instance2 = new DerivedWithConstructor(); // Logs 1
 
+
+        </div>
+        <div class="anotacoes" style="background-color: aqua;">
+            <strong>Nota:</strong> Antes que a especificação dos campos de classe fosse finalizada com a semântica, a
+            maioria dos
+            transpiladores, incluindo Babel e tsc, transformava os campos de classe no formulário, o que causou erros
+            sutis depois que os campos de classe foram padronizados.[[DefineOwnProperty]]DerivedWithConstructor
+        </div>
+        <h2>Exemplos:</h2>
+        <h3>Usando campos de classe(public class fields)</h3>
+        <p>
+            <strong> Os campos de classe não podem depender de argumentos do construtor,</strong> portanto, os inicializadores de campo
+            geralmente avaliam o mesmo valor para cada instância (a menos que a mesma expressão possa avaliar valores
+            diferentes a cada vez, como Date.now() ou inicializadores de objeto).
+        </p>
+        <div class="exemplos" style="background-color: rgb(255, 127, 127);">
+            class Person { <br>
+                name = nameArg; // nameArg is out of scope of the constructor <br>
+                constructor(nameArg) {} <br>
+              } <br>
+              
+        </div>
+        <div class="exemplos" style="background-color: aquamarine;">
+            class Person { <br>
+                // All instances of Person will have the same name <br>
+                name = "Dragomir"; <br>
+              } <br>
+              
         </div>
     </section>
 </body>
