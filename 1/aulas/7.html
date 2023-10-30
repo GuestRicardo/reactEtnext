@@ -36,8 +36,66 @@
             Existem algumas restrições de sintaxe adicionais:
             <ul>
                 <li>O nome de uma propriedade estática (campo ou método) não pode ser <strong>.prototype</strong> </li>
-                <li>O nome de um campo de classe (estático ou instância) não pode ser <strong> .constructor</strong></li>
+                <li>O nome de um campo de classe (estático ou instância) não pode ser <strong> .constructor</strong>
+                </li>
             </ul>
+        </p>
+        <h2>Descrição</h2>
+        <p>
+            Esta página apresenta os campos de instância pública em detalhes.
+            <ul>
+                <li>Para campos estáticos públicos, consulte estático. </li>
+                <li>Para campos particulares, consulte Recursos de classe particular.</li>
+                <li>Para métodos públicos, consulte Definições de método.</li>
+                <li>Para acessadores públicos, consulte getter e setter.</li>
+            </ul>
+        </p>
+        <p>
+            Os campos de instância pública existem em cada instância criada de uma classe. Ao declarar um campo público,
+            você pode garantir que o campo esteja sempre presente e que a definição de classe seja mais
+            autodocumentável.
+        </p>
+        <p>
+            Os campos de instância pública são adicionados à instância no momento da construção na classe base (antes da
+            execução do corpo do construtor) ou logo após os retornos em uma subclasse. Os campos sem inicializadores
+            são inicializados no . Assim como as propriedades, os nomes de campo podem ser computados.super()undefined
+        </p>
+        <div class="exemplos">
+            const PREFIX = "prefix"; <br>
+            <br>
+            class ClassWithField {<br>
+            field;<br>
+            fieldWithInitializer = "instance field";<br>
+            [`${PREFIX}Field`] = "prefixed field";<br>
+            }<br>
+            <br>
+            const instance = new ClassWithField();<br>
+            console.log(Object.hasOwn(instance, "field")); // true<br>
+            console.log(instance.field); // undefined<br>
+            console.log(instance.fieldWithInitializer); // "instance field"<br>
+            console.log(instance.prefixField); // "prefixed field"
+        </div>
+        <p>
+            Os nomes de campos computados são avaliados apenas uma vez, no momento da definição da classe. Isso
+            significa que cada classe sempre tem um conjunto fixo de nomes de campo, e duas instâncias não podem ter
+            nomes de campo diferentes por meio de nomes computados. O valor na expressão computada é o que envolve a
+            definição de classe, e fazer referência ao nome da classe é um ReferenceError porque a classe ainda não foi
+            inicializada. aguardar e render trabalho como esperado nesta expressão.thisthis
+        </p>
+        <div class="exemplos">
+            class C { <br>
+            [Math.random()] = 1;<br>
+            }<br>
+            <br>
+            console.log(new C());<br>
+            console.log(new C());<br>
+            // Both instances have the same field name
+
+        </div>
+        <p>
+            No inicializador de campo, isso se refere à instância de classe em construção e super refere-se à
+            propriedade da classe base, que contém os métodos de instância da classe base, mas não seus campos de
+            instância.prototype
         </p>
     </section>
 </body>
