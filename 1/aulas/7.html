@@ -16,7 +16,7 @@
             <strong>
                 Resumo:
             </strong>
-             public class fields aceita que possa criar metodos e interações sem precisar de usar os
+            public class fields aceita que possa criar metodos e interações sem precisar de usar os
             construtores, podendo assim elimina-los
         </div>
         <p>
@@ -26,13 +26,19 @@
         <h2>Sitaxe:</h2>
         <div class="exemplos">
             class ClassWithField { <br>
-                instanceField;<br>
-                instanceFieldWithInitializer = "instance field";<br>
-                static staticField;<br>
-                static staticFieldWithInitializer = "static field";<br>
-              }            <br>
-
+            instanceField;<br>
+            instanceFieldWithInitializer = "instance field";<br>
+            static staticField;<br>
+            static staticFieldWithInitializer = "static field";<br>
+            }
         </div>
+        <p>
+            Existem algumas restrições de sintaxe adicionais:
+            <ul>
+                <li>O nome de uma propriedade estática (campo ou método) não pode ser <strong>.prototype</strong> </li>
+                <li>O nome de um campo de classe (estático ou instância) não pode ser <strong> .constructor</strong></li>
+            </ul>
+        </p>
     </section>
 </body>
 
