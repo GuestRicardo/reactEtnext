@@ -97,6 +97,27 @@
             propriedade da classe base, que contém os métodos de instância da classe base, mas não seus campos de
             instância.prototype
         </p>
+        <div class="exemplos">
+            class Base { <br>
+                baseField = "base field";<br>
+                anotherBaseField = this.baseField;<br>
+                baseMethod() {<br>
+                  return "base method output";<br>
+                }<br>
+              }<br>
+              <br>
+              class Derived extends Base {<br>
+                subField = super.baseMethod();<br>
+              }<br>
+              <br>
+              const base = new Base();<br>
+              const sub = new Derived();<br>
+              <br>
+              console.log(base.anotherBaseField); // "base field"<br>
+              <br>
+              console.log(sub.subField); // "base method output"
+              
+        </div>
     </section>
 </body>
 
