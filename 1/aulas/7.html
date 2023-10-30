@@ -124,15 +124,101 @@
             instância.)this
             <div class="exemplos">
                 class C { <br>
-                    obj = {};<br>
-                  }<br>
-                  <br>
-                  const instance1 = new C();<br>
-                  const instance2 = new C();<br>
-                  console.log(instance1.obj === instance2.obj); // false
-                  
+                obj = {};<br>
+                }<br>
+                <br>
+                const instance1 = new C();<br>
+                const instance2 = new C();<br>
+                console.log(instance1.obj === instance2.obj); // false
+
             </div>
         </p>
+        <p>
+            A expressão é avaliada de forma síncrona. Não é possível usar await ou yield na expressão inicializador.
+            (Pense na expressão inicializadora como sendo implicitamente encapsulada em uma função.)
+        </p>
+        <p>
+            Como os campos de instância de uma classe são adicionados antes da execução do respectivo construtor, você
+            pode acessar os valores dos campos dentro do construtor. No entanto, como os campos de instância de uma
+            classe derivada são definidos após retornos, o construtor da classe base não tem acesso aos campos da classe
+            derivada.super()
+        </p>
+        <div class="exemplos">
+            class Base { <br>
+            constructor() {<br>
+            console.log("Base constructor:", this.field);<br>
+            }<br>
+            }<br>
+            <br>
+            class Derived extends Base {<br>
+            field = 1;<br>
+            constructor() {<br>
+            super();<br>
+            console.log("Derived constructor:", this.field);<br>
+            this.field = 2;<br>
+            }<br>
+            }<br>
+            <br>
+            const instance = new Derived();<br>
+            // Base constructor: undefined<br>
+            // Derived constructor: 1<br>
+            console.log(instance.field); // 2
+
+        </div>
+        <p>
+            Os campos são adicionados um a um. Os inicializadores de campo podem se referir a valores de campo acima
+            dele, mas não abaixo dele. Todas as instâncias e métodos estáticos são adicionados de antemão e podem ser
+            acessados, embora chamá-los possa não se comportar como esperado se eles se referirem a campos abaixo do que
+            está sendo inicializado.
+        </p>
+        <div class="exemplos">
+            class C { <br>
+            a = 1;<br>
+            b = this.c;<br>
+            c = this.a + 1;<br>
+            d = this.c + 1;<br>
+            }<br>
+            <br>
+            const instance = new C();<br>
+            console.log(instance.d); // 3<br>
+            console.log(instance.b); // undefined
+
+        </div>
+        <div class="anotacoes" style="background-color: aqua;">
+            <strong>Nota:</strong> Isso é mais importante com campos privados, porque acessar um campo privado não
+            inicializado lança um
+            TypeError, mesmo que o campo privado seja declarado abaixo. (Se o campo privado não for declarado, seria um
+            SyntaxError inicial.)
+        </div>
+        <p>
+            Como os campos de classe são adicionados usando a semântica [[DefineOwnProperty]] (que é essencialmente
+            Object.defineProperty()), as declarações de campo em classes derivadas não invocam setters na classe base.
+            Esse comportamento difere de usar no construtor.this.field = …
+        </p>
+        <div class="exemplos">
+            class Base {
+                set field(val) {
+                  console.log(val);
+                }
+              }
+              
+              class DerivedWithField extends Base {
+                field = 1;
+              }
+              
+              const instance = new DerivedWithField(); // No log
+              
+              class DerivedWithConstructor extends Base {
+                constructor() {
+                  super();
+                  this.field = 1;
+                }
+              }
+              
+              const instance2 = new DerivedWithConstructor(); // Logs 1
+              
+
+        </div>
     </section>
 </body>
 
