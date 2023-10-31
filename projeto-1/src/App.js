@@ -13,6 +13,8 @@ class App extends Component{
     }
 render(){
   const {name} = this.state;
+
+  return(
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -29,7 +31,7 @@ render(){
         </a>
       </header>
     </div>
-
+);
 }
  
 }
