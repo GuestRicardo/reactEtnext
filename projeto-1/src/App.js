@@ -2,8 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 
-class App extends Component() {
-  return (
+class App extends Component{
     state = {
       name: 'Jose',
       counter: 0
@@ -12,7 +11,6 @@ class App extends Component() {
     handlePclick=()=>{
       this.setState({name: 'tu clicou'})
     }
-    
 render(){
   const {name} = this.state;
     <div className="App">
@@ -33,7 +31,7 @@ render(){
     </div>
 
 }
-  );
+ 
 }
 
 export default App;
