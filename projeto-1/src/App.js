@@ -24,11 +24,11 @@ class App extends Component {
   };
 
   render() {
-    const { name, counter } = this.state;
+    const { posts } = this.state;
 
     return (
       <div className="App">
-
+        {}
       </div>
     );
   }
