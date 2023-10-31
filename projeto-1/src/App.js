@@ -7,12 +7,15 @@ class App extends Component {
     name: 'Jose',
     counter: 0
   };
+  handleAclick =()=>{
+    
+  }
 
   handlePclick = () => {
     this.setState({ name: 'tu clicou' })
   }
   render() {
-    const { name } = this.state;
+    const { name, counter } = this.state;
 
     return (
       <div className="App">
@@ -22,6 +25,7 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
+            onClick={this.handleAclick}
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
