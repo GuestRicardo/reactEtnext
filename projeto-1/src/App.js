@@ -7,35 +7,13 @@ class App extends Component {
     name: 'Jose',
     counter: 0
   };
-  handleAclick =(event)=>{
-    event.preventDefault();
-    const {counter} = this.state;
-    this.setState({counter: counter + 1});
-  }
 
-  handlePclick = () => {
-    this.setState({ name: 'tu clicou' })
-  }
   render() {
     const { name, counter } = this.state;
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            onClick={this.handleAclick}
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
       </div>
     );
   }
