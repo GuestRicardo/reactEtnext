@@ -1,8 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
 
-function App() {
+class App extends Component() {
   return (
+    state = {
+      name: 'Jose',
+      counter: 0
+    };
+
+    handlePclick=()=>{
+      this.setState({name: 'tu clicou'})
+    }
+    
+render(){
+  const {name} = this.state;
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +31,8 @@ function App() {
         </a>
       </header>
     </div>
+
+}
   );
 }
 
