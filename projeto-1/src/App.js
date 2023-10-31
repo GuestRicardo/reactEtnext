@@ -7,8 +7,10 @@ class App extends Component {
     name: 'Jose',
     counter: 0
   };
-  handleAclick =()=>{
-    
+  handleAclick =(event)=>{
+    event.preventDefault();
+    const {counter} = this.state;
+    this.setState({counter: counter + 1});
   }
 
   handlePclick = () => {
