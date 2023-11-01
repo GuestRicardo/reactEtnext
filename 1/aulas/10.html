@@ -62,13 +62,30 @@
             <div class="exemplos" style="background-color: aquamarine;">
                 <mark> // Correto</mark> <br>
                 this.setState(function(state, props) { <br>
-                    return { <br>
-                      counter: state.counter + props.increment <br>
-                    }; <br>
-                  });
+                return { <br>
+                counter: state.counter + props.increment <br>
+                }; <br>
+                });
             </div>
         </p>
         <h2>Atualizações de State São Mescladas</h2>
+        <p>
+            Quando você chama <strong>setState()</strong>, o React mescla o objeto que você fornece ao state atual.
+        </p>
+        <p>
+            Por exemplo: seu state pode conter várias variáveis independentes:
+            <div class="exemplos">
+                constructor(props) { <br>
+                super(props); <br>
+                this.state = { <br>
+                <mark>
+                    posts: [], <br>
+                    comments: [] <br>
+                </mark>
+                }; <br>
+                }
+            </div>
+        </p>
         
     </section>
 </body>
