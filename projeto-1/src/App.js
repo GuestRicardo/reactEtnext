@@ -27,7 +27,7 @@ class App extends Component {
   componentDidMount() {
     this.handleTimeout();
   }
-  //
+  //aq esta atualizando o metodo infinitamente(aq no caso esta se chamando)
   componentDidUpdate(){
     this.handleTimeout();
   }
