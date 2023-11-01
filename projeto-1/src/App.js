@@ -26,12 +26,10 @@ class App extends Component {
 
   componentDidMount() {
     const { posts, counter } = this.state;
-    post[0].title = 'O titulo esta sendo mudado'
+    posts[0].title = 'O titulo esta sendo mudado em 5 segundos'
 
     setTimeout(() => {
-      this.setState({
-
-      })
+      this.setState({ posts })
     }, 5000);
   }
 
