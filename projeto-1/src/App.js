@@ -23,14 +23,18 @@ class App extends Component {
       }
     ]
   };
-
+  
   componentDidMount() {
+    this.handleTimeout();
+  }
+  handleTimeout = () => {
     const { posts, counter } = this.state;
     posts[0].title = 'O componente em 5 segundos atualizou'
 
     setTimeout(() => {
-      this.setState({ posts, counter: counter+1 })
+      this.setState({ posts, counter: counter + 1 })
     }, 5000);
+
   }
 
   render() {
