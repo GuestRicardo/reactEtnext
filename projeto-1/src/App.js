@@ -5,21 +5,21 @@ import { Component } from 'react';
 class App extends Component {
   state = {
     posts: [
-     {
-      id: 1,
-      title: 'Titulo 1',
-      body: 'corpo 1',
-     },
-     {
-      id: 2,
-      title: 'Titulo 2',
-      body: 'corpo 2',
-     },
-     {
-      id: 3,
-      title: 'Titulo 3',
-      body: 'corpo 3',
-     }
+      {
+        id: 1,
+        title: 'Titulo 1',
+        body: 'corpo 1',
+      },
+      {
+        id: 2,
+        title: 'Titulo 2',
+        body: 'corpo 2',
+      },
+      {
+        id: 3,
+        title: 'Titulo 3',
+        body: 'corpo 3',
+      }
     ]
   };
 
@@ -28,7 +28,13 @@ class App extends Component {
 
     return (
       <div className="App">
-        {posts.map(post => <h1 key={post.id}>{post.title}</h1>)}
+        {posts.map(post => (
+          <>
+            <h1 key={post.id}>{post.title}</h1>
+            <p>{post.body}</p>
+          </>
+        ))}
+
       </div>
     );
   }
