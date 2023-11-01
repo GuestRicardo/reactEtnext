@@ -79,14 +79,31 @@
                 super(props); <br>
                 this.state = { <br>
                 <mark>
-                    posts: [], <br>
-                    comments: [] <br>
+                    posts: [ ], <br>
+                    comments: [ ] <br>
                 </mark>
                 }; <br>
                 }
             </div>
         </p>
-        
+        <p>
+            Então você pode atualizá-los independentemente com chamadas separadas do setState():
+            <div class="exemplos">
+                componentDidMount() { <br>
+                fetchPosts().then(response => { <br>
+                this.setState({<br>
+                <mark>posts: response.posts</mark><br>
+                });<br>
+                });<br>
+                <br>
+                fetchComments().then(response => {<br>
+                this.setState({<br>
+                <mark> comments: response.comments</mark><br>
+                });<br>
+                });<br>
+                }
+            </div>
+        </p>
     </section>
 </body>
 
