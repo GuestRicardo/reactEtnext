@@ -27,6 +27,10 @@ class App extends Component {
   componentDidMount() {
     this.handleTimeout();
   }
+  componentDidUpdate(){
+    
+  }
+
   handleTimeout = () => {
     const { posts, counter } = this.state;
     posts[0].title = 'O componente em 5 segundos atualizou'
@@ -36,6 +40,7 @@ class App extends Component {
     }, 5000);
 
   }
+
 
   render() {
     const { posts, counter } = this.state;
