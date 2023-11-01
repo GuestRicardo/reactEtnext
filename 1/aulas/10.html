@@ -13,9 +13,61 @@
     <section class="container">
         <h1 class="cyber">STATE</h1>
         <p>
-            Usando o State Corretamente
+            Usando o State Corretamente,Existem três coisas que você deve saber sobre setState().
         </p>
-        </div>
+        <h2>Não modifique o state diretamente</h2>
+        <p>
+            Por exemplo, isso não renderizará novamente o componente:
+            <div class="exemplos" style="background-color: rgb(255, 127, 127);">
+                <mark> // Errado</mark> <br>
+                this.state.comment = 'Hello';
+            </div>
+        </p>
+        <p>
+            Em vez disso, use setState();
+            <div class="exemplos" style="background-color: aquamarine;">
+                <mark> // Correto</mark> <br>
+                this.setState({comment: 'Hello'});
+            </div>
+            O único lugar onde você pode atribuir <strong>this.state</strong> é o construtor.
+        </p>
+        <h2>Atualizações de State Podem Ser Assíncronas</h2>
+        <p>
+            O React pode agrupar várias chamadas setState() em uma única atualização para desempenho.
+        </p>
+        <p>
+            Como this.props e this.state podem ser atualizados de forma assíncrona, você não deve confiar em seus
+            valores para calcular o próximo state.
+        </p>
+        <p>
+            Por exemplo, esse código pode falhar ao atualizar o contador:
+            <div class="exemplos" style="background-color: rgb(255, 127, 127);">
+                <mark> // Errado</mark> <br>
+                this.setState({ <br>
+                counter: this.state.counter + this.props.increment, <br>
+                });
+            </div>
+        </p>
+        <p>
+            Para consertá-lo, use uma segunda forma de setState() que aceite uma função ao invés de um objeto. Essa
+            função receberá o state anterior como o primeiro argumento e as props no momento em que a atualização for
+            aplicada como o segundo argumento:
+            <div class="exemplos" style="background-color: aquamarine;">
+                <mark> // Correto</mark> <br>
+                this.setState((state, props) => ({ <br>
+                counter: state.counter + props.increment <br>
+                }));
+            </div>
+            <sub>Usamos uma arrow function acima, mas também funciona com funções regulares:</sub>
+            <div class="exemplos" style="background-color: aquamarine;">
+                <mark> // Correto</mark> <br>
+                this.setState(function(state, props) { <br>
+                    return { <br>
+                      counter: state.counter + props.increment <br>
+                    }; <br>
+                  });
+            </div>
+        </p>
     </section>
 </body>
 
