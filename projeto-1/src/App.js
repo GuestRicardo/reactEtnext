@@ -23,12 +23,13 @@ class App extends Component {
       }
     ]
   };
-  
+  //aq esta disparando a função, e atualizara o estado da hudletimeout, o metodo rendle sera chamado
   componentDidMount() {
     this.handleTimeout();
   }
+  //
   componentDidUpdate(){
-    
+    this.handleTimeout();
   }
 
   handleTimeout = () => {
