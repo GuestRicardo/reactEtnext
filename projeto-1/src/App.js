@@ -4,6 +4,7 @@ import { Component } from 'react';
 
 class App extends Component {
   state = {
+    counter: 0,
     posts: [
       {
         id: 1,
@@ -24,14 +25,22 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('será executado somente uma vez quando for, montado na tela');
+    const { posts, counter } = this.state;
+    post[0].title = 'O titulo esta sendo mudado'
+
+    setTimeout(() => {
+      this.setState({
+
+      })
+    }, 5000);
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts, counter } = this.state;
 
     return (
       <div className="App">
+        <h2>{counter}</h2>
         {posts.map(post => (
           <div key={post.id}>
             <h1>{post.title}</h1>
