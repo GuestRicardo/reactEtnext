@@ -38,8 +38,46 @@
             montado e desmontado:
         </p>
         <div class="exemplos">
-            
+            <img src="../../frontend/assets/img/metdodo-ciclo-de-vida.png" alt="" class="zooImg">
+            <sub>Estes métodos são chamados de “métodos de ciclo de vida”.</sub>
         </div>
+        <p>
+            O método componentDidMount() é executado depois que a saída do componente é renderizada no DOM. Este é um
+            bom lugar para configurar um temporizador:
+            <div class="exemplos">
+                componentDidMount() { <br>
+                this.timerID = setInterval(<br>
+                () => this.tick(),<br>
+                1000<br>
+                );<br>
+                }
+            </div>
+        </p>
+        <p>
+            Note como nós salvamos o ID do temporizador em this (this.timerID).
+        </p>
+        <p>
+            Enquanto this.props é configurado pelo próprio React e this.state tem um significado especial, você está
+            livre para adicionar campos adicionais à classe manualmente se precisar armazenar algo que não participe do
+            fluxo de dados (como um ID do temporizador)
+        </p>
+        <p>
+            Vamos derrubar o temporizador no método do ciclo de vida componentWillUnmount():
+        <div class="exemplos">
+            componentWillUnmount() { <br>
+                clearInterval(this.timerID); <br>
+              }
+        </div>
+        </p>
+        <p>
+            Finalmente, vamos implementar um método chamado tick() que o componente Clock executará a cada segundo.
+        </p>
+        <p>
+            Ele usará this.setState() para agendar atualizações para o estado local do componente:
+        <div class="exemplos">
+            <img src="../../frontend/assets/img/metodo-tick.png" alt="" class="zooImg">
+        </div>
+        </p>
     </section>
 </body>
 
