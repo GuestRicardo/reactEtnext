@@ -23,6 +23,10 @@ class App extends Component {
     ]
   };
 
+  componentDidMount() {
+    console.log('será executado somente uma vez quando for, montado na tela');
+  }
+
   render() {
     const { posts } = this.state;
 
