@@ -11,104 +11,12 @@
 
 <body>
     <section class="container">
-        <h1 class="cyber">STATE</h1>
+        <h1 class="cyber">Definição de método</h1>
         <p>
-            Usando o State Corretamente,Existem três coisas que você deve saber sobre setState().
+            No ECMAScript 2015 foi introduzida uma sintaxe reduzida para definição de métodos em inicializadores de
+            objetos. É uma abreviação para uma função atribuída ao nome do método.
         </p>
-        <h2>Não modifique o state diretamente</h2>
-        <p>
-            Por exemplo, isso não renderizará novamente o componente:
-            <div class="exemplos" style="background-color: rgb(255, 127, 127);">
-                <mark> // Errado</mark> <br>
-                this.state.comment = 'Hello';
-            </div>
-        </p>
-        <p>
-            Em vez disso, use setState();
-            <div class="exemplos" style="background-color: aquamarine;">
-                <mark> // Correto</mark> <br>
-                this.setState({comment: 'Hello'});
-            </div>
-            O único lugar onde você pode atribuir <strong>this.state</strong> é o construtor.
-        </p>
-        <hr>
-        <h2>Atualizações de State Podem Ser Assíncronas</h2>
-        <p>
-            O React pode agrupar várias chamadas setState() em uma única atualização para desempenho.
-        </p>
-        <p>
-            Como this.props e this.state podem ser atualizados de forma assíncrona, você não deve confiar em seus
-            valores para calcular o próximo state.
-        </p>
-        <p>
-            Por exemplo, esse código pode falhar ao atualizar o contador:
-            <div class="exemplos" style="background-color: rgb(255, 127, 127);">
-                <mark> // Errado</mark> <br>
-                this.setState({ <br>
-                counter: this.state.counter + this.props.increment, <br>
-                });
-            </div>
-        </p>
-        <p>
-            Para consertá-lo, use uma segunda forma de setState() que aceite uma função ao invés de um objeto. Essa
-            função receberá o state anterior como o primeiro argumento e as props no momento em que a atualização for
-            aplicada como o segundo argumento:
-            <div class="exemplos" style="background-color: aquamarine;">
-                <mark> // Correto</mark> <br>
-                this.setState((state, props) => ({ <br>
-                counter: state.counter + props.increment <br>
-                }));
-            </div>
-            <sub>Usamos uma arrow function acima, mas também funciona com funções regulares:</sub>
-            <div class="exemplos" style="background-color: aquamarine;">
-                <mark> // Correto</mark> <br>
-                this.setState(function(state, props) { <br>
-                return { <br>
-                counter: state.counter + props.increment <br>
-                }; <br>
-                });
-            </div>
-        </p>
-        <hr>
-        <h2>Atualizações de State São Mescladas</h2>
-        <p>
-            Quando você chama <strong>setState()</strong>, o React mescla o objeto que você fornece ao state atual.
-        </p>
-        <p>
-            Por exemplo: seu state pode conter várias variáveis independentes:
-            <div class="exemplos">
-                constructor(props) { <br>
-                super(props); <br>
-                this.state = { <br>
-                <mark>
-                    posts: [ ], <br>
-                    comments: [ ] <br>
-                </mark>
-                }; <br>
-                }
-            </div>
-        </p>
-        <p>
-            Então você pode atualizá-los independentemente com chamadas separadas do setState():
-            <div class="exemplos">
-                componentDidMount() { <br>
-                fetchPosts().then(response => { <br>
-                this.setState({<br>
-                <mark>posts: response.posts</mark><br>
-                });<br>
-                });<br>
-                <br>
-                fetchComments().then(response => {<br>
-                this.setState({<br>
-                <mark> comments: response.comments</mark><br>
-                });<br>
-                });<br>
-                }
-            </div>
-            O merge é superficial, então <mark>this.setState({comments})</mark> deixa this.state.posts intacto, mas substitui
-            completamente <mark>this.state.comments</mark>
-        </p>
-        <hr>
+
     </section>
 </body>
 
