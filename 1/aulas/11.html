@@ -135,6 +135,33 @@
               };              
         </div>
         <h3>Métodos reduzidos não são construíveis</h3>
+        <p>
+            Métodos assim definidos não são construtores e lançarão um TypeError se você tentar instanciá-los.
+        </p>
+        <div class="exemplos">
+            var obj = { <br>
+                metodo() {}, <br>
+              }; <br>
+              new obj.metodo(); <mark>// TypeError: obj.method is not a constructor </mark> <br>
+              <br>
+              var obj = {<br>
+                *g() {},<br>
+              };<br>
+              new obj.g(); <mark>// TypeError: obj.g is not a constructor (modificado no ES2016)</mark> 
+              
+        </div>
+        <h2>Exemplos</h2>
+        <h3>Casi de testes Simples</h3>
+        <div class="exemplos">
+            var obj = { <br>
+                a: "foo",<br>
+                b() {<br>
+                  return this.a;<br>
+                },<br>
+              };<br>
+              console.log(obj.b()); // "foo"
+              
+        </div>
     </section>
 </body>
 
