@@ -41,17 +41,26 @@
             set propriedade(valor) {}<br>
             };
         </div>
-        <h2>Descrição</h2>
-        <p>
-            A sintaxe reduzida é similar à da getter e setter introduzida no ECMAScript 5. <br>
-            Dado o seguinte código:
-        </p>
-        <div class="exemplos">
-            var obj = { <br>
-            foo: function () {}, <br>
-            bar: function () {}, <br>
-            };
-
+        <div class="anotacoes">
+            <h2 style="padding-top: -5px; margin-top: -5px;">Descrição</h2>
+            <p>
+                A sintaxe reduzida é similar à da getter e setter introduzida no ECMAScript 5. <br>
+                Dado o seguinte código:
+            </p>
+            <div class="exemplos" style="background-color: aqua;">
+                var obj = { <br>
+                foo: function () {}, <br>
+                bar: function () {}, <br>
+                };
+            </div>
+            <p>Agora você pode reduzi-lo para isto:</p>
+            <div class="exemplos" style="background-color:aquamarine">
+                var obj = { <br>
+                    foo() {}, <br>
+                    bar() {}, <br>
+                  };
+                  
+            </div>
         </div>
 
     </section>
