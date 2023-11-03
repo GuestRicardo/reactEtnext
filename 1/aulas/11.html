@@ -56,11 +56,45 @@
             <p>Agora você pode reduzi-lo para isto:</p>
             <div class="exemplos" style="background-color:aquamarine">
                 var obj = { <br>
-                    foo() {}, <br>
-                    bar() {}, <br>
-                  };
-                  
+                foo() {}, <br>
+                bar() {}, <br>
+                };
             </div>
+        </div>
+
+        <h3>Generator methods</h3>
+        <p>
+            Os generator methods também podem ser definidos utilizando a sintaxe reduzida.
+        </p>
+        <ul>
+            <li>Observe que o asterisco (*) na sintaxe reduzida deve estar antes do nome da propriedade generator.
+                Assim, * g(){} funcionará, porém g *(){} não.</li>
+            <li>Se o método não for generator, sua definição não pode conter a palavra-chave yield. Dessa forma,
+                generator functions legadas também não funcionarão, lançando um SyntaxError (en-US). Sempre utilize
+                yield em conjunto com o asterisco (*)</li>
+        </ul>
+        <div class="exemplos">
+            <mark>// Utilizando a propriedade com nome (pre-ES6)</mark> <br>
+
+            var obj2 = {<br>
+            g: function* () {<br>
+            var indice = 0;<br>
+            while (true) yield indice++;<br>
+            },<br>
+            };<br>
+            <mark>// O mesmo objeto utilizando a sintaxe reduzida</mark><br>
+            <br>
+            var obj2 = {<br>
+            *g() {<br>
+            var indice = 0;<br>
+            while (true) yield indice++;<br>
+            },<br>
+            };<br>
+            <br>
+            var coisa = obj2.g();<br>
+            console.log(coisa.next().value);<mark>// 0</mark> <br>
+            console.log(coisa.next().value);<mark>// 1</mark> 
+
         </div>
 
     </section>
