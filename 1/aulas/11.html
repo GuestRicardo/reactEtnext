@@ -93,8 +93,26 @@
             <br>
             var coisa = obj2.g();<br>
             console.log(coisa.next().value);<mark>// 0</mark> <br>
-            console.log(coisa.next().value);<mark>// 1</mark> 
-
+            console.log(coisa.next().value);<mark>// 1</mark>
+        </div>
+        <h3>Métodos assíncronos</h3>
+        <p>
+            Funções assíncronas também podem ser definidas usando a sintaxe reduzida.
+        </p>
+        <div class="exemplos">
+          <mark>// Utilizando a propriedade com nome (pre-ES6)</mark> <br>
+            var obj3 = {<br>
+              f: async function () {<br>
+                await alguma_promise;<br>
+              },<br>
+            };<br>
+            
+            <mark> // O mesmo objeto com a sintaxe reduzida</mark> <br>
+            var obj3 = {<br>
+              async f() {<br>
+                await alguma_promise;<br>
+              },<br>
+            };            
         </div>
 
     </section>
