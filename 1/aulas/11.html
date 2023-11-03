@@ -100,21 +100,41 @@
             Funções assíncronas também podem ser definidas usando a sintaxe reduzida.
         </p>
         <div class="exemplos">
-          <mark>// Utilizando a propriedade com nome (pre-ES6)</mark> <br>
+            <mark>// Utilizando a propriedade com nome (pre-ES6)</mark> <br>
             var obj3 = {<br>
-              f: async function () {<br>
-                await alguma_promise;<br>
-              },<br>
+            f: async function () {<br>
+            await alguma_promise;<br>
+            },<br>
             };<br>
-            
+
             <mark> // O mesmo objeto com a sintaxe reduzida</mark> <br>
             var obj3 = {<br>
-              async f() {<br>
-                await alguma_promise;<br>
-              },<br>
-            };            
+            async f() {<br>
+            await alguma_promise;<br>
+            },<br>
+            };
         </div>
-
+        <h3>Generator methods assíncronos</h3>
+        <p>Os generator methods também podem ser assíncronos</p>
+        <div class="exemplos">
+            var obj4 = {<br>
+                f: async function* () {<br>
+                  yield 1;<br>
+                  yield 2;<br>
+                  yield 3;<br>
+                },<br>
+              };<br>
+              
+            <mark>// O mesmo objeto com a sintaxe reduzida</mark>  <br>
+              var obj4 = {<br>
+                async *f() {<br>
+                  yield 1;<br>
+                  yield 2;<br>
+                  yield 3;<br>
+                },<br>
+              };              
+        </div>
+        <h3>Métodos reduzidos não são construíveis</h3>
     </section>
 </body>
 
