@@ -19,33 +19,40 @@
         <h3>Exemplo:</h3>
         <div class="exemplos">
             const obj = { <br>
-                foo() {<br>
-                  return 'bar';<br>
-                },<br>
-              };<br>
-              <br>
-              console.log(obj.foo());<br>
-              <mark>// Saida esperada: "bar"</mark><br>
+            foo() {<br>
+            return 'bar';<br>
+            },<br>
+            };<br>
+            <br>
+            console.log(obj.foo());<br>
+            <mark>// Saida esperada: "bar"</mark><br>
         </div>
         <h3>Sintaxe:</h3>
         <div class="exemplos">
             <span class="lembrete">exemplos q podem ser usados via metodo</span> <br>
             var obj = { <br>
-                propriedade( parametros… ) {},<br>
-                *generator( parametros… ) {},<br>
-             <mark>// também com chaves computadas:</mark> <br>
-                [propriedade]( parameters… ) {},<br>
-                *[generator]( parametros… ) {},<br>
-                <mark>// compare ES5 sintaxe para getter/setter:</mark>  <br>
-                get propriedade() {},<br>
-                set propriedade(valor) {}<br>
-              };
+            propriedade( parametros… ) {},<br>
+            *generator( parametros… ) {},<br>
+            <mark>// também com chaves computadas:</mark> <br>
+            [propriedade]( parameters… ) {},<br>
+            *[generator]( parametros… ) {},<br>
+            <mark>// compare ES5 sintaxe para getter/setter:</mark> <br>
+            get propriedade() {},<br>
+            set propriedade(valor) {}<br>
+            };
         </div>
         <h2>Descrição</h2>
         <p>
-            A sintaxe reduzida é similar à da getter e setter introduzida no ECMAScript 5.  
+            A sintaxe reduzida é similar à da getter e setter introduzida no ECMAScript 5. <br>
+            Dado o seguinte código:
         </p>
-        
+        <div class="exemplos">
+            var obj = { <br>
+            foo: function () {}, <br>
+            bar: function () {}, <br>
+            };
+
+        </div>
 
     </section>
 </body>
