@@ -118,21 +118,21 @@
         <p>Os generator methods também podem ser assíncronos</p>
         <div class="exemplos">
             var obj4 = {<br>
-                f: async function* () {<br>
-                  yield 1;<br>
-                  yield 2;<br>
-                  yield 3;<br>
-                },<br>
-              };<br>
-              
-            <mark>// O mesmo objeto com a sintaxe reduzida</mark>  <br>
-              var obj4 = {<br>
-                async *f() {<br>
-                  yield 1;<br>
-                  yield 2;<br>
-                  yield 3;<br>
-                },<br>
-              };              
+            f: async function* () {<br>
+            yield 1;<br>
+            yield 2;<br>
+            yield 3;<br>
+            },<br>
+            };<br>
+
+            <mark>// O mesmo objeto com a sintaxe reduzida</mark> <br>
+            var obj4 = {<br>
+            async *f() {<br>
+            yield 1;<br>
+            yield 2;<br>
+            yield 3;<br>
+            },<br>
+            };
         </div>
         <h3>Métodos reduzidos não são construíveis</h3>
         <p>
@@ -140,27 +140,52 @@
         </p>
         <div class="exemplos">
             var obj = { <br>
-                metodo() {}, <br>
-              }; <br>
-              new obj.metodo(); <mark>// TypeError: obj.method is not a constructor </mark> <br>
-              <br>
-              var obj = {<br>
-                *g() {},<br>
-              };<br>
-              new obj.g(); <mark>// TypeError: obj.g is not a constructor (modificado no ES2016)</mark> 
-              
+            metodo() {}, <br>
+            }; <br>
+            new obj.metodo(); <mark>// TypeError: obj.method is not a constructor </mark> <br>
+            <br>
+            var obj = {<br>
+            *g() {},<br>
+            };<br>
+            new obj.g(); <mark>// TypeError: obj.g is not a constructor (modificado no ES2016)</mark>
+
         </div>
         <h2>Exemplos</h2>
         <h3>Caso de testes Simples</h3>
         <div class="exemplos">
             var obj = { <br>
-                a: "foo",<br>
-                b() {<br>
-                  return this.a;<br>
-                },<br>
-              };<br>
-              console.log(obj.b()); <mark>// "foo"</mark>               
+            a: "foo",<br>
+            b() {<br>
+            return this.a;<br>
+            },<br>
+            };<br>
+            console.log(obj.b()); <mark>// "foo"</mark>
         </div>
+        <h2>Nome de preopriedades computados</h2>
+        <p>
+            A sintaxe reduzida também suporta nome de propriedades computados.
+        </p>
+        <div class="exemplos">
+            var bar = {<br>
+            foo0: function () {<br>
+            return 0;<br>
+            },<br>
+            foo1() {<br>
+            return 1;<br>
+            },<br>
+            ["foo" + 2]() {<br>
+            return 2;<br>
+            },<br>
+            };<br>
+            <br>
+            console.log(bar.foo0()); // 0<br>
+            console.log(bar.foo1()); // 1<br>
+            console.log(bar.foo2()); // 2
+
+        </div> <br>
+        <div style="text-align: center; font-size: xx-large;" class="cyber">
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Method_definitions" style="text-decoration: none;">Documentação</a>
+        </div> <br>
     </section>
 </body>
 
