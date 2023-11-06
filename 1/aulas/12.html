@@ -17,10 +17,15 @@
                 href="https://jsonplaceholder.typicode.com/" style="text-decoration: none; color: red;">{JSON}
                 Placeholder</a>, e para usa-la lembre-se que será usada dentro do:
             <div class="anotacoes">
-                <strong>
-                    componentDidMount() {
-                    <br>
-                    }</strong>
+               
+                    componentDidMount() { <br>
+                        <span class="lembrete">add api</span> <br>
+                        fetch('https://jsonplaceholder.typicode.com/posts') <br>
+                        <span class="lembrete">convertendo dados recebidos em <strong>json</strong></span> <br>
+                        .then(response => response.json()) <br>
+                        <span class="lembrete">carregando</span> <br>
+                        .then(posts => this.setState({posts}))
+                    }
             </div>
         </p>
         <p>
