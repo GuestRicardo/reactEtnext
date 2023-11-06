@@ -23,32 +23,23 @@ class App extends Component {
       }
     ]
   };
-  //para poder acessalo quando quiser
-  timeOutUpdate = null;
+
   //aq esta disparando a função, e atualizara o estado da hudletimeout,
   // o metodo rendle sera chamado
   componentDidMount() {
-    this.handleTimeout();
+
   }
   //aq esta atualizando o metodo infinitamente(aq no caso esta se chamando)
   componentDidUpdate() {
-    this.handleTimeout();
+
   }
   //para limpar o lixo da pagina, quando o componente parar
   componentWillUnmount() {
-    clearTimeout();
-  }
-  handleTimeout = () => {
-    const { posts, counter } = this.state;
-    posts[0].title = 'O componente em 5 segundos atualizou'
-    //usando timeOutUpdade para poder manipula-lo
-    this.timeOutUpdate = setTimeout(() => {
-      this.setState({ posts, counter: counter + 1 })
-    }, 5000);
 
   }
+
   render() {
-    const { posts, counter } = this.state;
+    const { posts } = this.state;
     return (
       <div className="App">
         <h2>{counter}</h2>
