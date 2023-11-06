@@ -12,7 +12,9 @@ class App extends Component {
 
   // o metodo rendle sera chamado
   componentDidMount() {
-
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())//convertendo em json
+    .then(posts => this.setState({posts}))//carregando
   }
 
   componentDidUpdate() {
