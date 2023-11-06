@@ -39,6 +39,36 @@
             qualquer pessoa que tenha usado XMLHttpRequest, porém a nova API oferece um conjunto de recursos mais
             poderoso e flexível.
         </p>
+        <h3>Conceito e uso</h3>
+        <p>
+            O Fetch fornece uma definição genérica de objetos de Request e Response (e outras coisas envolvidas com
+            solicitações de rede). Isso permitirá que eles sejam usados onde quer que sejam necessários no futuro, seja
+            para service workers, Cache API e outras coisas similares que manipulam ou modifiquem pedidos e respostas ou
+            qualquer tipo de caso de uso que possa exigir que você gere suas próprias responses programaticamente.
+        </p>
+        <p>
+            Ele também fornece uma definição para conceitos relacionados como CORS e a semântica de cabeçalho de origem
+            HTTP, suplantando suas definições separadas em outro lugar.
+        </p>
+        <p>
+            Para fazer uma solicitação e buscar um recurso, use o método GlobalFetch.fetch (en-US) . Ele é implementado
+            em várias interfaces, especificamente Window e WorkerGlobalScope (en-US). Isso torna disponível em
+            praticamente qualquer contexto em que você possa querer obter recursos.
+        </p>
+        <p>
+            O método fetch () tem um argumento obrigatório, o caminho para o recurso que deseja obter. Ele retorna uma
+            promessa que resolve a Response para esta requisição, seja ele bem-sucedido ou não. Você também pode,
+            opcionalmente, passar um objeto de opções de inicialização como o segundo argumento (consulte Request).
+        </p>
+        <p>
+            Uma vez que uma Response é recuperada, há uma série de métodos disponíveis para definir o conteúdo do corpo
+            e como ele deve ser tratado (veja Body.)
+        </p>
+        <p>
+            Você pode criar um pedido e uma resposta diretamente usando os construtores Request() e Response() (en-US),
+            mas é improvável que você faça isso diretamente. Em vez disso, é mais provável que sejam criados como
+            resultados de outras ações da API (por exemplo, FetchEvent.respondWith (en-US) de service workers).
+        </p>
     </section>
 </body>
 
