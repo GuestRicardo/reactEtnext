@@ -27,7 +27,7 @@ class App extends Component {
     const { posts } = this.state;
     return (
       <div className="App">
-        <h2>{counter}</h2>
+        <h2>{}</h2>
         {posts.map(post => (
           <div key={post.id}>
             <h1>{post.title}</h1>
