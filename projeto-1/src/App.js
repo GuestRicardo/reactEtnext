@@ -25,10 +25,10 @@ class App extends Component {
   render() {
     const { posts } = this.state;
     return (
-      <div className="App">
+      <div className="posts">
         <h2>{ }</h2>
         {posts.map(post => (
-          <div key={post.id}>
+          <div key={post.id} className='post-content'>
             <h1>{post.title}</h1>
             <p>{post.body}</p>
           </div>
