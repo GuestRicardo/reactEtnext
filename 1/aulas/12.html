@@ -79,6 +79,13 @@
         <p>
             No exemplo acima foi carregado os POSTS estao sendo carregados no <strong>componentDidMount()</strong>, mais
             a ideia é usar uma função somente para o carregamento
+            <div class="exemplos">
+                loadPosts = async () => { <br>
+                    fetch('https://jsonplaceholder.typicode.com/posts')<br>
+                      .then(response => response.json())<br>
+                      .then(posts => this.setState({ posts }))<br>
+                  }<br>
+            </div>
         </p>
     </section>
 </body>
