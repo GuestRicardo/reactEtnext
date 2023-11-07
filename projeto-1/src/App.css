@@ -1,4 +1,4 @@
-.posts{
+.posts {
   display: grid;
   /*aq esta sendo configurado q será a coluna no minimo de 280px e 1 fileira*/
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
