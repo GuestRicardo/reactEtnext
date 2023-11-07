@@ -10,6 +10,9 @@
   min-height: 100vh;
   background: #303030;
   color: rgb(189, 178, 163);
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .post{
   background: #252323;
@@ -18,4 +21,7 @@
 .post-content {
   padding: 30px;
 
+}
+.post img{
+  max-width: 100%;
 }
