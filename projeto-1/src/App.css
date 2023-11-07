@@ -17,6 +17,10 @@
 .post{
   background: #252323;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 100ms ease-in-out;
+}
+.post:hover {
+transform: scale(1.05);
 }
 .post-content {
   padding: 30px;
