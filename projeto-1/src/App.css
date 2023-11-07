@@ -2,4 +2,16 @@
   display: grid;
   /*aq esta sendo configurado q será a coluna no minimo de 280px e 1 fileira*/
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /*espaçamento entre as grids*/
+  gap: 30px;
+}
+.container{
+  /*altura minima do container*/
+  min-height: 100vh;
+  background: #303030;
+  color: rgb(189, 178, 163);
+}
+.post{
+  background: #252323;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
