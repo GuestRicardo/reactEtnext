@@ -12,12 +12,14 @@ class App extends Component {
 
   // o metodo rendle sera chamado
   componentDidMount() {
-
+    this.loadPosts();
   }
+
   loadPosts = async () => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())//convertendo em json
-      .then(posts => this.setState({ posts }))//carregando
+    const postsResponse = fetch('https://jsonplaceholder.typicode.com/posts');
+    const [posts] = await Promise.all([postsResponse]);
+    const postsJson = await posts.json();
+    this.setState({ posts: postsJson });
   }
 
   render() {
