@@ -24,13 +24,19 @@
                 <mark> function Welcome(props) {</mark> <br>
                 return Olá, {props.name};<br>
                 }<br>
-  
+
                 const root = ReactDOM.createRoot(document.getElementById('root'));<br>
                 <mark> const element =
                     < Welcome name="Sara" />;</mark><br>
                 root.render(element);
             </code>
         </div>
+        <p>As props são entradas que não podem ser alteradas dentro de um componente. Componentes devem,
+            obrigatoriamente, apenas ler as props. Sendo assim, todos os componentes de React devem ser “puros” e não
+            podem alterar nenhum valor das props. Para isso, dentro do React usamos o conceito de <a
+                style="color: brown; font-size: x-large; text-decoration: none;" href="./10.html">“state”</a> que pode
+            ser
+            abordado nesta seção da documentação oficial.</p>
     </section>
 </body>
 
