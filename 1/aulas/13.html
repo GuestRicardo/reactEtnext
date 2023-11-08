@@ -13,8 +13,24 @@
     <section class="container">
         <h1 class="cyber">PROPS</h1>
         <p>
-         
+            Quando o React vê um elemento representando um componente definido pelo usuário, ele passa atributos JSX e
+            componentes filhos para esse componente como um único objeto. Nós chamamos esse objeto de “props”.
         </p>
+        <p>
+            Por exemplo, esse código renderiza “Olá, Sara” na página:
+        </p>
+        <div class="exemplos" style="background-color: aquamarine;">
+            <code>
+                <mark> function Welcome(props) {</mark> <br>
+                return Olá, {props.name};<br>
+                }<br>
+  
+                const root = ReactDOM.createRoot(document.getElementById('root'));<br>
+                <mark> const element =
+                    < Welcome name="Sara" />;</mark><br>
+                root.render(element);
+            </code>
+        </div>
     </section>
 </body>
 
