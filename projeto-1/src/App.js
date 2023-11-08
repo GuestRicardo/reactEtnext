@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Component } from 'react';
-import { PostCard } from './components/postCard'; 
+import { PostCard } from './components/PostCard/index';
 
 class App extends Component {
   state = {
@@ -37,6 +37,7 @@ class App extends Component {
         <div className="posts">
           {posts.map(post => (
             <PostCard
+              key={post.id}
               post={post}
             />
           ))}
