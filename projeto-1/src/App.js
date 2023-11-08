@@ -36,7 +36,9 @@ class App extends Component {
       <section className='container'>
         <div className="posts">
           {posts.map(post => (
-           <postCard atributo= 'aqui q esta sendo passado para o props, seria atributo' />
+           <postCard
+            post={post}
+           />
           ))}
         </div>
       </section>

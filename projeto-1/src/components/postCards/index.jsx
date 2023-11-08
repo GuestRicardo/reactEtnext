@@ -1,4 +1,4 @@
-export const postCard = (props) => {
+export const postCard = ({ post }) => {
   return (
     <div className="post">
       <img src={post.cover} alt={post.title} />
