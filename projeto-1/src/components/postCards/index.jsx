@@ -1,3 +1,5 @@
+export const postCard = (props) =>{
+return(
 <div className="post">
   <img src={post.cover} alt={post.title} />
   <div key={post.id} className='post-content'>
@@ -5,3 +7,6 @@
     <p>{post.body}</p>
   </div>
 </div>
+)
+}
+
