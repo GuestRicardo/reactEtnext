@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Component } from 'react';
-import { postCard } from './components/postCards';
+import { postCard } from './components/postCard';
 
 class App extends Component {
   state = {
