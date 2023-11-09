@@ -2,7 +2,7 @@
 import './App.css';
 import { Component } from 'react';
 
-import { loadPosts } from './components/load-posts';
+import { loadPosts } from './components/load-posts/index';
 import { Posts } from './components/Posts';
 
 class App extends Component {
