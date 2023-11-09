@@ -28,7 +28,7 @@ class App extends Component {
 
     return (
       <section className='container'>
-        <Posts posts={posts} />
+       <Posts posts={posts} />
       </section>
     );
   }
