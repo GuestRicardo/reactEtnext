@@ -2,9 +2,9 @@
 import './App.css';
 import { Component } from 'react';
 
-import { loadPosts } from './components/load-posts/index';
-import { Posts } from './components/Posts';
-import { PostCard } from './components/PostCard'
+import { loadPosts } from '../../components/load-posts/index';
+import { Posts } from '../../components/Posts';
+import { PostCard } from '../../components/PostCard'
 
 class App extends Component {
   state = {
