@@ -6,7 +6,7 @@ import { loadPosts } from '../../components/load-posts/index';
 import { Posts } from '../../components/Posts';
 import { PostCard } from '../../components/PostCard'
 
-class App extends Component {
+export class Home extends Component {
   state = {
     counter: 0,
     posts: [
@@ -43,5 +43,5 @@ class App extends Component {
     )
   }
 }
-export default App;
+export default Home;
 
