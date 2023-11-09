@@ -14,8 +14,8 @@ class App extends Component {
   };
 
   // o metodo rendle sera chamado
-  componentDidMount() {
-    this.loadPosts();
+  async componentDidMount() {
+    await this.loadPosts();
   }
 
   loadPosts = async () => {
