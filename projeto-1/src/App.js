@@ -4,6 +4,7 @@ import { Component } from 'react';
 
 import { loadPosts } from './components/load-posts/index';
 import { Posts } from './components/Posts';
+import { PostCard } from './components/PostCard'
 
 class App extends Component {
   state = {
@@ -28,9 +29,18 @@ class App extends Component {
 
     return (
       <section className='container'>
-       <Posts posts={posts} />
+        <Posts posts={posts} />
+        <div className="posts">
+          {posts.map(post => (
+            <PostCard
+              key={post.id}
+              post={post}
+            />
+          ))}
+        </div>
+
       </section>
-    );
+    )
   }
 }
 export default App;
