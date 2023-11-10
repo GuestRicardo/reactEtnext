@@ -11,7 +11,7 @@ export class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postPerPage: 2
+    postsPerPage: 2
   };
 
   // o metodo rendle sera chamado
@@ -46,7 +46,7 @@ export class Home extends Component {
             />
           ))}
         </div>
-            <button>Load more posts</button>
+            <button className='button-carregar'>Load more posts</button>
       </section>
     )
   }

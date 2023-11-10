@@ -29,3 +29,24 @@ transform: scale(1.05);
 .post img{
   max-width: 100%;
 }
+.button-carregar{
+  background: linear-gradient(4 #00fffc, #0099cc);
+  height: 55px;
+  width: 200px;
+  text-align: center;
+  text-align: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.check{
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
