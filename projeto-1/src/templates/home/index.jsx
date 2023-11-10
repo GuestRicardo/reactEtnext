@@ -8,10 +8,8 @@ import { PostCard } from '../../components/PostCard'
 
 export class Home extends Component {
   state = {
-    counter: 0,
-    posts: [
-
-    ]
+    posts: [],
+    allPosts: [],
   };
 
   // o metodo rendle sera chamado
@@ -21,7 +19,10 @@ export class Home extends Component {
 
   loadPosts = async () => {
     const postAndphotos = await loadPosts();
-    this.setState({ posts: postAndphotos });
+    this.setState({ 
+      posts: postAndphotos,
+      allPosts: postAndphotos,    
+    });
   }
 
   render() {
