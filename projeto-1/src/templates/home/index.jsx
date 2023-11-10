@@ -10,7 +10,7 @@ export class Home extends Component {
   state = {
     posts: [],
     allPosts: [],
-    pag: 0,
+    page: 0,
     postPerPage: 2
   };
 
