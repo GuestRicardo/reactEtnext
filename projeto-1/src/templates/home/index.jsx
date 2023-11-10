@@ -47,7 +47,7 @@ export class Home extends Component {
             />
           ))}
         </div>
-            <ButtonCarregar />     
+            <ButtonCarregar text="Carregar Páginas" />     
       </section>
     )
   }
