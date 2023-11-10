@@ -1,5 +1,5 @@
 
-import '../../styles/global-style.css';
+import './style.css';
 import { Component } from 'react';
 
 import { loadPosts } from '../../components/load-posts/index';
