@@ -5,6 +5,7 @@ import { Component } from 'react';
 import { loadPosts } from '../../components/load-posts/index';
 import { Posts } from '../../components/Posts';
 import { PostCard } from '../../components/PostCard'
+import { ButtonCarregar } from '../../components/buttons/button-carregar';
 
 export class Home extends Component {
   state = {
@@ -46,7 +47,9 @@ export class Home extends Component {
             />
           ))}
         </div>
-            <button className='button-carregar'>Load more posts</button>
+        <div>
+            <ButtonCarregar />
+        </div>
       </section>
     )
   }
