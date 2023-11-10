@@ -10,6 +10,8 @@ export class Home extends Component {
   state = {
     posts: [],
     allPosts: [],
+    pag: 0,
+    postPerPage: 2
   };
 
   // o metodo rendle sera chamado
@@ -18,11 +20,16 @@ export class Home extends Component {
   }
 
   loadPosts = async () => {
+    const { page, postsPerPage } = this.state;
+
     const postAndphotos = await loadPosts();
-    this.setState({ 
-      posts: postAndphotos,
-      allPosts: postAndphotos,    
+    this.setState({
+      posts: postAndphotos.slice(page, postsPerPage),
+      allPosts: postAndphotos,
     });
+  }
+  loadMorePosts = () => {
+    console.log('load more post chamados')
   }
 
   render() {
@@ -39,7 +46,7 @@ export class Home extends Component {
             />
           ))}
         </div>
-
+            <button>Load more posts</button>
       </section>
     )
   }
