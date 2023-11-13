@@ -10,7 +10,7 @@ export class ButtonCarregar extends Component {
                 <button
                     className='buttonC'
                     onClick={onClick}
-                    disabled={disabled}                >
+                    disabled={disabled}>
                     {text}
                 </button>
             </div>
