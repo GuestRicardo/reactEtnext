@@ -2,7 +2,7 @@
 import './style.css';
 import { Component } from 'react';
 
-import { loadPosts } from '../../components/load-posts/index';
+import { loadPosts } from '../../utils/load-posts';
 import { Posts } from '../../components/Posts';
 import { PostCard } from '../../components/PostCard'
 import { ButtonCarregar } from '../../components/buttons/button-carregar';
@@ -35,14 +35,14 @@ export class Home extends Component {
       postsPerPage,
       allPosts,
       posts
-    }= this.state;
+    } = this.state;
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage)
     posts.push(...nextPosts);
 
     this.setState({ posts, page: nextPage })
 
-   // console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
+    console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
 
   render() {
@@ -51,14 +51,7 @@ export class Home extends Component {
     return (
       <section className='container'>
         <Posts posts={posts} />
-        <div className="posts">
-          {posts.map(post => (
-            <PostCard
-              key={post.id}
-              post={post}
-            />
-          ))}
-        </div>
+        <PostCard/>
         <ButtonCarregar
           text="Carregar Páginas"
           onClick={this.loadMorePosts}
