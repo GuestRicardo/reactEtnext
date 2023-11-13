@@ -30,7 +30,7 @@ export class Home extends Component {
     });
   }
   loadMorePosts = () => {
-    const {
+    /** * const {
       page,
       postsPerPage,
       allPosts,
@@ -41,7 +41,7 @@ export class Home extends Component {
     posts.push(...nextPosts);
 
     this.setState({ posts, page: nextPage })
-
+*/
    // console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
 
