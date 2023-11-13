@@ -3,7 +3,7 @@ import '../../templates/home/style.css'
 
 export class ButtonCarregar extends Component{
     render() {
-        const {text} = this.props;
+        const {text, onClick} = this.props;
         return (
             <div className='buttonCenter'>
                 <button
