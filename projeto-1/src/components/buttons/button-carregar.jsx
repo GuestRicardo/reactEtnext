@@ -1,15 +1,18 @@
 import { Component } from 'react'
 import '../../templates/home/style.css'
 
-export class ButtonCarregar extends Component{
+export class ButtonCarregar extends Component {
     render() {
-        const {text, quandoClica} = this.props;
+        const { text, onClick, disabled } = this.props;
+        
         return (
             <div className='buttonCenter'>
                 <button
-                   onClick={quandoClica}
-                  className="buttonC"  >
-                    { text }
+                    className='button'
+                    onClick={onClick}
+                    disabled={disabled}
+                >
+                    {text}
                 </button>
             </div>
         )
