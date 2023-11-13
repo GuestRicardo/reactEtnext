@@ -30,7 +30,15 @@ export class Home extends Component {
     });
   }
   loadMorePosts = () => {
-    console.log('load more post chamados')
+    const {
+      page,
+      postsPerPage,
+      allPosts,
+      posts
+    }= this.state;
+    const nextPage = page + postsPerPage;
+
+    console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
 
   render() {
