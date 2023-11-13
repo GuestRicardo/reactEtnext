@@ -38,9 +38,9 @@ export class Home extends Component {
     }= this.state;
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage)
-    this.push(...nextPosts);
+    posts.push(...nextPosts);
 
-    this.setState({posts, page: nextPage})
+    this.setState({ posts, page: nextPage })
 
     console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
