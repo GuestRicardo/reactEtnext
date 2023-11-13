@@ -7,7 +7,7 @@ export class ButtonCarregar extends Component{
         return (
             <div className='buttonCenter'>
                 <button
-                  onClick={this.loadMorePosts} 
+                   onClick={onClick}
                   className="buttonC"  >
                     { text }
                 </button>
