@@ -4,14 +4,13 @@ import '../../templates/home/style.css'
 export class ButtonCarregar extends Component {
     render() {
         const { text, onClick, disabled } = this.props;
-        
+
         return (
             <div className='buttonCenter'>
                 <button
-                    className='button'
+                    className='buttonC'
                     onClick={onClick}
-                    disabled={disabled}
-                >
+                    disabled={disabled}                >
                     {text}
                 </button>
             </div>

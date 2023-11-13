@@ -4,7 +4,7 @@ import { Component } from 'react';
 
 import { loadPosts } from '../../utils/load-posts';
 import { Posts } from '../../components/Posts';
-import { PostCard } from '../../components/PostCard'
+//import { PostCard } from '../../components/PostCard'
 import { ButtonCarregar } from '../../components/buttons/button-carregar';
 
 export class Home extends Component {
@@ -29,6 +29,7 @@ export class Home extends Component {
       allPosts: postAndphotos,
     });
   }
+
   loadMorePosts = () => {
     const {
       page,
@@ -51,8 +52,9 @@ export class Home extends Component {
     return (
       <section className='container'>
         <Posts posts={posts} />
-        <PostCard/>
+
         <ButtonCarregar
+          className='buttonC'
           text="Carregar Páginas"
           onClick={this.loadMorePosts}
         />
