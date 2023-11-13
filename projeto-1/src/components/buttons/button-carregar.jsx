@@ -3,11 +3,11 @@ import '../../templates/home/style.css'
 
 export class ButtonCarregar extends Component{
     render() {
-        const {text, onClick} = this.props;
+        const {text, quandoClica} = this.props;
         return (
             <div className='buttonCenter'>
                 <button
-                   onClick={onClick}
+                   onClick={quandoClica}
                   className="buttonC"  >
                     { text }
                 </button>

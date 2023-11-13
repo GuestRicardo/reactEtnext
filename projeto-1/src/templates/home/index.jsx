@@ -49,7 +49,7 @@ export class Home extends Component {
         </div>
         <ButtonCarregar
           text="Carregar Páginas"
-          onClick={this.loadMorePosts}
+          quandoClica={this.loadMorePosts}
         />
       </section>
     )
