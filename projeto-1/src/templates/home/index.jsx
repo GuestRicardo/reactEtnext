@@ -42,7 +42,7 @@ export class Home extends Component {
 
     this.setState({ posts, page: nextPage })
 
-    console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
+   // console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
 
   render() {
