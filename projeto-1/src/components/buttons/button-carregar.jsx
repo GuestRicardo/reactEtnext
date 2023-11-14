@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import '../../templates/home/style.css'
+import './style.css'
 
 export class ButtonCarregar extends Component {
     render() {
