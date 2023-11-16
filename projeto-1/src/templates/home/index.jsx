@@ -54,7 +54,9 @@ export class Home extends Component {
       <section className='container'>
         <h1 className='h1top'>Projeto de buscas</h1>
         <div>
-          <InputSearch />
+          <InputSearch
+            
+          />
         </div>
         <Posts posts={posts} />
 
