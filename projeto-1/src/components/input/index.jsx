@@ -11,7 +11,12 @@ export class InputSearch extends Component {
                         type="input" className="form__field"
                         placeholder="Name" name="name"
                         id='name' required
-
+                        onchange={
+                            this.onChange=(e)=>{
+                                console.log(e.target)
+                            }
+                        }
+                        
                     />
                     <label for="name" className="form__label">Digite á Busca</label>
                 </div>
