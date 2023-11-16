@@ -50,7 +50,8 @@ export class Home extends Component {
     const { posts } = this.state;
 
     return (
-      <section className='container'>
+      <section className='container'>        
+
         <Posts posts={posts} />
 
         <ButtonCarregar
