@@ -33,4 +33,5 @@ transform: scale(1.05);
 .h1top{
   font-size: 50px;
   text-align: center;
+  margin-bottom: 25px;
 }
