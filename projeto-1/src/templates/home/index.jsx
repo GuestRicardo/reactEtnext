@@ -52,7 +52,7 @@ export class Home extends Component {
 
     return (
       <section className='container'>
-        <h1>Projeto de buscas</h1>
+        <h1 className='h1top'>Projeto de buscas</h1>
         <InputSearch />
         <Posts posts={posts} />
 

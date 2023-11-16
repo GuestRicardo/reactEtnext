@@ -30,3 +30,7 @@ transform: scale(1.05);
   /*espaçamento entre as grids*/
   gap: 30px;
 }
+.h1top{
+  font-size: 50px;
+  text-align: center;
+}
