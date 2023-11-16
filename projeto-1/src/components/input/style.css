@@ -2,10 +2,10 @@
     box-sizing: border-box;
   } */
   
-  :root {
+  /* :root {
     /* //--background-size: 50vw; */
-    --background-size: unquote('min(100vw, 40em)');
-  }
+    /* --background-size: unquote('min(100vw, 40em)');
+  } */
 /*   
   html {
     font-size: calc(100% + 0.5vw);
@@ -46,7 +46,7 @@
   .input-group {
 
     width: 100%;
-    max-width: 20em;
+    max-width: 200em;
     display: flex;
     flex-direction: column;
     z-index: 2;
