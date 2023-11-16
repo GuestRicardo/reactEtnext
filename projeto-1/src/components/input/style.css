@@ -40,6 +40,7 @@ $gray: #9b9b9b; */
   transition: 0.2s;
   font-size: 1rem;
   color: gray;
+
 }
 
 .form__field:focus {
@@ -73,4 +74,5 @@ $gray: #9b9b9b; */
   font-size: 1.5rem;
   background-color:#222222;
   margin-bottom: 15px;
+  padding-bottom: 15px;
 }
