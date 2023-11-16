@@ -10,5 +10,8 @@
   }
   .buttonCenter{
     margin-top: 25px;
-    text-align: center;    
+    text-align: center; 
+    /* display: flex; */
+    /* align-items: flex-end; */
+    min-height: 100px;   
   }
