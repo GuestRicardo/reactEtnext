@@ -55,7 +55,9 @@ export class Home extends Component {
         <h1 className='h1top'>Projeto de buscas</h1>
         <div>
           <InputSearch
-            onchange={onchange}
+            onChange={(e)=>{
+              console.log(e.target.value)
+            }}
           />
         </div>
         <Posts posts={posts} />
