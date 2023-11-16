@@ -6,6 +6,7 @@ import { loadPosts } from '../../utils/load-posts';
 import { Posts } from '../../components/Posts';
 //import { PostCard } from '../../components/PostCard'
 import { ButtonCarregar } from '../../components/buttons/button-carregar';
+import { InputSearch } from '../../components/input';
 
 export class Home extends Component {
   state = {
@@ -50,8 +51,9 @@ export class Home extends Component {
     const { posts } = this.state;
 
     return (
-      <section className='container'>        
-
+      <section className='container'>
+        <h1>Projeto de buscas</h1>
+        <InputSearch />
         <Posts posts={posts} />
 
         <ButtonCarregar
