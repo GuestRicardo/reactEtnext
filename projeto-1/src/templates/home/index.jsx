@@ -30,7 +30,7 @@ export class Home extends Component {
       allPosts: postAndphotos,
     });
   }
-  //metodo para usar na paginação
+  //metodo(evento) para usar na paginação
   loadMorePosts = () => {
     const {
       page,
@@ -46,9 +46,9 @@ export class Home extends Component {
 
     console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
-  //metodo para usar na busca do input
+  //metodo(evento) para usar na busca do input  
   handleChange = () => {
-
+const {.valueOf()}
   }
   render() {
     const { posts } = this.state;
