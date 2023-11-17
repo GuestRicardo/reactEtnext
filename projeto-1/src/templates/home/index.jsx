@@ -30,7 +30,7 @@ export class Home extends Component {
       allPosts: postAndphotos,
     });
   }
-
+  //metodo para usar na paginação
   loadMorePosts = () => {
     const {
       page,
@@ -46,7 +46,10 @@ export class Home extends Component {
 
     console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
+  //metodo para usar na busca do input
+  handleChange = () => {
 
+  }
   render() {
     const { posts } = this.state;
 
@@ -55,9 +58,7 @@ export class Home extends Component {
         <h1 className='h1top'>Projeto de buscas</h1>
         <div>
           <InputSearch
-            onChange={(e)=>{
-              console.log(e.target.value)
-            }}
+            onChange={ this.handleChange}
           />
         </div>
         <Posts posts={posts} />
