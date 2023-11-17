@@ -13,7 +13,8 @@ export class Home extends Component {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 2
+    postsPerPage: 2,
+    searchValue: ''
   };
 
   // o metodo rendle sera chamado
@@ -47,18 +48,21 @@ export class Home extends Component {
     console.log(page, postsPerPage, nextPage, nextPage + postsPerPage)
   }
   //metodo(evento) para usar na busca do input  
-  handleChange = () => {
-const {.valueOf()}
+  handleChange = (e) => {
+    const { value } =e.target;
+    this.setState({searchValue: value})
   }
+
   render() {
-    const { posts } = this.state;
+    const { posts, searchValue } = this.state;
 
     return (
       <section className='container'>
         <h1 className='h1top'>Projeto de buscas</h1>
         <div>
           <InputSearch
-            onChange={ this.handleChange}
+            onChange={this.handleChange}
+            value={searchValue}
           />
         </div>
         <Posts posts={posts} />
