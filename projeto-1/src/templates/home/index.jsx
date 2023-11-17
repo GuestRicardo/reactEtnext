@@ -69,7 +69,10 @@ export class Home extends Component {
             value={searchValue}
           />
         </div>
-        <h1>Resultado: {searchValue}</h1>
+        <h1>Você buscou:</h1>
+        <h3>
+          {searchValue}
+        </h3>
         <hr /> <br />
         <Posts posts={posts} />
 
