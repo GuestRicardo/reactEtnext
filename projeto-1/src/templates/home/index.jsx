@@ -8,7 +8,9 @@ import { Posts } from '../../components/Posts';
 import { ButtonCarregar } from '../../components/buttons/button-carregar';
 import { InputSearch } from '../../components/input';
 
+
 export class Home extends Component {
+  //estado, tudo componente q tiver estado precisara passar por aq
   state = {
     posts: [],
     allPosts: [],
@@ -21,7 +23,7 @@ export class Home extends Component {
   async componentDidMount() {
     await this.loadPosts();
   }
-
+  //para fazer o carregamento dos posts
   loadPosts = async () => {
     const { page, postsPerPage } = this.state;
 
@@ -49,10 +51,11 @@ export class Home extends Component {
   }
   //metodo(evento) para usar na busca do input  
   handleChange = (e) => {
-    const { value } =e.target;
-    this.setState({searchValue: value})
+    const { value } = e.target;
+    this.setState({ searchValue: value })
   }
 
+  //tudo que esta sendo exibido na tela esta aq
   render() {
     const { posts, searchValue } = this.state;
 
