@@ -16,7 +16,7 @@ export class Home extends Component {
     allPosts: [],
     page: 0,
     postsPerPage: 2,
-    searchValue: ''
+    searchValue: '',
   };
 
   // o metodo rendle sera chamado
@@ -68,6 +68,8 @@ export class Home extends Component {
             value={searchValue}
           />
         </div>
+        <h1>Resultado: {searchValue}</h1>
+        <hr /> <br />
         <Posts posts={posts} />
 
         <ButtonCarregar
