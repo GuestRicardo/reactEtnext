@@ -65,6 +65,7 @@ export class Home extends Component {
         <div>
           <InputSearch
             onChange={this.handleChange}
+            //value é o estado do elemento
             value={searchValue}
           />
         </div>
