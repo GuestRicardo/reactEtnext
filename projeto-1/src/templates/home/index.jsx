@@ -60,13 +60,13 @@ export class Home extends Component {
     const { posts, searchValue, allPosts, page, postsPerPage } = this.state;
 
     //se caso tiver valor, será filtrado e
-    const filteredPosts = !!searchValue ?    
-      posts.filter(post => {//e retornara
-        return post.title.toLocaleLowerCase().includes( searchValue.toLowerCase());
+    const filteredPosts = !!searchValue ?
+      allPosts.filter(post => {//e retornara
+        return post.title.toLocaleLowerCase().includes(searchValue.toLowerCase());
         //todos os posts q for digitado no input usando o searchValue
       })
-      ://se nao tiver nenhum dos valores buscados será retornado os posts
-      posts;
+      //se nao tiver nenhum dos valores buscados será retornado os posts
+      : posts;
 
     return (
       <section className='container'>
