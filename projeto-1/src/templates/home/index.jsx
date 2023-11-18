@@ -85,8 +85,14 @@ export class Home extends Component {
           )}
           <hr /> <br />
         </>
-        <Posts posts={filteredPosts} />
-
+        {filteredPosts.length > 0 &&(
+          <Posts posts={filteredPosts} />
+        )}
+        {filteredPosts.length === 0 &&(
+          <div  className='h1top'>
+            <h4><mark>Não existem POSTS</mark></h4>
+          </div>
+        )}
         <div>
           {!searchValue && (
             <ButtonCarregar
