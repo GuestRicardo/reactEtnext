@@ -72,17 +72,22 @@ export class Home extends Component {
         <>
           <h1>Você buscou:</h1>
           {!!searchValue && (
-            <h3>{ searchValue }</h3>
+            <h3>{searchValue}</h3>
           )}
           <hr /> <br />
         </>
         <Posts posts={posts} />
 
-        <ButtonCarregar
-          className='buttonC'
-          text="Carregar Páginas"
-          onClick={this.loadMorePosts}
-        />
+        <div>
+          {!searchValue && (
+            <ButtonCarregar
+              className='buttonC'
+              text="Carregar Páginas"
+              onClick={this.loadMorePosts}
+            />
+          )}
+
+        </div>
       </section>
     )
   }
