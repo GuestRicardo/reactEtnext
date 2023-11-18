@@ -57,7 +57,8 @@ export class Home extends Component {
 
   //tudo que esta sendo exibido na tela esta aq
   render() {
-    const { posts, searchValue } = this.state;
+    const { posts, searchValue, allPosts, page, postsPerPage } = this.state;
+    const filteredPosts = !!searchValue ? posts : posts;
 
     return (
       <section className='container'>
@@ -76,7 +77,7 @@ export class Home extends Component {
           )}
           <hr /> <br />
         </>
-        <Posts posts={posts} />
+        <Posts posts={filteredPosts} />
 
         <div>
           {!searchValue && (
