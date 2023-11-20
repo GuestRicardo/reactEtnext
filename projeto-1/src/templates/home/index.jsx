@@ -57,7 +57,7 @@ export class Home extends Component {
 
   //tudo que esta sendo exibido na tela esta aq
   render() {
-    const { posts, searchValue, allPosts, page, postsPerPage } = this.state;
+    const { posts, searchValue, allPosts } = this.state;
 
     //se caso tiver valor, será filtrado e
     const filteredPosts = !!searchValue ?
