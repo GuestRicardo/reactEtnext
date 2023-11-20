@@ -73,9 +73,8 @@ export class Home extends Component {
         <h1 className='h1top'>Projeto de buscas</h1>
         <div>
           <InputSearch
-            onChange={this.handleChange}
-            //value é o estado do elemento
-            value={searchValue}
+            searchValue={ searchValue }
+            handleChange={this.handleChange}
           />
         </div>
         <>
@@ -85,11 +84,11 @@ export class Home extends Component {
           )}
           <hr /> <br />
         </>
-        {filteredPosts.length > 0 &&(
+        {filteredPosts.length > 0 && (
           <Posts posts={filteredPosts} />
         )}
-        {filteredPosts.length === 0 &&(
-          <div  className='h1top'>
+        {filteredPosts.length === 0 && (
+          <div className='h1top'>
             <h4><mark>Não existem POSTS</mark></h4>
           </div>
         )}
