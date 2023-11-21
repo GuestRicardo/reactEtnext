@@ -26,7 +26,7 @@
         <hr>
         <h3>Diferenças entre trabalhar com props e estado?</h3>
         <hr>
-        <h3 style="color: brown;">state</h3>
+        <h3 style="color: brown;">STATE</h3>
         <p>
             A diferença em ter o <strong>state</strong> é que você pode manipula-lo para baixo, exemplo disso é q ele
             fica dentro da home,
@@ -38,6 +38,19 @@
         <p>
             Lembrando que todos os componentes usados do <strong>state</strong> e a <strong>props </strong>são privadas
             do componente q estará sendo usada. mais sempre poderá ser passado adiante
+        </p>
+        <p>
+            O estado salvará na memoria tudo q for passado para ele e assim q o <strong>state</strong> mudar o react vai
+            renderizar a pagina novamente
+        </p>
+        <h3 style="color: brown;">PROPS</h3>
+        <p>
+            Já a <strong>PROPS</strong> esta sendo recebida mudará diacordo o estado, mas se mudar a props diretamente o
+            estado nao tem nada haver com isso, sendo que a PROP é algo q se passa para o componente
+        </p>
+        <p style="color: brown;">
+            O react tem um sentido de dados sendo q ele nao retorna para trás, exemplo nada pode estar acima do
+            componente pai, exemplo usado o home, então nunca o estado influenciara em componentes pai
         </p>
     </section>
 </body>
