@@ -42,9 +42,14 @@
             usá-los também como ciclo de vida do componente.
             <div class="exemplos">
                 useEffect(()=>{<br>
-                <mark></mark> <br>
+                <mark>Tudo que estiver aq no escopo, sera executado somente uma vez</mark>, <strong>Porque nao tem nenhuma dependencia no array abaixo</strong><br>
                 }[<mark><strong>Aqui é um array de dependencia, ela receberá qualquer variavel, e essa variavel pode
                         mudar ate essa propria função, quando ela for chamada</strong></mark>]);
+                        <div class="anotacoes">
+                            useEffect(()=>{<br>
+                                console.log(o que vc quiser q seja executado); <br>
+                            } [quantidade de vez q será executado(re-enderizado) o consolelog acima]);
+                        </div>
             </div>
 
         </p>
