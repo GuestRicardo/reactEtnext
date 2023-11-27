@@ -14,15 +14,25 @@
         <h1 class="cyber">setStates em classes</h1>
         <img class="zoomImg" src="../../frontend/assets/img/setState em class_.png" alt="">
         <p>
-            Essa parte do codigo é assicrono, isso quer dizer que quando ele esta na espera, equanto o outros codigos estao sendo executado em simultaneo, ai ele começa com
-            * um estado e é preciso usar o setState q vai sicronizar com um Callback
-            * n o exemplo acima esta sendo mostrado como funciona, this.setState esta sendo assicrono com a função q esta sendo carregado o console.log
-            * entao, handleClick esta passando para o react, execultar a função q esta sendo contadora e depois q ela terminar
+            Essa parte do codigo é assicrono, isso quer dizer que quando ele esta na espera, equanto o outros codigos
+            estao sendo executado em simultaneo, ai ele começa com
+            <img class="zoomImg" src="../../frontend/assets/img/assicrono.png" alt="">
+            <p>
+                um estado e é preciso usar o setState q vai sicronizar com um Callback
+                <div class="exemplos">
+                    setState(<strong style="color: blue;">o q desejar</strong>, <strong style="color: blueviolet;">o callback</strong>)
+                </div>
+
+            </p>
+            * n o exemplo acima esta sendo mostrado como funciona, this.setState esta sendo assicrono com a função q
+            esta sendo carregado o console.log
+            * entao, handleClick esta passando para o react, execultar a função q esta sendo contadora e depois q ela
+            terminar
             * entao entrará o console.log
-            * 
+            *
             */
         </p>
-        <p>        
+        <p>
             Oq esta sendo manipulado acima, nao é o DOM do navegador,
             na verdade é o virtual DOM é do proprio React ou seja é uma copia do DOM real,
             o <strong>setState</strong> ele compara os 2 DOMS e procura onde esta a diferença
