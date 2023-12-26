@@ -46,6 +46,35 @@
                 style="color: brown; text-decoration: none;">gerenciador de pacotes</a>, basta, na pasta raiz do seu
             projeto Node, executar o
             seguinte comando no terminal:
+            <div class="anotacoes">npm install eslint -D</div>
+        </p>
+        <p>
+            Perceba que estamos usando a flag -D, indicando ao NPM que o eslint é uma dependência de desenvolvimento,
+            afinal, em produção não precisamos dele.
+        </p>
+        <p>
+            Em seguida, precisamos configurá-lo para que seja aplicado na nossa aplicação. Ou seja, vamos dar a ele
+            informações sobre o nosso projeto e indicar quais regras de escrita queremos seguir.
+        </p>
+        <h2>Configurando EsLint</h2>
+        <p>
+            Antes que iniciemos a configuração, é importante definirmos qual estilo de programação queremos seguir. Mais
+            a frente, você verá que podemos definir manualmente os parâmetros e tipos de verificação do ESLint. No
+            entanto, configurar manualmente é bem trabalhoso e pode gerar dúvidas quanto ao estilo. Com isso em mente,
+            tem se criado alguns styles guides (guias de estilo). Eu, particularmente, gosto do style guide da Airbnb,
+            que é o estilo que usaremos como exemplo, mas sinta-se à vontade para escolher outro.
+        </p>
+        <p>
+            Para iniciarmos o processo de configuração do ESLint, precisamos, primeiro, inicializar o ESLint na
+            aplicação. Seguem os devidos comandos para NPM:
+            <div class="anotacoes">
+                npx eslint --init
+            </div>
+            O terminal vai apresentar algumas perguntas. Vamos configurar juntos!
+        </p>
+        <p>
+            A primeira configuração que precisamos definir é com qual propósito iremos usar o ESLint. O nosso propósito
+            será checar sintaxe, encontrar problemas e garantir a aplicação de um estilo de código. Ficará assim:
         </p>
     </section>
 </body>
