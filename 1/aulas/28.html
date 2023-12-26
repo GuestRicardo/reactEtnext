@@ -91,6 +91,65 @@
             escolher None of these:
             <img src="../../frontend/assets/img/eslint3.png" alt="" class="imgM">
         </p>
+        <p>
+            É importante também para o ESLint saber se estamos usando Typescript. Como eu não estou utilizando no meu
+            projeto, então respondi que não:
+            <img src="../../frontend/assets/img/eslint4.png" alt="" class="imgM">
+        </p>
+        <p>
+            Agora, você precisa informar qual o destino do seu código. Se irá rodar no browser ou no Node. Já que o
+            contexto aqui é usarmos ESLint com Node, então vamos selecionar Node mesmo. Para isso, com a tecla espaço,
+            desselecione Browser e selecione Node e, depois, confirme com a tecla enter:
+            <img src="../../frontend/assets/img/eslint5.png" alt="" class="imgM">
+        </p>
+        <p>
+            Nessa etapa, deveremos definir o estilo que seguiremos no nosso código. Iremos escolher um estilo popular:
+            <img src="../../frontend/assets/img/eslint6.png" alt="" class="imgM">
+        </p>
+        <p>
+            Na próxima etapa, irei escolher o style guide que mencionei anteriormente, o da Airbnb:
+            <img src="../../frontend/assets/img/eslint7.png" alt="" class="imgM">
+        </p>
+        <p>
+            O estilo da Airbnb segue alguns padrões que já falamos, como pôr ponto e vírgula ao fim de cada setença de
+            código, vírgula após último elemento de um array ou depois do último atributo de um objeto, strings são
+            delimitadas por aspas simples… Para ver a lista de regras presentes no style guide da Airbnb, basta dar uma
+            olhada nesse link. <br> <br>
+
+            Continuando, agora definiremos o formato do arquivo no qual você poderá realizar algumas configurações
+            adicionais do ESLint. Nesse arquivo, também poderemos definir ou sobrescrever regras que ele irá analisar no
+            nosso projeto. Particularmente, gosto desse arquivo no formato JavaScript:
+            <img src="../../frontend/assets/img/eslint8.png" alt="" class="imgM">
+        </p>
+        <p>
+            Após a etapa anterior, será perguntando a você se deseja instalar as dependências relacionadas ao style
+            guide escolhido. Confirme:
+            <img src="../../frontend/assets/img/eslint9.png" alt="" class="imgM">
+            Finalmente, temos o ESLint instalado e configurado com a excelente style guide da Airbnb. Agora, pra uma
+            completa experiência com essa tecnologia, é necessário integrá-la ao VS Code.
+        </p>
+        <h2>Configurando Vs code com Eslint</h2>
+        <p>
+            Essa etapa é necessária para uma completa integração do ESLint e, assim, termos o processo de
+            desenvolvimento de nossas aplicações facilitado.
+        </p>
+        <p>
+            O primeiro passo é instalar a extensão ESLint no VS Code. Para isso, no seu VS Code, clique no botão de
+            extensões, pesquisar “eslint” e instale a extensão correspondente:
+            <img src="../../frontend/assets/img/eslintvs.png" alt="" class="imgM">
+            Feito isso, reinicie o VS Code e passará a visualizar os avisos no código do seu projeto quando alguma regra
+            do style guide da Airbnb for violada.
+        </p>
+        <p>
+            Um outro recurso que também podemos habilitar no ESLint e configurar para que funcione no VS Code é, sempre
+            que salvarmos um arquivo, o ESLint fazer a correção automatica dos desvios às regras nesse arquivo. Claro
+            que nem sempre ele será capaz de resolver tudo sozinho, mas na maioria das vezes ele tira de letra.
+        </p>
+        <p>
+            Para adicionarmos essa funcionalidade, precisamos alterar o arquivo settings.json do VS Code. Podemos
+            abri-lo indo no menu view e depois em command palette:
+            <img src="../../frontend/assets/img/eslintvs2.png" alt="" class="imgM">
+        </p>
     </section>
 </body>
 
