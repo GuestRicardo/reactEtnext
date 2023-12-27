@@ -211,6 +211,38 @@
             que antes tinha sido definida pelo nosso style guide. Não tem problema algum nisso. No final, como estamos
             sobrescrevendo, nossas regras definidas de forma manual é que irão vigorar.
         </p>
+        <p>
+            Geralmente, para realizarmos pequenos testes, utilizamos a função console.log para vermos o valor de uma
+            variável em algum momento da execução do nosso código. O ESLint lança um aviso sobre o uso do console.
+            Provavelmente, o objetivo dessa regra é estimular que usemos a ferramenta de debug, que de fato é bem
+            melhor. De qualquer maneira, vamos sobrescrever essa regra e permitir a utilização de console.log. Para isso
+            basta adicionarmos a rules a regra ‘no-console’: ‘off’, ficando assim:
+            <div class="anotacoes">
+                <code>
+                    module.exports = { <br>
+                    "env": {<br>
+                    "es2021": true,<br>
+                    "node": true<br>
+                    },<br>
+                    "extends": "eslint:recommended",<br>
+                    "parserOptions": {<br>
+                    "ecmaVersion": 12,<br>
+                    "sourceType": "module"<br>
+                    },<br>
+                    "rules": {<br>
+                    'no-console': 'off',<br>
+                    }<br>
+                    };
+                </code>
+            </div>
+            Basta salvar e pronto. Sua regra estara sendo monitorada pelo ESLint!
+        </p>
+        <p>
+            Agora que você sabe como adicionar um estilo personalizado manualmente, pode se aventurar e adicionar os
+            seus próprios. Para ver a lista de regras disponíveis basta acessar esse <a
+                href="https://eslint.org/docs/rules/" style="color: brown;">link.</a>
+        </p>
+
     </section>
 </body>
 
