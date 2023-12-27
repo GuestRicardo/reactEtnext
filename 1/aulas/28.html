@@ -183,6 +183,30 @@
             escrita especifico que nós queremos, independentemente de estar numa style guide ou não. Será que isso é
             possível? Sim!
         </p>
+        <h2>Definindo regras manualmente</h2>
+        <p>
+            Após inicializar o ESLint na sua aplicação, você deve ter notado que, na raiz da sua aplicação, foi criado
+            um arquivo chamado eslintrc.js (ou em outro formato, como JSON, se assim você escolheu na etapa de
+            configurações). É exatamente nele que iremos colocar nossas regras personalizadas. Ele estará mais ou menos
+            assim:
+            <div class="exemplos">
+                <code>
+                    module.exports = { <br>
+                        "env": {<br>
+                            "es2021": true,<br>
+                            "node": true<br>
+                        },<br>
+                        "extends": "eslint:recommended",<br>
+                        "parserOptions": {<br>
+                            "ecmaVersion": 12,<br>
+                            "sourceType": "module"<br>
+                        },<br>
+                        "rules": {<br>
+                        }<br>
+                    };
+                </code>
+            </div>
+        </p>
     </section>
 </body>
 
