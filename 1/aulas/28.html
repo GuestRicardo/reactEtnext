@@ -192,20 +192,24 @@
             <div class="exemplos">
                 <code>
                     module.exports = { <br>
-                        "env": {<br>
-                            "es2021": true,<br>
-                            "node": true<br>
-                        },<br>
-                        "extends": "eslint:recommended",<br>
-                        "parserOptions": {<br>
-                            "ecmaVersion": 12,<br>
-                            "sourceType": "module"<br>
-                        },<br>
-                        "rules": {<br>
-                        }<br>
+                    "env": {<br>
+                    "es2021": true,<br>
+                    "node": true<br>
+                    },<br>
+                    "extends": "eslint:recommended",<br>
+                    "parserOptions": {<br>
+                    "ecmaVersion": 12,<br>
+                    "sourceType": "module"<br>
+                    },<br>
+                    "rules": {<br>
+                    }<br>
                     };
                 </code>
             </div>
+            É no atributo rules que definiremos nossas regras. Como temos o Airbnb como style guide, há algumas regras
+            que ele próprio definiu. Pode ser que, ao adicionarmos um regra a rules, estejamos sobrescrevendo uma regra
+            que antes tinha sido definida pelo nosso style guide. Não tem problema algum nisso. No final, como estamos
+            sobrescrevendo, nossas regras definidas de forma manual é que irão vigorar.
         </p>
     </section>
 </body>
