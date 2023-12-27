@@ -154,6 +154,35 @@
             Em seguida, pesquise por settings e abra a opção que tem JSON:
             <img src="../../frontend/assets/img/eslintvs3.png" alt="" class="imgM">
         </p>
+        <p>
+            Adicione, então, as seguintes configurações após o último atributo do settings.json:
+            <div class="anotacoes">
+                "editor.codeActionsOnSave": { <br>
+                "source.fixAll.eslint": true<br>
+                },<br>
+                "eslint.validate": ["javascript", "typescript"]<br>
+            </div>
+        </p>
+        <p>
+            Para você ver exatamente onde colocar, segue esse mesmo trecho adicionado no meu settings.json:
+            <img src="../../frontend/assets/img/eslintvs4.png" alt="" class="imgM">
+            O importante é que fique antes desse último colchete ( } ). Não esqueça de salvar o arquivo!
+        </p>
+        <p>
+            Perceba que adicionei os atributos “javascript” e “typescript”. É necessário que informemos quais linguagens
+            de programação queremos que o ESLint faça uma análise e aplique as correções ao salvarmos um arquivo.
+            Sinta-se livre para adicionar outras.
+        </p>
+        <p>
+            Uma vez adicionado esse recurso, se um arquivo no seu projeto estiver com erros de estilo, basta salvá-lo e
+            Voilà! O ESLint corrigirá para você. É bem fácil esquecermos de seguir as orientações que o ESLint dá, mas é
+            bem difícil esquecermos de salvar nossos arquivos 😅
+        </p>
+        <p>
+            Você deve ter percebido que, até agora, não inserimos nenhum estilo personlizado, ou seja, um estilo de
+            escrita especifico que nós queremos, independentemente de estar numa style guide ou não. Será que isso é
+            possível? Sim!
+        </p>
     </section>
 </body>
 
