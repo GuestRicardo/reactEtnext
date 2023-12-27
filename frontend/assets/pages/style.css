@@ -1,0 +1,12 @@
+.menu {
+   background-color: #22438c;
+   width: 60px;
+   padding: 0px, 10px;
+   line-height: 50px;
+   overflow: hidden;
+   color: #eee;
+   border-radius: 25px;
+   display: flex;
+   transition: all .5s ease;
+   cursor: pointer;
+}
