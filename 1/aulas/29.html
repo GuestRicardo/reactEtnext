@@ -53,7 +53,20 @@
             Se você já usou ou sabe pra quer serve o TypeScript e o Flow (dentre outras soluções) é fácil entender pra
             que serve o prop-types. Serve para você ter o controle do tipo das suas variáveis. Mas o benefício não é só
             esse, o prop-types assim como o TypeScript (inclusive, recomendo usa-lo e o próprio Facebook também
-            recomenda).
+            recomenda). <br>
+            (1) Pra usar, precisamos importar no nosso componente: <br>
+            <div class="exemplos">
+                import PropTypes from 'prop-types';
+            </div>
+            (2) Depois que declaramos a nossa importação, podemos fazer uso do seus benefícios.
+            <div class="exemplos">
+                UserItem.propTypes = { <br>
+                user: propTypes.object.isRequired <br>
+                }
+            </div>
+            No trecho acima, temos um componente chamado UserItem, 'conectamos' ao nosso propTypes e dentro, no corpo do
+            objeto, passamos qual variável queremos controlar, no caso a variável user que vai ser do tipo objeto e é
+            obrigatória.
         </p>
         <!--################################################################################################################-->
         <hr>
