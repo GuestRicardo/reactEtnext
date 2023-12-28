@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="../../frontend/assets/css/style.css">
     <title>Document</title>
     <style>
-        .flame{
-          
+        .flame {
             max-height: 400px;
             min-height: 400px;
             max-width: 400px;
             min-width: 400px;
             position: fixed;
-            
         }
     </style>
 </head>
 
-<body draggable="true" ondragstart="dragStart(event)">
-    <iframe  src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame" draggable="true" ondragstart="dragStart(event)"></iframe>
+<body draggable="true" ondragstart="dragStart(event)" id="3">
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame" draggable="true"
+        ondragstart="dragStart(event)" id="1"></iframe>
 
-    <section class="container" draggable="true" ondragstart="dragStart(event)">
+    <section class="container" draggable="true" ondragstart='dragStart(event)' id="2">
+
         <h1>Prop-Types</h1>
         <h2>Onde fica o prop-types do React?</h2>
         <p>
@@ -99,9 +99,15 @@
             <img src="../../frontend/assets/img/prop-Types2.png" alt="" class="imgM">
             <img src="../../frontend/assets/img/prop-Types3.png" alt="" class="imgM">
         </p>
-              
-    </section>
 
+    </section>
+    <scrip src="../../frontend/assets/pages/script.js" />
+    <script>
+        function dragStart(event) {
+            event.dataTransfer.setData("text/plain", event.target.id);
+            console.log('event.target.id', event.target.id);
+        }
+    </script>
 </body>
 
 </html>
