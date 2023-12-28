@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="./style.css" rel="stylesheet">
 
 </head>
@@ -28,48 +29,48 @@
             <div class="btn">
                 <i class="material-icons md-36">music_note</i>
             </div> -->
-            
+
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
-                  <i class="material-symbols-outlined"> logout</i>
-                </a> 
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
+                    <i class="material-symbols-outlined"> logout</i>
+                </a>
             </div>
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">translate</i>
-                </a> 
+                </a>
             </div>
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">share_reviews</i>
-                </a> 
+                </a>
             </div>
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">browse_activity</i>
-                </a> 
+                </a>
             </div>
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">grade</i>
-                </a> 
+                </a>
             </div>
             <div class="btn">
-                <a onclick="goBack()"  target="_blank" style="text-decoration: none;">
+                <a onclick="goBack()" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">arrow_back</i>
-                </a> 
+                </a>
             </div>
             <div class="btn">
-                <a href="../../../1/index.html"   target="_blank" style="text-decoration: none;">
+                <a href="../../../1/index.html" target="_blank" style="text-decoration: none;">
                     <i class="material-symbols-outlined">home</i>
-                </a> 
+                </a>
             </div>
-            <div class="btn">
-                <a href="https://twitter.com/GuestRicardo"   target="_blank" style="text-decoration: none;">
+            <div class="btn" id="1">
+                <a onclick="windowClose()" style="text-decoration: none;">
                     <i class="material-symbols-outlined">close </i>
-                </a> 
+                </a>
             </div>
-<!-- 
+            <!-- 
             <div class="btn">
                 <i class="material-icons md-36">settings</i>
             </div>
@@ -84,6 +85,19 @@
             </div> -->
         </label>
     </div>
+    <script>
+        //retornar pagina anterior
+        function goBack() {
+            window.history.back()
+        }
+        //fechando a janela
+        function windowClose() {
+            document.getElementById("a").onclick = function () {
+                window.close();
+            }
+
+        }
+    </script>
 </body>
 
 </html>
