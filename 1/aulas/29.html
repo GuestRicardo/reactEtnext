@@ -9,19 +9,21 @@
     <title>Document</title>
     <style>
         .flame{
-            width: 400px;
-            height: 400px;
+          
+            max-height: 400px;
+            min-height: 400px;
+            max-width: 400px;
+            min-width: 400px;
+            position: fixed;
             
-            position: absolute;
-           
         }
     </style>
 </head>
 
-<body>
-    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame" ></iframe>
+<body draggable="true" ondragstart="dragStart(event)">
+    <iframe  src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame" draggable="true" ondragstart="dragStart(event)"></iframe>
 
-    <section class="container">
+    <section class="container" draggable="true" ondragstart="dragStart(event)">
         <h1>Prop-Types</h1>
         <h2>Onde fica o prop-types do React?</h2>
         <p>
