@@ -367,4 +367,9 @@ a:active {
    color: rgb(0, 13, 73);
 }
 /*##################################-link-#########################################*/
-
+.flame {
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  margin-left: 58%;
+}
