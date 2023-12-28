@@ -1,414 +1,119 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
+body {overflow: hidden; background: #212121}
+input {position: absolute; display: none}
 
-body {
-    background-color: rgba(218, 245, 255, 0.97);
-    font-family: 'Oswald', sans-serif;
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.navire {
-    background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1471359656/navire_n02z6s.png) no-repeat;
-    background-size: 100% auto;
-    width: 120px;
-    height: 100px;
-    position: absolute;
-    top: -50px;
-    right: -130px;
-    -webkit-transition: right 0.2s ease;
-    transition: right 0.2s ease;
+.menu {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  margin-top: -25px;
 }
 
-.mainMenuOverlay.open .navire {
-    right: 70%;
-    -webkit-transition: right 28s ease 1s;
-    transition: right 28s ease 1s;
+.btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-/* ### main Menu Overlay */
-.mainMenuOverlay {
-    background-color: rgba(34, 152, 195, 0.84);
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -420px;
-    z-index: 999;
-    height: 420px;
-    box-shadow: 0 0 15px -3px #03374A;
-    border-radius: 100% 100% 0 0 / 14% 14% 0 0;
-    -webkit-transition: bottom 0.5s ease;
-    transition: bottom 0.5s ease;
+.material-icons.md-36 { font-size: 36px; color: #03A9F4 }
+
+.btn {
+  background: #ECEFF1;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.mainMenuOverlay.open {
-    bottom: 0;
+.btn:not(:first-child) {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: -2;
+  
+  -webkit-transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+  transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
 }
 
-.mainMenuOverlay .toggleMenu {
-    display: block;
-    /*background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/sandwich.png) no-repeat center center #65B5D0;background-size: 23px auto;*/
-    background-color: #65B5D0;
-    border: 1px solid #FFF;
-    border-radius: 80px;
-    width: 62px;
-    height: 62px;
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    margin: -31px 0 0 -31px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #FFF;
-    text-align: center;
-    line-height: 62px;
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2) inset, 0 0 16px -4px #063343;
-    -webkit-transition: box-shadow 0.5s ease, top 0.5s ease;
-    transition: box-shadow 0.5s ease, top 0.5s ease;
+.btn:nth-child(2) {top:0px;-webkit-transition-delay: 0s;transition-delay: 0s}
+.btn:nth-child(3) {top:0px;left:0px;-webkit-transition-delay: 0.1s;transition-delay: 0.1s}
+.btn:nth-child(4) {left:0px;;-webkit-transition-delay: 0.2s;;transition-delay: 0.2s}
+.btn:nth-child(5) {top:0px;left:0px;-webkit-transition-delay: 0.3s;transition-delay: 0.3s}
+.btn:nth-child(6) {top:0px;-webkit-transition-delay: 0.4s;transition-delay: 0.4s}
+.btn:nth-child(7) {top:0px;left:0px;-webkit-transition-delay: 0.5s;transition-delay: 0.5s}
+.btn:nth-child(8) {left:0px;-webkit-transition-delay: 0.6s;transition-delay: 0.6s}
+.btn:nth-child(9) {top:0px;left:0px;-webkit-transition-delay: 0.7s;transition-delay: 0.7s}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(2) {
+  top:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .toggleMenu:hover,
-.mainMenuOverlay .toggleMenu:active {}
-
-.mainMenuOverlay.open .toggleMenu {
-    top: 50%;
-    background-color: #2298C3;
+input#toggle:checked ~ #show-menu .btn:nth-child(3) {
+  top:-100px;left:100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox {
-    background: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/go2.png) no-repeat center center;
-    background-size: 28px auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -31px 0 0 -31px;
-    height: 62px;
-    width: 142px;
-    text-align: right;
-    border-radius: 40px;
-    -webkit-transform-origin: 31px 31px;
-    -ms-transform-origin: 31px 31px;
-    transform-origin: 31px 31px;
-    -webkit-transition: all 1s ease 0.4s;
-    transition: all 1s ease 0.4s;
+input#toggle:checked ~ #show-menu .btn:nth-child(4) {
+  left:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay.open .itemMenuBox {
-    width: 182px;
-    -webkit-transition: all 1s ease 0s;
-    transition: all 1s ease 0s;
+input#toggle:checked ~ #show-menu .btn:nth-child(5) {
+  top :100px;left:100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox.bills {
-    -webkit-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
+input#toggle:checked ~ #show-menu .btn:nth-child(6) {
+  top:150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox.tarsheed {
-    -webkit-transform: rotate(330deg);
-    -ms-transform: rotate(330deg);
-    transform: rotate(330deg);
+input#toggle:checked ~ #show-menu .btn:nth-child(7) {
+  top:100px;left:-100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox.employees {
-    -webkit-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg);
+input#toggle:checked ~ #show-menu .btn:nth-child(8) {
+  left:-150px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox.location {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+input#toggle:checked ~ #show-menu .btn:nth-child(9) {
+  top:-100px;left:-100px;opacity:1;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.mainMenuOverlay .itemMenuBox.eservices {
-    -webkit-transform: rotate(150deg);
-    -ms-transform: rotate(150deg);
-    transform: rotate(150deg);
+.menuBtn, .closeBtn {
+  position: absolute;
+  transition: all 0.3s ease;
 }
 
-.mainMenuOverlay .itemMenuBox.contact {
-    -webkit-transform: rotate(210deg);
-    -ms-transform: rotate(210deg);
-    transform: rotate(210deg);
+.closeBtn {
+  transform: translateY(50px);
+  opacity: 0;
 }
 
-.mainMenuOverlay .itemMenuBox .itemMenu {
-    display: inline-block;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 40px;
-    background-color: #1f97c2;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 62px;
-    height: 62px;
-    border-radius: 40px;
-    transition: all 0.8s ease;
-    color: #FFF;
-    font-size: 28px;
-    line-height: 64px;
-    text-align: center;
+input#toggle:checked ~ #show-menu .btn .menuBtn {
+  transform: translateY(-50px);
+  opacity: 0;
 }
 
-
-.mainMenuOverlay .itemMenuBox.bills .itemMenu {
-    /*background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/file.png);
-	background-size: 20px auto;*/
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-
-.mainMenuOverlay .itemMenuBox.tarsheed .itemMenu {
-    /* background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/tarsheed.png); 
-	background-size: 38px auto;*/
-    -webkit-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg);
-}
-
-.mainMenuOverlay .itemMenuBox.employees .itemMenu {
-    /*background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/employees.png);
-	background-size: 38px auto;*/
-    -webkit-transform: rotate(330deg);
-    -ms-transform: rotate(330deg);
-    transform: rotate(330deg);
-}
-
-
-
-.mainMenuOverlay .itemMenuBox.location .itemMenu {
-    /*background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/marker.png);
-	background-size: 24px auto;*/
-    -webkit-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
-}
-
-
-
-.mainMenuOverlay .itemMenuBox.eservices .itemMenu {
-    /*background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/mouse.png);
-	background-size: 32px auto;*/
-    -webkit-transform: rotate(210deg);
-    -ms-transform: rotate(210deg);
-    transform: rotate(210deg);
-}
-
-
-
-.mainMenuOverlay .itemMenuBox.contact .itemMenu {
-    /*background-image: url(https://res.cloudinary.com/dioieuprs/image/upload/v1466688705/floating-menu/phone.png);
-	background-size: 19px auto;*/
-    -webkit-transform: rotate(150deg);
-    -ms-transform: rotate(150deg);
-    transform: rotate(150deg);
-}
-
-/* Hover */
-.mainMenuOverlay .itemMenuBox.bills .itemMenu:hover {
-    -webkit-transform: rotate(450deg);
-    -ms-transform: rotate(450deg);
-    transform: rotate(450deg);
-}
-
-.mainMenuOverlay .itemMenuBox.tarsheed .itemMenu:hover {
-    -webkit-transform: rotate(390deg);
-    -ms-transform: rotate(390deg);
-    transform: rotate(390deg);
-}
-
-.mainMenuOverlay .itemMenuBox.employees .itemMenu:hover {
-    -webkit-transform: rotate(690deg);
-    -ms-transform: rotate(690deg);
-    transform: rotate(690deg);
-}
-
-.mainMenuOverlay .itemMenuBox.location .itemMenu:hover {
-    -webkit-transform: rotate(630deg);
-    -ms-transform: rotate(630deg);
-    transform: rotate(630deg);
-}
-
-.mainMenuOverlay .itemMenuBox.eservices .itemMenu:hover {
-    -webkit-transform: rotate(570deg);
-    -ms-transform: rotate(570deg);
-    transform: rotate(570deg);
-}
-
-.mainMenuOverlay .itemMenuBox.contact .itemMenu:hover {
-    -webkit-transform: rotate(510deg);
-    -ms-transform: rotate(510deg);
-    transform: rotate(510deg);
-}
-
-
-
-.floating {
-    -webkit-animation-name: Floatingx;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-name: Floating;
-    -moz-animation-duration: 3s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Floatingx {
-    from {
-        -webkit-transform: translate(0, 0px);
-    }
-
-    65% {
-        -webkit-transform: translate(0, 5px);
-    }
-
-    to {
-        -webkit-transform: translate(0, -0px);
-    }
-}
-
-@-moz-keyframes Floating {
-    from {
-        -moz-transform: translate(0, 0px);
-    }
-
-    65% {
-        -moz-transform: translate(0, 5px);
-    }
-
-    to {
-        -moz-transform: translate(0, -0px);
-    }
-}
-
-.floating2 {
-    -webkit-animation-name: Floatingx2;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-name: Floating2;
-    -moz-animation-duration: 3s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Floatingx2 {
-    from {
-        -webkit-transform: translate(0, 0px);
-    }
-
-    45% {
-        -webkit-transform: translate(0, 8px);
-    }
-
-    to {
-        -webkit-transform: translate(0, -0px);
-    }
-}
-
-@-moz-keyframes Floating2 {
-    from {
-        -moz-transform: translate(0, 0px);
-    }
-
-    45% {
-        -moz-transform: translate(0, 8px);
-    }
-
-    to {
-        -moz-transform: translate(0, -0px);
-    }
-}
-
-.floating3 {
-    -webkit-animation-name: Floatingx3;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-name: Floating3;
-    -moz-animation-duration: 3s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Floatingx3 {
-    from {
-        -webkit-transform: translate(0, 0px);
-    }
-
-    50% {
-        -webkit-transform: translate(2px, 4px);
-    }
-
-    to {
-        -webkit-transform: translate(0, -0px);
-    }
-}
-
-@-moz-keyframes Floating3 {
-    from {
-        -moz-transform: translate(0, 0px);
-    }
-
-    50% {
-        -moz-transform: translate(2px, 4px);
-    }
-
-    to {
-        -moz-transform: translate(0, -0px);
-    }
-}
-
-
-
-/* signature */
-.signatureBox {
-    text-align: right;
-    padding: 4px;
-}
-
-.signatureBox.fixed {
-    position: fixed;
-    bottom: 8px;
-    right: 8px;
-}
-
-.signature,
-.signature a {
-    color: #484848;
-}
-
-.signature:before,
-.signature:after {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: bottom;
-    -webkit-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    width: 11px
-}
-
-.signature:before {
-    content: 'Mahmoud';
-}
-
-.signature:after {
-    content: 'NBET';
-    margin-left: 0px;
-    width: 10px
-}
-
-.signature:hover {
-    color: #484848;
-}
-
-.signature:hover:before {
-    width: 76px;
-}
-
-.signature:hover:after {
-    width: 34px;
-    margin-left: 3px;
+input#toggle:checked ~ #show-menu .btn .closeBtn {
+  transform: translateY(0px);
+  opacity: 1;
 }

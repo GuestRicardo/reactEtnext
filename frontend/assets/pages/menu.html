@@ -7,30 +7,49 @@
     <link rel="stylesheet" href="./style.css">
 
     <title>Document</title>
+    <script>
+        $(".toggleMenu").on('click', function () {
+            $("#mainMenu").toggleClass('open');
+        });
+    </script>
 </head>
 
 <body>
-    <div id="mainMenu" class="mainMenuOverlay floating2">
-        <div class="navire floating3"></div>
-        <div class="itemMenuBox bills">
-            <a href="https://codepen.io/mahmoud-nb/pen/ZOYdKm" target="_blank" class="itemMenu ">
-                <i class="fa fa-file-text-o" aria-hidden="true"></i></a>
-        </div>
-        <div class="itemMenuBox tarsheed"><a href="javascript:void(0)" class="itemMenu "><i class="fa fa-diamond"
-                    aria-hidden="true"></i></a></div>
-        <div class="itemMenuBox employees"><a href="javascript:void(0)" class="itemMenu "><i class="fa fa-users"
-                    aria-hidden="true"></i></a></div>
-        <div class="itemMenuBox location"><a href="javascript:void(0)" class="itemMenu "><i class="fa fa-location-arrow"
-                    aria-hidden="true"></i></a></div>
-        <div class="itemMenuBox eservices"><a href="javascript:void(0)" class="itemMenu "><i class="fa fa-key"
-                    aria-hidden="true"></i></a></div>
-        <div class="itemMenuBox contact"><a href="javascript:void(0)" class="itemMenu "><i class="fa fa-phone"
-                    aria-hidden="true"></i></a></div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <a href="javascript:void(0)" class="toggleMenu floating"><i class="fa fa-bars" aria-hidden="true"></i></a>
+    <div class="menu">
+        <input type="checkbox" id="toggle" />
+        <label id="show-menu" for="toggle">
+            <div class="btn">
+                <i class="material-icons md-36 toggleBtn menuBtn">menu</i>
+                <i class="material-icons md-36 toggleBtn closeBtn">close</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">photo_camera</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">photo</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">music_note</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">chat_bubble</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">settings</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">phone</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">cloud</i>
+            </div>
+            <div class="btn">
+                <i class="material-icons md-36">videocam</i>
+            </div>
+        </label>
     </div>
-
-    <script src="./index.js"></script>
 </body>
 
 </html>
