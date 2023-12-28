@@ -12,19 +12,17 @@
             height: 400px;
             width: 400px;
             position: fixed;
-            float: right;
-            align-items: end;
-            text-align: end;
+            margin-left: 58%;
         }
     </style>
 </head>
 
 <body>
-    <div draggable="true" ondragstart="dragStart(event)" id="1">
+    
+    <div>
         <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
     </div>
-
-    <section class="container" draggable="true" ondragstart='dragStart(event)' id="2">
+    <section class="container">
 
         <h1>Prop-Types</h1>
         <h2>Onde fica o prop-types do React?</h2>
@@ -103,13 +101,7 @@
         </p>
 
     </section>
-    <scrip src="../../frontend/assets/pages/script.js" />
-    <script>
-        function dragStart(event) {
-            event.dataTransfer.setData("text/plain", event.target.id);
-            console.log('event.target.id', event.target.id);
-        }
-    </script>
+
 </body>
 
 </html>
