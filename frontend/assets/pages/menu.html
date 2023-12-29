@@ -65,8 +65,8 @@
                     <i class="material-symbols-outlined">home</i>
                 </a>
             </div>
-            <div class="btn" id="1">
-                <a onclick="windowClose()" style="text-decoration: none;">
+            <div class="btn">
+                <a onclick="close_window();return false;" style="text-decoration: none;" id="1">
                     <i class="material-symbols-outlined">close </i>
                 </a>
             </div>
@@ -91,11 +91,10 @@
             window.history.back()
         }
         //fechando a janela
-        function windowClose() {
-            document.getElementById("a").onclick = function () {
-                window.close();
+        function close_window() {
+            if (confirm("Fechar Janela?")) {
+                window.frames.closewindow();
             }
-
         }
     </script>
 </body>
