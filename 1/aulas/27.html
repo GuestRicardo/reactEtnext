@@ -2,29 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../frontend/assets/css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
 </head>
 
 <body>
-    <div>
-        <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
-    </div>
-    <section class="container">
-        <h1>Configurações interessantes e importantes para se colocar no projeto</h1>
-        <p>
-            O projeto precisa de uma padronização, e para isso serpá usado algumas ferramentas, então vamos começar:
-        </p>
-        <ul>
-            <li><strong>EditorConfig:</strong> é uma extenção para o vsCode é so instala-lo na opções extenções, ele vai
-                padronizar o codico
-                depois de instalado é so criar na area da pasta do projeto o <strong>editorconfig</strong>
-            </li>
-        </ul>
-    </section>
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+    <h1>Configurações interessantes e importantes para se colocar no projeto</h1>
+    <p>
+      O projeto precisa de uma padronização, e para isso serpá usado algumas ferramentas, então vamos começar:
+    </p>
+    <ul>
+      <li><strong>EditorConfig:</strong> é uma extenção para o vsCode é so instala-lo na opções extenções, ele vai
+        padronizar o codico
+        depois de instalado é so criar na area da pasta do projeto o <strong>editorconfig</strong>
+        <br>Essas são as configurações q o projeto vai usar.
+        <div class="anotacoes">
+          # EditorConfig is awesome: https://EditorConfig.org
+
+          # top-most EditorConfig file
+          root = true
+
+          [*]
+          indent_style = space
+          indent_size = 2
+          end_of_line = lf
+          charset = utf-8
+          trim_trailing_whitespace = true
+          insert_final_newline = true
+        </div>
+      </li>
+    </ul>
+  </section>
 </body>
 
 </html>
