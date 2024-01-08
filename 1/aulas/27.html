@@ -151,6 +151,18 @@
       <div class="anotacoes">
         <code>npm install prop-types</code>
       </div>
+      agora dentro do arquivo q estiver pedindoos prop-types, no caso para corrigir as props
+      <div class="exemplos">
+        import PropTypes from 'prop-types'; <br> <br>
+        NomeDoComponente.defaultProps = { <br>
+          disabled: false, <br>
+        } <br> <br>
+        NomeDoComponente.PropTypes = { <br>
+          text: PropType.string.isRequired, <br>
+          onClick: PropType.func.isRequired, <br>
+          disabled: PropType.bool, <br>
+        }
+      </div>
     </li>
     </ul>
   </section>
