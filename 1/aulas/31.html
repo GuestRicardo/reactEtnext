@@ -27,7 +27,7 @@
     <p>
       Instalando no projeto: <br>
       <ul>
-        <li>1- acesse o site: <a
+        <li>1- acesse o site: <a class="cyber"
             href="https://mswjs-io.translate.goog/docs/getting-started?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc">LINK</a>
           Neste link tera todas as informações para a instalação da libre
         </li>
@@ -53,7 +53,26 @@
               <code>});</code> <br>
               <code>});</code> <br>
             </div>
+            Neste exemplo esta sendo renderizado a pagina home, so que tem um pequeno problema, o home tem Posts
+            <strong>assicronos</strong> isso significa q nao esta sendo pego pelo teste os posts para resouver isto sera
+            preciso:
+            <div class="exemplos">
+              <code>describe('Home />',() =>{ </code> <br>
+              <code>it('shoud render search, posts and load more', ()=>{</code> <br>
+              <code>render(Home />)</code> <br>
+              <code>const noMorePosts = screen.getByText('Não existe Posts')</code> <br>
+              <code>await waitForElementToBeRemoved(noMorePosts);</code> <br>
+              <code>screen.debug();</code> <br>
+              <code>});</code> <br>
+              <code>});</code> <br>
+            </div>
+            Aqui esta sendo resouvido o problema de sicronização q estava faltando acima, Agora será preciso usar o
+            <strong>Mock</strong> para elementos externos
           </div>
+        </li> <hr>
+        <h3>Mock</h3>
+        <li>5- Agora q vamos usar lib q foi instalada
+
         </li>
       </ul>
 
