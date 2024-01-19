@@ -136,11 +136,13 @@
             it('should render search, posts and load more', async ()=>{
               render(Home/>);
               const noMorePosts = screen.getByText('Não existem Posts');
+              <span class="lembrete">quantas inserções esta querendo</span>
+              expect.assertions(1);
               await waitForElementToBeRemoved(noMorePosts);
               <span class="lembrete">pegando os inputs</span>
               const search = screen.getByPlaceloaderText(/type your search/i);
               <span class="lembrete">aguatdando a busca</span>
-              expect(sea)
+              expect(seaech).toBeInTheDocument();
             })
           </div>
         </li>
