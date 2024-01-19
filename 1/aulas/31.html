@@ -142,7 +142,15 @@
               <span class="lembrete">pegando os inputs</span><br>
               const search = screen.getByPlaceloaderText(/type your search/i);<br>
               <span class="lembrete">aguatdando a busca</span><br>
-              expect(seaech).toBeInTheDocument();<br>
+              expect(seaech).toBeInTheDocument();<br><br>
+              <span class="lembrete">para saber se tem 2 imagens na tela</span><br>
+              const images = screen.getAllByRole('img', {name: /title/i});<br>
+              <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
+              expect(images).toHaveLength(2);<br> <br>
+              <span class="lembrete">para saber se o botao load more esta na tela</span><br>
+              const images = screen.getAllByRole('img', {name: /title/i});<br>
+              <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
+              expect(images).toHaveLength(2);<br>
             })
           </div>
         </li>
