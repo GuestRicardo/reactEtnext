@@ -133,16 +133,16 @@
         <li>
           6- agora que terminou a configuração do mocK, agora é partitr para os testes, começando pela busca.
           <div class="anotacoes">
-            it('should render search, posts and load more', async ()=>{
-              render(Home/>);
-              const noMorePosts = screen.getByText('Não existem Posts');
-              <span class="lembrete">quantas inserções esta querendo</span>
-              expect.assertions(1);
-              await waitForElementToBeRemoved(noMorePosts);
-              <span class="lembrete">pegando os inputs</span>
-              const search = screen.getByPlaceloaderText(/type your search/i);
-              <span class="lembrete">aguatdando a busca</span>
-              expect(seaech).toBeInTheDocument();
+            it('should render search, posts and load more', async ()=>{ <br>
+              render(Home/>);<br><br>
+              const noMorePosts = screen.getByText('Não existem Posts');<br>
+              <span class="lembrete">quantas inserções esta querendo</span><br>
+              expect.assertions(1);<br>
+              await waitForElementToBeRemoved(noMorePosts);<br>
+              <span class="lembrete">pegando os inputs</span><br>
+              const search = screen.getByPlaceloaderText(/type your search/i);<br>
+              <span class="lembrete">aguatdando a busca</span><br>
+              expect(seaech).toBeInTheDocument();<br>
             })
           </div>
         </li>
