@@ -133,7 +133,11 @@
         <li>
           6- agora que terminou a configuração do mocK, agora é partitr para os testes, começando pela busca.
           <div class="anotacoes">
-
+            it('should render search, posts and load more', async ()=>{
+              render(Home/>);
+              const noMorePosts = screen.getByText('Não existem Posts');
+              await waitForElementToBeRemoved(noMorePosts);
+            })
           </div>
         </li>
       </ul>
