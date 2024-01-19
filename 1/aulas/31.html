@@ -148,9 +148,9 @@
               <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
               expect(images).toHaveLength(2);<br> <br>
               <span class="lembrete">para saber se o botao load more esta na tela</span><br>
-              const images = screen.getAllByRole('img', {name: /title/i});<br>
+              const button= screen.getAllByRole('button', {name: /load more posts/i});<br>
               <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
-              expect(images).toHaveLength(2);<br>
+              expect(button).toBeInTheDocument();<br>
             })
           </div>
         </li>
