@@ -137,6 +137,10 @@
               render(Home/>);
               const noMorePosts = screen.getByText('Não existem Posts');
               await waitForElementToBeRemoved(noMorePosts);
+              <span class="lembrete">pegando os inputs</span>
+              const search = screen.getByPlaceloaderText(/type your search/i);
+              <span class="lembrete">aguatdando a busca</span>
+              expect(sea)
             })
           </div>
         </li>
