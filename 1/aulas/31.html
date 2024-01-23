@@ -85,28 +85,28 @@
             console.log('A chamada foi interceptada');<br>
             ctx.json[<br>
             {<br>
-              <div style="margin-left: 15px;">
-                "userId:1",<br>
-                "id":1,<br>
-                "title":"1"<br>
-                "body":"1"<br>
-              </div>
+            <div style="margin-left: 15px;">
+              "userId:1",<br>
+              "id":1,<br>
+              "title":"1"<br>
+              "body":"1"<br>
+            </div>
             },<br>
             {<br>
-              <div style="margin-left: 15px;">
-                "userId:2",<br>
-                "id":2,<br>
-                "title": "2"<br>
-                "body":"2"<br>
-              </div>
+            <div style="margin-left: 15px;">
+              "userId:2",<br>
+              "id":2,<br>
+              "title": "2"<br>
+              "body":"2"<br>
+            </div>
             },<br>
             {<br>
-              <div style="margin-left: 15px;">
-                "userId:3",<br>
-                "id":3,<br>
-                "title": "3"<br>
-                "body":"3"<br>
-              </div>
+            <div style="margin-left: 15px;">
+              "userId:3",<br>
+              "id":3,<br>
+              "title": "3"<br>
+              "body":"3"<br>
+            </div>
             },<br>
             ])<br>
             })<br>
@@ -134,40 +134,44 @@
           6- agora que terminou a configuração do mocK, agora é partitr para os testes, começando pela busca.
           <div class="anotacoes">
             it('should render search, posts and load more', async ()=>{ <br>
-              render(Home/>);<br><br>
-              const noMorePosts = screen.getByText('Não existem Posts');<br>
-              <span class="lembrete">quantas inserções esta querendo</span><br>
-              expect.assertions(1);<br>
-              await waitForElementToBeRemoved(noMorePosts);<br>
-              <span class="lembrete">pegando os inputs</span><br>
-              const search = screen.getByPlaceloaderText(/type your search/i);<br>
-              <span class="lembrete">aguatdando a busca</span><br>
-              expect(seaech).toBeInTheDocument();<br><br>
-              <span class="lembrete">para saber se tem 2 imagens na tela</span><br>
-              const images = screen.getAllByRole('img', {name: /title/i});<br>
-              <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
-              expect(images).toHaveLength(2);<br> <br>
-              <span class="lembrete">para saber se o botao load more esta na tela</span><br>
-              const button= screen.getAllByRole('button', {name: /load more posts/i});<br>
-              <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
-              expect(button).toBeInTheDocument();<br>
+            render(Home/>);<br><br>
+            const noMorePosts = screen.getByText('Não existem Posts');<br>
+            <span class="lembrete">quantas inserções esta querendo</span><br>
+            expect.assertions(1);<br>
+            await waitForElementToBeRemoved(noMorePosts);<br>
+            <span class="lembrete">pegando os inputs</span><br>
+            const search = screen.getByPlaceloaderText(/type your search/i);<br>
+            <span class="lembrete">aguatdando a busca</span><br>
+            expect(seaech).toBeInTheDocument();<br><br>
+            <span class="lembrete">para saber se tem 2 imagens na tela</span><br>
+            const images = screen.getAllByRole('img', {name: /title/i});<br>
+            <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
+            expect(images).toHaveLength(2);<br> <br>
+            <span class="lembrete">para saber se o botao load more esta na tela</span><br>
+            const button= screen.getAllByRole('button', {name: /load more posts/i});<br>
+            <span class="lembrete">quantidade de imagens q tem q exibir</span><br>
+            expect(button).toBeInTheDocument();<br>
             })
           </div>
         </li>
         <hr>
         <li>
-          7- Testando se os Posts estao funcionando corretamente
+          7- Testando se os Posts estao funcionando corretamente, pois a ideia é q esteja na tela 2 posts, pois sao o q
+          esta definido na aplicação
 
           <div class="anotacoes">
             it('should search for posts', async ()=>{ <br>
-              render(Home/>);<br><br>
-              const noMorePosts = screen.getByText('Não existem Posts');<br>
+            render(Home/>);<br><br>
+            const noMorePosts = screen.getByText('Não existem Posts');<br>
 
 
-              await waitForElementToBeRemoved(noMorePosts);<br>
-              <span class="lembrete">pegando os inputs</span><br>
-              const search = screen.getByPlaceloaderText(/type your search/i);<br>
-
+            await waitForElementToBeRemoved(noMorePosts);<br>
+            <span class="lembrete">pegando os inputs</span><br>
+            const search = screen.getByPlaceloaderText(/type your search/i);<br>
+            <span class="lembrete">confirmando se os 2 posts esta na tela</span><br>
+            <br>
+            expect(screen.getByRole('heading',{ name: 'title 1 1'})).toBeTheDocument(); <br>
+            expect(screen.getByRole('heading',{ name: 'title 2 2'})).toBeTheDocument();
             })
           </div>
         </li>
