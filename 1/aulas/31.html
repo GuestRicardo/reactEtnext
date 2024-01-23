@@ -165,6 +165,7 @@
             const noMorePosts = screen.getByText('Não existem Posts');<br>
 
 
+            <span class="lembrete">esse await é onde faz o carregamento</span><br>
             await waitForElementToBeRemoved(noMorePosts);<br>
             <span class="lembrete">pegando os inputs</span><br>
             const search = screen.getByPlaceloaderText(/type your search/i);<br>
@@ -201,6 +202,12 @@
           <div class="anotacoes">
             <span style="color: brown;">userEvent.type(search, 'Post does not exist');</span><br>
             expect(screen.getByText('Não existem Posts')).toBeInTheDocument();
+          </div>
+        </li>
+        <li>
+          10- agora é editar acima, no codigo as inserções, pois foi tirada nesse ultimo teste, sendo q agora sao 10 expects
+          <div class="anotacoes">
+            expect.assertions(10)
           </div>
         </li>
       </ul>
