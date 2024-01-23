@@ -154,6 +154,23 @@
             })
           </div>
         </li>
+        <hr>
+        <li>
+          7- Testando se os Posts estao funcionando corretamente
+
+          <div class="anotacoes">
+            it('should search for posts', async ()=>{ <br>
+              render(Home/>);<br><br>
+              const noMorePosts = screen.getByText('Não existem Posts');<br>
+
+
+              await waitForElementToBeRemoved(noMorePosts);<br>
+              <span class="lembrete">pegando os inputs</span><br>
+              const search = screen.getByPlaceloaderText(/type your search/i);<br>
+
+            })
+          </div>
+        </li>
       </ul>
 
     </p>
