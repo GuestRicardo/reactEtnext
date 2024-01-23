@@ -191,7 +191,16 @@
         </li>
         <li>
           8- O proximo passo é testar o 'search value', q seria os resultados das buscas, para saber se esta funcionando
-          corretamente, e confirmar se o valor digitado é o mesmo q esta sendo usado na busca
+          corretamente, e confirmar se o valor digitado é o mesmo q esta sendo usado na busca:
+          <div class="anotacoes">
+            expect(screen.getByRole('heading', { name:'search value: title1' })).toBeInTheDocument();
+          </div>
+        </li>
+        <li>
+          9- teste apara quando o post nao existe, caso tu busque com palavras nao existentes
+          <div class="anotacoes">
+
+          </div>
         </li>
       </ul>
 
