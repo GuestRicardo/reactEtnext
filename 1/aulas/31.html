@@ -217,6 +217,7 @@
             const button = screen.getByRole('button', { name: /load more post/i }); <br>
             userEvent.click(button) <br>
             expect(screen.getByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br>
+            <span class="lembrete">Abaixo o botão esta sendo ocultado depois da busca</span><br>
             expect(button).toBeDisabled();
           </div>
         </li>
