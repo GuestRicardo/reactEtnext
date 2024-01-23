@@ -199,7 +199,8 @@
         <li>
           9- teste apara quando o post nao existe, caso tu busque com palavras nao existentes
           <div class="anotacoes">
-
+            <span style="color: brown;">userEvent.type(search, 'Post does not exist');</span><br>
+            expect(screen.getByText('Não existem Posts')).toBeInTheDocument();
           </div>
         </li>
       </ul>
