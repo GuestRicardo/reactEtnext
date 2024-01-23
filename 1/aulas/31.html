@@ -173,8 +173,10 @@
             expect(screen.getByRole('heading',{ name: 'title 1 1'})).toBeTheDocument(); <br>
             expect(screen.getByRole('heading',{ name: 'title 2 2'})).toBeTheDocument(); <br>
             <span class="lembrete">o terceiro tem q esta ocuto</span><br>
+            expect(screen.queryByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br> <br>
+            <span class="lembrete">Agora é testar se quando busca um elemento, os nao citados nao será exibido no resultado</span><br>
 
-            })
+          })
           </div>
         </li>
       </ul>
