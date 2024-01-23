@@ -174,12 +174,14 @@
             expect(screen.getByRole('heading',{ name: 'title 2 2'})).toBeTheDocument(); <br>
             <span class="lembrete">o terceiro tem q esta ocuto</span><br>
             expect(screen.queryByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br> <br>
-            <span class="lembrete">Agora é testar se quando busca um elemento, os nao citados nao será exibido no resultado</span><br>
+            <span class="lembrete">Agora é testar se quando busca um elemento, os nao citados nao será exibido no
+              resultado</span><br>
+            <span style="color: brown;">userEvent.type(search, 'title1')</span><br>
             expect(screen.getByRole('heading',{ name: 'title 1 1'})).not.toBeTheDocument(); <br>
             expect(screen.queryByRole('heading',{ name: 'title 2 2'})).not.toBeTheDocument(); <br>
-            <span class="lembrete">o terceiro tem q esta ocuto</span><br>
             expect(screen.queryByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br> <br>
-          })
+            <span class="lembrete">Agora é limpar o que esta na tela</span><br>
+            })
           </div>
         </li>
       </ul>
