@@ -205,13 +205,20 @@
           </div>
         </li>
         <li>
-          10- agora é editar acima, no codigo as inserções, pois foi tirada nesse ultimo teste, sendo q agora sao 10 expects
+          10- agora é editar acima, no codigo as inserções, pois foi tirada nesse ultimo teste, sendo q agora sao 10
+          expects
           <div class="anotacoes">
             expect.assertions(10)
           </div>
         </li>
         <li>
           11- agora é testar o botãao para exibir mais Posts
+          <div class="anotacoes">
+            const button = screen.getByRole('button', { name: /load more post/i }); <br>
+            userEvent.click(button) <br>
+            expect(screen.getByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br>
+            expect(button).toBeDisabled();
+          </div>
         </li>
       </ul>
 
