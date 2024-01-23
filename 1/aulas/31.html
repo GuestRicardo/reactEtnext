@@ -174,18 +174,24 @@
             expect(screen.getByRole('heading',{ name: 'title 2 2'})).toBeTheDocument(); <br>
             <span class="lembrete">o terceiro tem q esta ocuto</span><br>
             expect(screen.queryByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br> <br>
+            <hr>
             <span class="lembrete">Agora é testar se quando busca um elemento, os nao citados nao será exibido no
               resultado</span><br>
             <span style="color: brown;">userEvent.type(search, 'title1')</span><br>
             expect(screen.getByRole('heading',{ name: 'title 1 1'})).not.toBeTheDocument(); <br>
             expect(screen.queryByRole('heading',{ name: 'title 2 2'})).not.toBeTheDocument(); <br>
             expect(screen.queryByRole('heading',{ name: 'title 3 3'})).toBeTheDocument(); <br> <br>
+            <hr>
             <span class="lembrete">Agora é limpar o input e reaparecer tudo dinovo</span><br>
             <span style="color: brown;">userEvent.clear(search)</span><br>
             expect(screen.getByRole('heading',{ name: 'title 1 1'})).toBeTheDocument(); <br>
             expect(screen.getByRole('heading',{ name: 'title 2 2'})).toBeTheDocument(); <br>
             })
           </div>
+        </li>
+        <li>
+          8- O proximo passo é testar o 'search value', q seria os resultados das buscas, para saber se esta funcionando
+          corretamente, e confirmar se o valor digitado é o mesmo q esta sendo usado na busca
         </li>
       </ul>
 
