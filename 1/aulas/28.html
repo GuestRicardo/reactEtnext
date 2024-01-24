@@ -2,255 +2,259 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../frontend/assets/css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
 </head>
 
 <body>
-    <div>
-        <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
-    </div>
-    <section class="container">
-        <h1>Organização e padronização com ESLint</h1>
-        <p>
-            Se você já sentiu que seu código está desorganizado, precisando de um padrão, saiba que você não está só.
-            Essa é uma situação comum entre desenvolvedores, principalmente na fase inicial de aprendizado. Elaborar uma
-            boa organização requer tempo e trabalho, mas é muito importante, especialmente quando a aplicação começa a
-            crescer.
-        </p>
-        <p>
-            Para facilitar essa tarefa, foram criados algumas ferramentas, padrões e guias de estilo, como o ESLint.
-            Nesse artigo vamos aprender a fazer organização e padronização com ESLint em aplicações Node.js, utilizando
-            como IDE o Visual Studio Code.
-        </p>
-        <h2>Eslint</h2>
-        <p>
-            O ESLint é uma ferramenta de análise de código que, juntamente com a sua extensão de mesmo nome disponível
-            no VSCode, permite identificar erros quanto ao padrão de escrita que definimos. Com ele você pode, por
-            exemplo, definir que no seu código JavaScript as sentenças sempre terminarão com ponto e vírgula o que após
-            o último elemento de um array sempre terá uma vírgula.
-        </p>
-        <p>
-            Em resumo, na prática o ESLint vai analisar seu código, com base no padrões que você definiu, e vai indicar
-            onde está diferente. Basta colocar o cursor do mouse em cima de cada erro para que o ESLint mostre a regra
-            que você esqueceu. Veja o exemplo a seguir:
-            <img src="../../frontend/assets/img/eslint.png" alt="" class="imgM">
-        </p>
-        <p>
-            Consequentemente, o processo de desenvolvimento melhora, pois não precisamos mais nos preocupar tanto em
-            identificar problemas no padrão de escrita.
-        </p>
-        <h2>Instalando o EsLint</h2>
-        <p>
-            Caso esteja usando o NPM como <a href="https://nodejs.org/en/download/current"
-                style="color: brown; text-decoration: none;">gerenciador de pacotes</a>, basta, na pasta raiz do seu
-            projeto Node, executar o
-            seguinte comando no terminal:
-            <div class="anotacoes">npm install eslint -D</div>
-        </p>
-        <p>
-            Perceba que estamos usando a flag -D, indicando ao NPM que o eslint é uma dependência de desenvolvimento,
-            afinal, em produção não precisamos dele.
-        </p>
-        <p>
-            Em seguida, precisamos configurá-lo para que seja aplicado na nossa aplicação. Ou seja, vamos dar a ele
-            informações sobre o nosso projeto e indicar quais regras de escrita queremos seguir.
-        </p>
-        <h2>Configurando EsLint</h2>
-        <p>
-            Antes que iniciemos a configuração, é importante definirmos qual estilo de programação queremos seguir. Mais
-            a frente, você verá que podemos definir manualmente os parâmetros e tipos de verificação do ESLint. No
-            entanto, configurar manualmente é bem trabalhoso e pode gerar dúvidas quanto ao estilo. Com isso em mente,
-            tem se criado alguns styles guides (guias de estilo). Eu, particularmente, gosto do style guide da Airbnb,
-            que é o estilo que usaremos como exemplo, mas sinta-se à vontade para escolher outro.
-        </p>
-        <p>
-            Para iniciarmos o processo de configuração do ESLint, precisamos, primeiro, inicializar o ESLint na
-            aplicação. Seguem os devidos comandos para NPM:
-            <div class="anotacoes">
-                npx eslint --init
-            </div>
-            O terminal vai apresentar algumas perguntas. Vamos configurar juntos!
-        </p>
-        <p>
-            A primeira configuração que precisamos definir é com qual propósito iremos usar o ESLint. O nosso propósito
-            será checar sintaxe, encontrar problemas e garantir a aplicação de um estilo de código. Ficará assim:
-            <img src="../../frontend/assets/img/eslint1.png" alt="" class="imgM">
-        </p>
-        <p>
-            O próximo passo é definir que tipo de módulos usamos no nosso projeto. O Node.js ainda não aceita a sintaxe
-            de import/export do ES6, mas como eu estou usando o pacote Sucrase (fica a dica) para contornar isso, irei
-            escolhê-lo:
-            <img src="../../frontend/assets/img/eslint2.png" alt="" class="imgM">
-        </p>
-        <p>
-            Se você estiver usando o Sucrase ou Babel para ativar a sintaxe import/export, então faça como eu. Mas se
-            não, escolha o padrão do Node.js, que é o CommonJS. <br>
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+    <h1>Configurando EsLint no projeto</h1>
+    <p>
+      <a style="text-decoration: none;" href=""></a>
+    </p>
+    <h1>Organização e padronização com ESLint</h1>
+    <p>
+      Se você já sentiu que seu código está desorganizado, precisando de um padrão, saiba que você não está só.
+      Essa é uma situação comum entre desenvolvedores, principalmente na fase inicial de aprendizado. Elaborar uma
+      boa organização requer tempo e trabalho, mas é muito importante, especialmente quando a aplicação começa a
+      crescer.
+    </p>
+    <p>
+      Para facilitar essa tarefa, foram criados algumas ferramentas, padrões e guias de estilo, como o ESLint.
+      Nesse artigo vamos aprender a fazer organização e padronização com ESLint em aplicações Node.js, utilizando
+      como IDE o Visual Studio Code.
+    </p>
+    <h2>Eslint</h2>
+    <p>
+      O ESLint é uma ferramenta de análise de código que, juntamente com a sua extensão de mesmo nome disponível
+      no VSCode, permite identificar erros quanto ao padrão de escrita que definimos. Com ele você pode, por
+      exemplo, definir que no seu código JavaScript as sentenças sempre terminarão com ponto e vírgula o que após
+      o último elemento de um array sempre terá uma vírgula.
+    </p>
+    <p>
+      Em resumo, na prática o ESLint vai analisar seu código, com base no padrões que você definiu, e vai indicar
+      onde está diferente. Basta colocar o cursor do mouse em cima de cada erro para que o ESLint mostre a regra
+      que você esqueceu. Veja o exemplo a seguir:
+      <img src="../../frontend/assets/img/eslint.png" alt="" class="imgM">
+    </p>
+    <p>
+      Consequentemente, o processo de desenvolvimento melhora, pois não precisamos mais nos preocupar tanto em
+      identificar problemas no padrão de escrita.
+    </p>
+    <h2>Instalando o EsLint</h2>
+    <p>
+      Caso esteja usando o NPM como <a href="https://nodejs.org/en/download/current"
+        style="color: brown; text-decoration: none;">gerenciador de pacotes</a>, basta, na pasta raiz do seu
+      projeto Node, executar o
+      seguinte comando no terminal:
+      <div class="anotacoes">npm install eslint -D</div>
+    </p>
+    <p>
+      Perceba que estamos usando a flag -D, indicando ao NPM que o eslint é uma dependência de desenvolvimento,
+      afinal, em produção não precisamos dele.
+    </p>
+    <p>
+      Em seguida, precisamos configurá-lo para que seja aplicado na nossa aplicação. Ou seja, vamos dar a ele
+      informações sobre o nosso projeto e indicar quais regras de escrita queremos seguir.
+    </p>
+    <h2>Configurando EsLint</h2>
+    <p>
+      Antes que iniciemos a configuração, é importante definirmos qual estilo de programação queremos seguir. Mais
+      a frente, você verá que podemos definir manualmente os parâmetros e tipos de verificação do ESLint. No
+      entanto, configurar manualmente é bem trabalhoso e pode gerar dúvidas quanto ao estilo. Com isso em mente,
+      tem se criado alguns styles guides (guias de estilo). Eu, particularmente, gosto do style guide da Airbnb,
+      que é o estilo que usaremos como exemplo, mas sinta-se à vontade para escolher outro.
+    </p>
+    <p>
+      Para iniciarmos o processo de configuração do ESLint, precisamos, primeiro, inicializar o ESLint na
+      aplicação. Seguem os devidos comandos para NPM:
+      <div class="anotacoes">
+        npx eslint --init
+      </div>
+      O terminal vai apresentar algumas perguntas. Vamos configurar juntos!
+    </p>
+    <p>
+      A primeira configuração que precisamos definir é com qual propósito iremos usar o ESLint. O nosso propósito
+      será checar sintaxe, encontrar problemas e garantir a aplicação de um estilo de código. Ficará assim:
+      <img src="../../frontend/assets/img/eslint1.png" alt="" class="imgM">
+    </p>
+    <p>
+      O próximo passo é definir que tipo de módulos usamos no nosso projeto. O Node.js ainda não aceita a sintaxe
+      de import/export do ES6, mas como eu estou usando o pacote Sucrase (fica a dica) para contornar isso, irei
+      escolhê-lo:
+      <img src="../../frontend/assets/img/eslint2.png" alt="" class="imgM">
+    </p>
+    <p>
+      Se você estiver usando o Sucrase ou Babel para ativar a sintaxe import/export, então faça como eu. Mas se
+      não, escolha o padrão do Node.js, que é o CommonJS. <br>
 
-            O próximo passo é definir se você está utilizando algum Framework. Como estamos num projeto Node.js, iremos
-            escolher None of these:
-            <img src="../../frontend/assets/img/eslint3.png" alt="" class="imgM">
-        </p>
-        <p>
-            É importante também para o ESLint saber se estamos usando Typescript. Como eu não estou utilizando no meu
-            projeto, então respondi que não:
-            <img src="../../frontend/assets/img/eslint4.png" alt="" class="imgM">
-        </p>
-        <p>
-            Agora, você precisa informar qual o destino do seu código. Se irá rodar no browser ou no Node. Já que o
-            contexto aqui é usarmos ESLint com Node, então vamos selecionar Node mesmo. Para isso, com a tecla espaço,
-            desselecione Browser e selecione Node e, depois, confirme com a tecla enter:
-            <img src="../../frontend/assets/img/eslint5.png" alt="" class="imgM">
-        </p>
-        <p>
-            Nessa etapa, deveremos definir o estilo que seguiremos no nosso código. Iremos escolher um estilo popular:
-            <img src="../../frontend/assets/img/eslint6.png" alt="" class="imgM">
-        </p>
-        <p>
-            Na próxima etapa, irei escolher o style guide que mencionei anteriormente, o da Airbnb:
-            <img src="../../frontend/assets/img/eslint7.png" alt="" class="imgM">
-        </p>
-        <p>
-            O estilo da Airbnb segue alguns padrões que já falamos, como pôr ponto e vírgula ao fim de cada setença de
-            código, vírgula após último elemento de um array ou depois do último atributo de um objeto, strings são
-            delimitadas por aspas simples… Para ver a lista de regras presentes no style guide da Airbnb, basta dar uma
-            olhada nesse link. <br> <br>
+      O próximo passo é definir se você está utilizando algum Framework. Como estamos num projeto Node.js, iremos
+      escolher None of these:
+      <img src="../../frontend/assets/img/eslint3.png" alt="" class="imgM">
+    </p>
+    <p>
+      É importante também para o ESLint saber se estamos usando Typescript. Como eu não estou utilizando no meu
+      projeto, então respondi que não:
+      <img src="../../frontend/assets/img/eslint4.png" alt="" class="imgM">
+    </p>
+    <p>
+      Agora, você precisa informar qual o destino do seu código. Se irá rodar no browser ou no Node. Já que o
+      contexto aqui é usarmos ESLint com Node, então vamos selecionar Node mesmo. Para isso, com a tecla espaço,
+      desselecione Browser e selecione Node e, depois, confirme com a tecla enter:
+      <img src="../../frontend/assets/img/eslint5.png" alt="" class="imgM">
+    </p>
+    <p>
+      Nessa etapa, deveremos definir o estilo que seguiremos no nosso código. Iremos escolher um estilo popular:
+      <img src="../../frontend/assets/img/eslint6.png" alt="" class="imgM">
+    </p>
+    <p>
+      Na próxima etapa, irei escolher o style guide que mencionei anteriormente, o da Airbnb:
+      <img src="../../frontend/assets/img/eslint7.png" alt="" class="imgM">
+    </p>
+    <p>
+      O estilo da Airbnb segue alguns padrões que já falamos, como pôr ponto e vírgula ao fim de cada setença de
+      código, vírgula após último elemento de um array ou depois do último atributo de um objeto, strings são
+      delimitadas por aspas simples… Para ver a lista de regras presentes no style guide da Airbnb, basta dar uma
+      olhada nesse link. <br> <br>
 
-            Continuando, agora definiremos o formato do arquivo no qual você poderá realizar algumas configurações
-            adicionais do ESLint. Nesse arquivo, também poderemos definir ou sobrescrever regras que ele irá analisar no
-            nosso projeto. Particularmente, gosto desse arquivo no formato JavaScript:
-            <img src="../../frontend/assets/img/eslint8.png" alt="" class="imgM">
-        </p>
-        <p>
-            Após a etapa anterior, será perguntando a você se deseja instalar as dependências relacionadas ao style
-            guide escolhido. Confirme:
-            <img src="../../frontend/assets/img/eslint9.png" alt="" class="imgM">
-            Finalmente, temos o ESLint instalado e configurado com a excelente style guide da Airbnb. Agora, pra uma
-            completa experiência com essa tecnologia, é necessário integrá-la ao VS Code.
-        </p>
-        <h2>Configurando Vs code com Eslint</h2>
-        <p>
-            Essa etapa é necessária para uma completa integração do ESLint e, assim, termos o processo de
-            desenvolvimento de nossas aplicações facilitado.
-        </p>
-        <p>
-            O primeiro passo é instalar a extensão ESLint no VS Code. Para isso, no seu VS Code, clique no botão de
-            extensões, pesquisar “eslint” e instale a extensão correspondente:
-            <img src="../../frontend/assets/img/eslintvs.png" alt="" class="imgM">
-            Feito isso, reinicie o VS Code e passará a visualizar os avisos no código do seu projeto quando alguma regra
-            do style guide da Airbnb for violada.
-        </p>
-        <p>
-            Um outro recurso que também podemos habilitar no ESLint e configurar para que funcione no VS Code é, sempre
-            que salvarmos um arquivo, o ESLint fazer a correção automatica dos desvios às regras nesse arquivo. Claro
-            que nem sempre ele será capaz de resolver tudo sozinho, mas na maioria das vezes ele tira de letra.
-        </p>
-        <p>
-            Para adicionarmos essa funcionalidade, precisamos alterar o arquivo settings.json do VS Code. Podemos
-            abri-lo indo no menu view e depois em command palette:
-            <img src="../../frontend/assets/img/eslintvs2.png" alt="" class="imgM">
-        </p>
-        <p>
-            Em seguida, pesquise por settings e abra a opção que tem JSON:
-            <img src="../../frontend/assets/img/eslintvs3.png" alt="" class="imgM">
-        </p>
-        <p>
-            Adicione, então, as seguintes configurações após o último atributo do settings.json:
-            <div class="anotacoes">
-                "editor.codeActionsOnSave": { <br>
-                "source.fixAll.eslint": true<br>
-                },<br>
-                "eslint.validate": ["javascript", "typescript"]<br>
-            </div>
-        </p>
-        <p>
-            Para você ver exatamente onde colocar, segue esse mesmo trecho adicionado no meu settings.json:
-            <img src="../../frontend/assets/img/eslintvs4.png" alt="" class="imgM">
-            O importante é que fique antes desse último colchete ( } ). Não esqueça de salvar o arquivo!
-        </p>
-        <p>
-            Perceba que adicionei os atributos “javascript” e “typescript”. É necessário que informemos quais linguagens
-            de programação queremos que o ESLint faça uma análise e aplique as correções ao salvarmos um arquivo.
-            Sinta-se livre para adicionar outras.
-        </p>
-        <p>
-            Uma vez adicionado esse recurso, se um arquivo no seu projeto estiver com erros de estilo, basta salvá-lo e
-            Voilà! O ESLint corrigirá para você. É bem fácil esquecermos de seguir as orientações que o ESLint dá, mas é
-            bem difícil esquecermos de salvar nossos arquivos 😅
-        </p>
-        <p>
-            Você deve ter percebido que, até agora, não inserimos nenhum estilo personlizado, ou seja, um estilo de
-            escrita especifico que nós queremos, independentemente de estar numa style guide ou não. Será que isso é
-            possível? Sim!
-        </p>
-        <h2>Definindo regras manualmente</h2>
-        <p>
-            Após inicializar o ESLint na sua aplicação, você deve ter notado que, na raiz da sua aplicação, foi criado
-            um arquivo chamado eslintrc.js (ou em outro formato, como JSON, se assim você escolheu na etapa de
-            configurações). É exatamente nele que iremos colocar nossas regras personalizadas. Ele estará mais ou menos
-            assim:
-            <div class="exemplos">
-                <code>
-                    module.exports = { <br>
-                    "env": {<br>
-                    "es2021": true,<br>
-                    "node": true<br>
-                    },<br>
-                    "extends": "eslint:recommended",<br>
-                    "parserOptions": {<br>
-                    "ecmaVersion": 12,<br>
-                    "sourceType": "module"<br>
-                    },<br>
-                    "rules": {<br>
-                    }<br>
-                    };
-                </code>
-            </div>
-            É no atributo rules que definiremos nossas regras. Como temos o Airbnb como style guide, há algumas regras
-            que ele próprio definiu. Pode ser que, ao adicionarmos um regra a rules, estejamos sobrescrevendo uma regra
-            que antes tinha sido definida pelo nosso style guide. Não tem problema algum nisso. No final, como estamos
-            sobrescrevendo, nossas regras definidas de forma manual é que irão vigorar.
-        </p>
-        <p>
-            Geralmente, para realizarmos pequenos testes, utilizamos a função console.log para vermos o valor de uma
-            variável em algum momento da execução do nosso código. O ESLint lança um aviso sobre o uso do console.
-            Provavelmente, o objetivo dessa regra é estimular que usemos a ferramenta de debug, que de fato é bem
-            melhor. De qualquer maneira, vamos sobrescrever essa regra e permitir a utilização de console.log. Para isso
-            basta adicionarmos a rules a regra ‘no-console’: ‘off’, ficando assim:
-            <div class="anotacoes">
-                <code>
-                    module.exports = { <br>
-                    "env": {<br>
-                    "es2021": true,<br>
-                    "node": true<br>
-                    },<br>
-                    "extends": "eslint:recommended",<br>
-                    "parserOptions": {<br>
-                    "ecmaVersion": 12,<br>
-                    "sourceType": "module"<br>
-                    },<br>
-                    "rules": {<br>
-                    'no-console': 'off',<br>
-                    }<br>
-                    };
-                </code>
-            </div>
-            Basta salvar e pronto. Sua regra estara sendo monitorada pelo ESLint!
-        </p>
-        <p>
-            Agora que você sabe como adicionar um estilo personalizado manualmente, pode se aventurar e adicionar os
-            seus próprios. Para ver a lista de regras disponíveis basta acessar esse <a
-                href="https://eslint.org/docs/rules/" style="color: brown; text-decoration: none;">link.</a>
-        </p>
-        <p>
-            ESLint é muito fácil né? Terminamos por aqui esse artigo e espero ter lhe ajudado a entender melhor o que é
-            ESLint e como começar a usá-lo para organizar e padronizar e ter um código de melhor qualidade. Bons
-            estudos!
-        </p>
-    </section>
+      Continuando, agora definiremos o formato do arquivo no qual você poderá realizar algumas configurações
+      adicionais do ESLint. Nesse arquivo, também poderemos definir ou sobrescrever regras que ele irá analisar no
+      nosso projeto. Particularmente, gosto desse arquivo no formato JavaScript:
+      <img src="../../frontend/assets/img/eslint8.png" alt="" class="imgM">
+    </p>
+    <p>
+      Após a etapa anterior, será perguntando a você se deseja instalar as dependências relacionadas ao style
+      guide escolhido. Confirme:
+      <img src="../../frontend/assets/img/eslint9.png" alt="" class="imgM">
+      Finalmente, temos o ESLint instalado e configurado com a excelente style guide da Airbnb. Agora, pra uma
+      completa experiência com essa tecnologia, é necessário integrá-la ao VS Code.
+    </p>
+    <h2>Configurando Vs code com Eslint</h2>
+    <p>
+      Essa etapa é necessária para uma completa integração do ESLint e, assim, termos o processo de
+      desenvolvimento de nossas aplicações facilitado.
+    </p>
+    <p>
+      O primeiro passo é instalar a extensão ESLint no VS Code. Para isso, no seu VS Code, clique no botão de
+      extensões, pesquisar “eslint” e instale a extensão correspondente:
+      <img src="../../frontend/assets/img/eslintvs.png" alt="" class="imgM">
+      Feito isso, reinicie o VS Code e passará a visualizar os avisos no código do seu projeto quando alguma regra
+      do style guide da Airbnb for violada.
+    </p>
+    <p>
+      Um outro recurso que também podemos habilitar no ESLint e configurar para que funcione no VS Code é, sempre
+      que salvarmos um arquivo, o ESLint fazer a correção automatica dos desvios às regras nesse arquivo. Claro
+      que nem sempre ele será capaz de resolver tudo sozinho, mas na maioria das vezes ele tira de letra.
+    </p>
+    <p>
+      Para adicionarmos essa funcionalidade, precisamos alterar o arquivo settings.json do VS Code. Podemos
+      abri-lo indo no menu view e depois em command palette:
+      <img src="../../frontend/assets/img/eslintvs2.png" alt="" class="imgM">
+    </p>
+    <p>
+      Em seguida, pesquise por settings e abra a opção que tem JSON:
+      <img src="../../frontend/assets/img/eslintvs3.png" alt="" class="imgM">
+    </p>
+    <p>
+      Adicione, então, as seguintes configurações após o último atributo do settings.json:
+      <div class="anotacoes">
+        "editor.codeActionsOnSave": { <br>
+        "source.fixAll.eslint": true<br>
+        },<br>
+        "eslint.validate": ["javascript", "typescript"]<br>
+      </div>
+    </p>
+    <p>
+      Para você ver exatamente onde colocar, segue esse mesmo trecho adicionado no meu settings.json:
+      <img src="../../frontend/assets/img/eslintvs4.png" alt="" class="imgM">
+      O importante é que fique antes desse último colchete ( } ). Não esqueça de salvar o arquivo!
+    </p>
+    <p>
+      Perceba que adicionei os atributos “javascript” e “typescript”. É necessário que informemos quais linguagens
+      de programação queremos que o ESLint faça uma análise e aplique as correções ao salvarmos um arquivo.
+      Sinta-se livre para adicionar outras.
+    </p>
+    <p>
+      Uma vez adicionado esse recurso, se um arquivo no seu projeto estiver com erros de estilo, basta salvá-lo e
+      Voilà! O ESLint corrigirá para você. É bem fácil esquecermos de seguir as orientações que o ESLint dá, mas é
+      bem difícil esquecermos de salvar nossos arquivos 😅
+    </p>
+    <p>
+      Você deve ter percebido que, até agora, não inserimos nenhum estilo personlizado, ou seja, um estilo de
+      escrita especifico que nós queremos, independentemente de estar numa style guide ou não. Será que isso é
+      possível? Sim!
+    </p>
+    <h2>Definindo regras manualmente</h2>
+    <p>
+      Após inicializar o ESLint na sua aplicação, você deve ter notado que, na raiz da sua aplicação, foi criado
+      um arquivo chamado eslintrc.js (ou em outro formato, como JSON, se assim você escolheu na etapa de
+      configurações). É exatamente nele que iremos colocar nossas regras personalizadas. Ele estará mais ou menos
+      assim:
+      <div class="exemplos">
+        <code>
+          module.exports = { <br>
+          "env": {<br>
+          "es2021": true,<br>
+          "node": true<br>
+          },<br>
+          "extends": "eslint:recommended",<br>
+          "parserOptions": {<br>
+          "ecmaVersion": 12,<br>
+          "sourceType": "module"<br>
+          },<br>
+          "rules": {<br>
+          }<br>
+          };
+        </code>
+      </div>
+      É no atributo rules que definiremos nossas regras. Como temos o Airbnb como style guide, há algumas regras
+      que ele próprio definiu. Pode ser que, ao adicionarmos um regra a rules, estejamos sobrescrevendo uma regra
+      que antes tinha sido definida pelo nosso style guide. Não tem problema algum nisso. No final, como estamos
+      sobrescrevendo, nossas regras definidas de forma manual é que irão vigorar.
+    </p>
+    <p>
+      Geralmente, para realizarmos pequenos testes, utilizamos a função console.log para vermos o valor de uma
+      variável em algum momento da execução do nosso código. O ESLint lança um aviso sobre o uso do console.
+      Provavelmente, o objetivo dessa regra é estimular que usemos a ferramenta de debug, que de fato é bem
+      melhor. De qualquer maneira, vamos sobrescrever essa regra e permitir a utilização de console.log. Para isso
+      basta adicionarmos a rules a regra ‘no-console’: ‘off’, ficando assim:
+      <div class="anotacoes">
+        <code>
+          module.exports = { <br>
+          "env": {<br>
+          "es2021": true,<br>
+          "node": true<br>
+          },<br>
+          "extends": "eslint:recommended",<br>
+          "parserOptions": {<br>
+          "ecmaVersion": 12,<br>
+          "sourceType": "module"<br>
+          },<br>
+          "rules": {<br>
+          'no-console': 'off',<br>
+          }<br>
+          };
+        </code>
+      </div>
+      Basta salvar e pronto. Sua regra estara sendo monitorada pelo ESLint!
+    </p>
+    <p>
+      Agora que você sabe como adicionar um estilo personalizado manualmente, pode se aventurar e adicionar os
+      seus próprios. Para ver a lista de regras disponíveis basta acessar esse <a href="https://eslint.org/docs/rules/"
+        style="color: brown; text-decoration: none;">link.</a>
+    </p>
+    <p>
+      ESLint é muito fácil né? Terminamos por aqui esse artigo e espero ter lhe ajudado a entender melhor o que é
+      ESLint e como começar a usá-lo para organizar e padronizar e ter um código de melhor qualidade. Bons
+      estudos!
+    </p>
+  </section>
 </body>
 
 </html>
