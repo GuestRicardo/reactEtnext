@@ -83,6 +83,34 @@
     <h3>Declarando uma variavel State</h3>
     <p>
       Em uma classe, inicializamos o state count para 0 definindo this.state para { count: 0 } no construtor:
+      <img src="../../frontend/assets/img/useState/6.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Em um componente de função, não temos this, portanto não podemos definir ou ler this.state. Em vez disso, chamamos
+      o Hook useState dentro do nosso component:
+      <img src="../../frontend/assets/img/useState/7.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      O que o useState faz? Ele declara um variável state. Nossa variável é chamada de count mas poderíamos chamar de
+      qualquer coisa, como banana. Esta é uma maneira de “preservar” alguns valores entre as chamadas de funções —
+      useState é uma nova maneira de usar as mesmas capacidades que o this.state tem em uma classe. Normalmente,
+      variáveis “desaparecem” quando a função sai mas variáveis de state são preservadas pelo React.
+    </p>
+    <p>
+      O que passamos para o useState como argumento? O único argumento para o Hook useState() é o state inicial.
+      Diferente de classes, o state não tem que ser um objeto. Podemos manter um número ou uma string se for tudo que
+      precisamos. No nosso exemplo, apenas queremos um número para quantas vezes o usuário clicou, então passamos 0 como
+      state inicial para nossa variável. (Se quiséssemos guardar dois valores diferentes no state, chamaríamos
+      useState() duas vezes.)
+    </p>
+    <p>
+      O que useState retorna? Ele retorna um par de valores: o state atual e uma função que atualiza o state. É por isso
+      que escrevemos const [count, setCount] = useState(). Isto é similar ao this.state.count e this.setState em uma
+      classe, exceto o fato de pegá-los em par. Se você não está familiarizado com a sintaxe que usamos, vamos voltar
+      nisso no final dessa página.
+    </p>
+    <p>
+      Agora que sabemos o que o Hook useState faz, nosso exemplo deve fazer mais sentido:
     </p>
   </section>
 
