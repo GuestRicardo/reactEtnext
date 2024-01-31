@@ -259,7 +259,7 @@ h1::first-letter {
 }
 
 .imgM {
-  width: 100%;  
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,7 +268,7 @@ h1::first-letter {
 
 .zoomImg {
   overflow: hidden;
-  width: 100%;  
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -292,6 +292,7 @@ h1::first-letter {
   font-size: smaller;
   color: red;
   background-color: yellow;
+  padding: 10px;
 }
 .cyber{
   text-shadow: red -2px 0, cyan 2px 0;
@@ -317,34 +318,34 @@ h1::first-letter {
 
 .arrowSliding {
   position: absolute;
-  -webkit-animation: slide 4s linear infinite; 
+  -webkit-animation: slide 4s linear infinite;
           animation: slide 4s linear infinite;
 }
 
 .delay1 {
-  -webkit-animation-delay: 1s; 
+  -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 .delay2 {
-  -webkit-animation-delay: 2s; 
+  -webkit-animation-delay: 2s;
     animation-delay: 2s;
 }
 .delay3 {
-  -webkit-animation-delay: 3s; 
+  -webkit-animation-delay: 3s;
     animation-delay: 3s;
 }
 
 @-webkit-keyframes slide {
-    0% { opacity:0; transform: translateX(15vw); }	
-   20% { opacity:1; transform: translateX(9vw); }	
-   80% { opacity:1; transform: translateX(-9vw); }	
-  100% { opacity:0; transform: translateX(-15vw); }	
+    0% { opacity:0; transform: translateX(15vw); }
+   20% { opacity:1; transform: translateX(9vw); }
+   80% { opacity:1; transform: translateX(-9vw); }
+  100% { opacity:0; transform: translateX(-15vw); }
 }
 @keyframes slide {
-    0% { opacity:0; transform: translateX(15vw); }	
-   20% { opacity:1; transform: translateX(9vw); }	
-   80% { opacity:1; transform: translateX(-9vw); }	
-  100% { opacity:0; transform: translateX(-15vw); }	
+    0% { opacity:0; transform: translateX(15vw); }
+   20% { opacity:1; transform: translateX(9vw); }
+   80% { opacity:1; transform: translateX(-9vw); }
+  100% { opacity:0; transform: translateX(-15vw); }
 }
 /*##################################-SETA-#########################################*/
 /*##################################-link-#########################################*/
