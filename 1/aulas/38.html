@@ -111,7 +111,24 @@
     </p>
     <p>
       Agora que sabemos o que o Hook useState faz, nosso exemplo deve fazer mais sentido:
-    </p>
+      <img src="../../frontend/assets/img/useState/8.png" alt="" class="zoomImg">
+      Nós declaramos uma variável state chamada count e definimos ela para 0. O React vai lembrar o valor atual entre
+      cada re-renderização e fornecer o valor mais recente para nossa função. Se quisermos atualizar o count atual,
+      podemos chamar setCount.
+      <div class="lembret">
+        <strong>Nota</strong> <br>
+        <p>
+          Você pode estar se perguntando: Por que é chamado useState ao invés de createState?
+        </p>
+        <p>
+          “Create” não seria muito preciso porque o state é criado apenas na primeira vez que nosso componente
+          renderiza. Durante as próximas renderizações, useState nos da o state atual. Caso contrário, não seria “state”
+          de qualquer maneira! Também tem outro motivo pelo qual nomes de Hook sempre começam com use. Vamos aprender o
+          porque depois, nas Regras dos Hooks.
+        </p>
+      </div>
+    </p> <hr>
+
   </section>
 
 </body>
