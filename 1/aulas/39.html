@@ -200,8 +200,49 @@
       vezes continham lógicas não relacionadas, mas as lógicas relacionadas (entre si) estavam separadas em vários
       métodos. Aqui temos um componente que combina o contador e o indicador de status de amizade dos exemplos
       anteriores:
+      <img src="../../frontend/assets/img/useEffect/1.8.png" alt="" class="zoomImg" />
     </p>
+    <p>
+      Note como a lógica que define document.title esta dividida entre componentDidMount e componentDidUpdate. A lógica
+      do subscription também esta dividida entre componentDidMount e componentWillUnmount. E o componentDidMount contém
+      código das duas tarefas.
+    </p>
+    <p>
+      Então, como Hook resolvem esse problema? Assim como você pode usar o Hooks State mais de uma vez, você também pode
+      usar vários efeitos. Isso nos permite separar lógicas não relacionadas em diferentes efeitos:
+      <img src="../../frontend/assets/img/useEffect/1.9.png" alt="" class="zoomImg" />
+      Hooks nos permitem dividir o código com base no que ele está fazendo em vez de encaixá-lo em algum nome dos
+      métodos do ciclo de vida. React irá aplicar todos os efeitos usados por um componente, na ordem em que eles foram
+      especificados.
+    </p>
+    <h3>Explicação: Por que efeitos executam em cada atualização</h3>
+    <p>
+      Se você está acostumado com classes, você pode estar se perguntando o porquê da fase de limpeza dos efeitos
+      acontecerem depois de cada re-renderização, e não apenas uma vez durante a desmontagem. Vamos dar uma olhada em um
+      exemplo prático para ver porque esse design nos ajuda a criar componentes com menos bugs.
+    </p>
+    <p>
+      Anteriormente nessa página, nós introduzimos um componente de exemplo FriendStatus que mostra quando um amigo está
+      online ou não. Nossa classe lê friend.id do this.props, faz subscribe no status do amigo após a montagem do
+      componente e faz unsubscribe durante a desmontagem:
+      <img src="../../frontend/assets/img/useEffect/2.0.png" alt="" class="zoomImg" />
 
+    </p>
+    <p>
+      Mas o que acontece se a prop friend mudar enquanto o componente está na tela? Nosso componente deveria continuar
+      exibindo o status de online de um amigo diferente. Isso é um bug. Nós também causaríamos um memory leak ou um
+      crash durante o desmonte, já que a chamada do unsubscribe estaria usando o id do amigo errado.
+    </p>
+    <p>
+      Em componentes de classe, nós precisariamos adicionar componentDidUpdate para cuidar desse caso:
+      <img src="../../frontend/assets/img/useEffect/2.1.png" alt="" class="zoomImg" />
+      Esquecer de cuidar do componentDidUpdate devidamente é uma fonte comum de bugs em aplicações React.
+    </p>
+    <p>
+      Agora considere a versão desse componente que usa Hooks:
+      <img src="../../frontend/assets/img/useEffect/2.2.png" alt="" class="zoomImg" />
+      Ele não sofre desse bug. (Mas nós também não fizemos nenhuma mudança nele.)
+    </p>
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
