@@ -124,6 +124,31 @@
       forma síncrona. Nos casos incomuns em que eles precisam (como medir o layout), existe um Hook useLayoutEffect
       separado com uma API idêntica ao useEffect.
     </div>
+    <hr>
+    <h3>Efeitos com limpeza</h3>
+    <p>
+      Anteriormente, nós vimos como expressar efeitos colaterais que não precisam de limpeza. Contudo, alguns efeitos
+      precisam. Por exemplo, nós podemos querer configurar uma subscription para alguma origem de dados externa. Nesse
+      caso, é importante limpar para que não causemos um vazamento de memória! Vamos comparar como faríamos isso com
+      classes e com Hooks.
+    </p>
+    <h3>Exemplos usando classes</h3>
+    <p>
+      Em uma classe React, geralmente você configura uma subscription no componentDidMount, e limpa no
+      componentWillUnmount. Por exemplo, digamos que nós temos um módulo ChatAPI que nos permite fazer um subscribe ao
+      status de online de um amigo. Aqui esta como nós poderíamos fazer o subscribe e mostrar o status usando uma
+      classe:
+      <img src="../../frontend/assets/img/useEffect/1.5.png" alt="" class="zoomImg" />
+      Preste atenção como componentDidMount e componentWillUnmount precisam espelhar um ao outro. Métodos do ciclo de
+      vida nos forçam a dividir essa lógica mesmo quando conceitualmente o código dos dois é relacionado ao mesmo
+      efeito.
+    </p>
+    <div class="lembrete">
+      <strong>Nota</strong> <br>
+      Leitores atentos talvez notem que esse exemplo também precisa de um método componentDidUpdate para ficar
+      totalmente correto. Nós ignoraremos isso por enquanto, mas voltaremos nisso em uma sessão mais abaixo nessa
+      página.
+    </div>
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
