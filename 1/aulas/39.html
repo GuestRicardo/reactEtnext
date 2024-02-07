@@ -252,6 +252,55 @@
       à falta da lógica de atualização.
     </p>
     <h2>Dica: Otimizando a performace ao pular efeitos</h2>
+    <p>
+      Em alguns casos, limpar ou aplicar o efeito em cada renderização pode criar um problema de performance. Em
+      componentes de classes, nós resolvemos isso escrevendo uma comparação extra com prevProps ou prevState dentro do
+      componentDidUpdate:
+      <img src="../../frontend/assets/img/useEffect/2.4.png" alt="" class="zoomImg" />
+    </p>
+    <p>
+      Esse requerimento é comum o bastante para estar embutido na API do Hook useEffect. Você pode dizer ao React para
+      pular a aplicação de um efeito se certos valores não tiverem mudado entre as renderizações. Para fazer isso, passe
+      uma array como um segundo argumento opcional ao useEffect:
+      <img src="../../frontend/assets/img/useEffect/2.5.png" alt="" class="zoomImg" />
+    </p>
+    <p>
+      No exemplo acima, nós passamos o [count] como segundo argumento. O que isso quer dizer? Se count é 5, e o nosso
+      componente re-renderiza com count ainda sendo 5, o React irá comparar [5] da renderização passada e [5] da próxima
+      renderização. Por todos os itens na array serem o mesmo (5 === 5), o React ira pular o efeito. Essa é a nossa
+      otimização.
+    </p>
+    <p>
+      Quando nós renderizamos com count atualizado para 6, o React irá comparar os itens no array [5] da renderização
+      passada com os items no array [6] da próxima renderização. Desta vez, o React irá re-aplicar o efeito porque 5 !==
+      6. Se houver múltiplos itens no array, o React irá re-executar o efeitos mesmo se apenas um deles for diferente.
+    </p>
+    <p>
+      Isso também funciona para efeitos que tenham uma fase de limpeza:
+      <img src="../../frontend/assets/img/useEffect/2.6.png" alt="" class="zoomImg" />
+      No futuro, talvez o segundo argumento seja adicionado automaticamente por uma transformação em tempo de build.
+    </p>
+    <div class="lembrete">
+      <strong>Nota</strong> <br>
+      Se você usar essa otimização, tenha certeza de que a array inclua qualquer valor do escopo acima (como props e
+      state) que mude com o tempo e que ele seja usado pelo efeito. Caso contrário, seu código fará referência a valores
+      obsoletos de renderizações anteriores. Saiba mais sobre como lidar com funções e o que fazer quando a matriz muda
+      com muita frequência. <br>
+      <br>
+      Se você quer executar um efeito e limpá-lo apenas uma vez (na montagem e desmontagem), você pode passar um array
+      vazio ([]) como segundo argumento. Isso conta ao React que o seu efeito não depende de nenhum valor das props ou
+      state, então ele nunca precisa re-executar. Isso não é tratado como um caso especial — segue diretamente de como o
+      array de dependências sempre funciona. <br>
+      <br>
+      Se você passar um array vazio ([]), a props e o state passados dentro do efeito sempre terão seus valores
+      iniciais. Enquanto passando [] como segundo parâmetro aproxima-se do modelo mental familiar de componentDidMount e
+      componentWillUnmount, geralmente há melhores soluções para evitar efeitos repetidos com muita frequência. Além
+      disso, não esqueça de que o React adia a execução do useEffect até o navegador ser pintado, então fazer trabalho
+      extra é menos problemático. <br>
+      <br>
+      Recomendamos usar as regras do exhaustive-deps como parte do nosso pacote eslint-plugin-react-hooks. Ele avisa
+      quando as dependências são especificadas incorretamente e sugere uma correção.
+    </div>
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
