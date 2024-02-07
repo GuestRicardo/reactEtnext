@@ -44,6 +44,24 @@
       Existem dois tipos comuns de efeitos colaterais nos componentes React: aqueles que não precisam de limpeza, e
       aqueles que precisam. Vamos ver as suas diferenças mais detalhadamente.
     </div>
+    <hr>
+    <h2>Efeitos Sem Limpeza</h2>
+    <p>
+      De vez em quando, nós queremos executar algum código adicional depois que o React atualizou a DOM. Requisições,
+      mutações manuais do DOM e log são exemplos comuns de efeitos que não precisam de limpeza. Nós dizemos isso porque
+      podemos executa-los e imediatamente esquecer deles. Vamos comparar como classes e Hooks nos permitem expressar
+      tais efeitos colaterais.
+    </p>
+    <h3>Exemplo usando Classes</h3>
+    <p>
+      Em um componente de classe do React, o método render não deve causar efeitos colaterais. Seria muito cedo — nós
+      geralmente queremos executar nossos efeitos depois que o React atualizou a DOM.
+    </p>
+    <p>
+      Isso é o porque nas classes do React, nós colocamos efeitos dentro de componentDidMount e componentDidUpdate.
+      Voltando ao nosso exemplo, aqui está um componente de classe do React chamado contador que atualiza o título logo
+      após o React faz as mudanças na DOM:
+    </p>
     <h1>useEffect PARTE 2</h1>
     <p>
       <a href="https://www.treinaweb.com.br/blog/react-conheca-o-poder-dos-hooks#:~:text=O%20useEffect()%20recebe%20como,que%20o%20componente%20for%20atualizado."
