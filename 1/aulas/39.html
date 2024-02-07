@@ -174,7 +174,34 @@
       <strong>Nota</strong>
       Nós não precisamos retornar uma função nomeada do efeito. Nós chamamos de cleanup aqui apenas para esclarecer seu
       propósito, mas nós podemos retornar uma arrow function ou chamarmos de qualquer coisa diferente.
-    </div> <hr>
+    </div>
+    <hr>
+    <h2>Pecapitulando</h2>
+    <p>
+      Nós aprendemos que useEffect nos deixa expressar diferentes tipos de efeitos colaterais depois que o componente
+      renderiza. Alguns efeitos podem requerer limpeza, então eles retornam uma função:
+      <img src="../../frontend/assets/img/useEffect/1.7.png" alt="" class="zoomImg" />
+      O Effect Hook unifica ambos casos com uma única API.
+    </p>
+    <hr>
+    <p>Se você acha que tem um bom entendimento de como o Effect Hook funciona, ou se você se sente sobrecarregado, você
+      já pode pular para a próxima página sobre as Regras dos Hooks.</p>
+    <hr>
+    <hr>
+    <h2>Dicas para usar efeitos</h2>
+    <p>
+      Vamos continuar essa página com um olhar mais aprofundado em alguns aspectos do useEffect sobre os quais alguns
+      usuários mais experientes do React provavelmente ficarão curiosos. Não se sinta obrigado a se aprofundar neles
+      agora. Você sempre pode voltar nessa página para saber mais sobe o Effect Hook.
+    </p>
+    <h3>Dica: use múltiplos efeitos para separar preocupações</h3>
+    <p>
+      Um dos problemas que nós levantamos na Motivação dos Hooks era que os métodos do ciclo de vida das classes muitas
+      vezes continham lógicas não relacionadas, mas as lógicas relacionadas (entre si) estavam separadas em vários
+      métodos. Aqui temos um componente que combina o contador e o indicador de status de amizade dos exemplos
+      anteriores:
+    </p>
+
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
