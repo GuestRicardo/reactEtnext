@@ -243,6 +243,15 @@
       <img src="../../frontend/assets/img/useEffect/2.2.png" alt="" class="zoomImg" />
       Ele não sofre desse bug. (Mas nós também não fizemos nenhuma mudança nele.)
     </p>
+    <p>
+      Não existe nenhum código especial para cuidar das atualizações porque useEffect cuida delas por padrão. Ele limpa
+      os efeitos anteriores antes de aplicar os próximos efeitos. Para ilustrar isso, aqui está a sequência de chamadas
+      ao subscribe e unsubscribe que o componente fez ao longo do tempo:
+      <img src="../../frontend/assets/img/useEffect/2.3.png" alt="" class="zoomImg" />
+      Este comportamento garante a consistência por padrão e previne bugs que são comuns aos componente de classe devido
+      à falta da lógica de atualização.
+    </p>
+
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
