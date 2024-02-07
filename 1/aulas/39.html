@@ -23,7 +23,7 @@
     </p>
     <p>
       O Effect Hook (Hook de Efeito) te permite executar efeitos colaterais em componentes funcionais:
-      <img src="../../frontend/assets/img/useEffect/1.1.png" alt="" class="zoomImg">
+      <img src="../../frontend/assets/img/useEffect/1.1.png" alt="" class="zoomImg" />
     </p>
     <p>
       Esse trecho de código é baseado no exemplo de contador da página anterior, mas nós adicionamos uma nova
@@ -61,6 +61,18 @@
       Isso é o porque nas classes do React, nós colocamos efeitos dentro de componentDidMount e componentDidUpdate.
       Voltando ao nosso exemplo, aqui está um componente de classe do React chamado contador que atualiza o título logo
       após o React faz as mudanças na DOM:
+      <img src="../../frontend/assets/img/useEffect/1.2.png" alt="" class="zoomImg" />
+      Note que nós temos que duplicar o código entre esses dois métodos do ciclo de vida na classe.
+    </p>
+    <p>
+      Isso acontece porque em muitos casos nós queremos executar o mesmo efeito colateral não importando se o componente
+      acabou de ser montado ou foi atualizado. Conceitualmente, nós queremos que isso aconteça em cada renderização —
+      mas componentes de classe do React não tem um método assim. Nós poderíamos extrair um método separado mas ainda
+      assim teríamos que chamá-lo em dois lugares.
+      <br>
+      Agora vamos ver como podemos fazer a mesma coisa com o Hook useEffect.
+
+
     </p>
     <h1>useEffect PARTE 2</h1>
     <p>
