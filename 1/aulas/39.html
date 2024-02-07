@@ -149,6 +149,32 @@
       totalmente correto. Nós ignoraremos isso por enquanto, mas voltaremos nisso em uma sessão mais abaixo nessa
       página.
     </div>
+    <h3>Exemplo usadno HOOKS</h3>
+    <p>
+      Vamos ver como poderíamos escrever esse componente usando Hooks.
+
+      Você pode pensar que precisamos de um efeito separado para executarmos a limpeza. Mas o código para adicionar e
+      remover uma subscription é tão relacionado um com o outro que o useEffect foi desenhado para mantê-los juntos. Se
+      o seu efeito retornar uma função, o React irá executá-la quando for a hora de limpar:
+      <img src="../../frontend/assets/img/useEffect/1.6.png" alt="" class="zoomImg" />
+    </p>
+    <p>
+      Por que precisamos retornar uma função dos nossos efeitos? Isso é um mecanismo opcional de limpeza para efeitos.
+      Cada efeito pode retornar uma função que irá limpar depois dela. Isso nos permite manter a lógica para adicionar e
+      remover subscriptions perto uma da outra. Elas são parte do mesmo efeito!
+    </p>
+    <p>
+      Quando exatamente o React limpa um efeito? O React executa a limpeza quando o componente desmonta. Contudo, como
+      aprendemos anteriormente, efeitos rodam em todas as renderizações e não apenas uma vez. É por isso que o React
+      também limpa os efeitos da renderização anterior antes de rodar os efeitos da próxima vez. Nós discutiremos o
+      porquê disso evitar bugs e como podemos desabilitar esse comportamento caso isso cause problemas de performance
+      abaixo.
+    </p>
+    <div class="lembrete">
+      <strong>Nota</strong>
+      Nós não precisamos retornar uma função nomeada do efeito. Nós chamamos de cleanup aqui apenas para esclarecer seu
+      propósito, mas nós podemos retornar uma arrow function ou chamarmos de qualquer coisa diferente.
+    </div> <hr>
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
