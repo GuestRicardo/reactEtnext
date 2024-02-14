@@ -66,14 +66,13 @@
           Ele necessita de dependencias, essas dependencias pode definir a quantidade de vez q ele sera executado, se
           estiver vazio será ssomente uma vez
         </li>
-        <li><strong>componentDidMount</strong>- execulta uma vez.
+        <li><strong>componentDidMount com dependencia</strong>- execulta toda vez q a dependencia mudar.
           <div class="exemplos">
             useEffect(()=>{ <br>
-            console.log('componentDidMount'); <br>
-            }, []);
+            console.log('contador mudou para caunter', counter); <br>
+            }, [counter]);
           </div>
-          Ele necessita de dependencias, essas dependencias pode definir a quantidade de vez q ele sera executado, se
-          estiver vazio será ssomente uma vez
+          Então toda vez que for mudado o conter ele sera executado novamente
         </li>
 
       </ul>
