@@ -45,13 +45,14 @@
       componentDidMount, componentDidUpdate, e componentWillUnmount combinados.
     </div>
     <p style="border: 3px solid yellow; padding: 5px;">
-      Para mostra na pratica, aqui segui lum exemplo dos componentes de ciclo usando o <strong class="cyber">useEffect</strong>:
+      Para mostra na pratica, aqui segui lum exemplo dos componentes de ciclo usando o <strong
+        class="cyber">useEffect</strong>:
       <br>
       <ul>
         <li><strong>componentDidUpdate</strong>- execulta toda vez que o componente atualiza.
           <div class="exemplos">
             useEffect(()=>{ <br>
-              console.log('componentDidUpdate'); <br>
+            console.log('componentDidUpdate'); <br>
             });
           </div>
           Toda vez que o componente for execultado ele sera atualizado
@@ -59,10 +60,11 @@
         <li><strong>componentDidMount</strong>- execulta uma vez.
           <div class="exemplos">
             useEffect(()=>{ <br>
-              console.log('componentDidMount'); <br>
+            console.log('componentDidMount'); <br>
             }, []);
           </div>
-          Ele necessita de dependencias, essas dependencias pode definir a quantidade de vez q ele sera executado
+          Ele necessita de dependencias, essas dependencias pode definir a quantidade de vez q ele sera executado, se
+          estiver vazio será ssomente uma vez
         </li>
 
       </ul>
@@ -347,7 +349,8 @@
       corresponde a qual variável de state entre as re-renderizações? Como o React “compara” os efeitos anteriores e os
       próximos toda atualização? Na próxima página nos iremos aprender sobre as Regras dos Hooks — elas são essenciais
       para fazer os Hooks funcionarem.
-    </p> <hr>
+    </p>
+    <hr>
     <!--######################################################################################################-->
     <hr>
     <h1>useEffect PARTE 2</h1>
