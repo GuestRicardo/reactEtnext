@@ -56,7 +56,8 @@
             });
           </div>
           Toda vez que o componente for execultado ele sera atualizado
-        </li> <hr>
+        </li>
+        <hr>
         <li><strong>componentDidMount</strong>- execulta uma vez.
           <div class="exemplos">
             useEffect(()=>{ <br>
@@ -65,7 +66,8 @@
           </div>
           Ele necessita de dependencias, essas dependencias pode definir a quantidade de vez q ele sera executado, se
           estiver vazio será ssomente uma vez
-        </li> <hr>
+        </li>
+        <hr>
         <li><strong>componentDidMount com dependencia</strong>- execulta toda vez q a dependencia mudar.
           <div class="exemplos">
             useEffect(()=>{ <br>
@@ -73,14 +75,25 @@
             }, [counter]);
           </div>
           Então toda vez que for mudado o conter ele sera executado novamente
-        </li><hr>
+        </li>
+        <hr>
 
-      </ul><hr>
+      </ul>
+      <hr>
     </p>
     <h2>Exemplo criando e limpando </h2>
-    <p>
-      
-    </p>
+    <div class="exemplos">
+      useEffect(()=>{ <br>
+      document.querySelector('h1')?.addEventListener('click', eventFn); <br>
+      <div class="anotacoes">
+        return()=>{ <br>
+        document.querySelector('h1')?.addEventListener('click', eventFn); <br>
+        }
+      </div>
+      },[ ]);
+
+
+    </div>
     <div>
       Existem dois tipos comuns de efeitos colaterais nos componentes React: aqueles que não precisam de limpeza, e
       aqueles que precisam. Vamos ver as suas diferenças mais detalhadamente.
