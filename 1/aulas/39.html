@@ -77,23 +77,25 @@
           Então toda vez que for mudado o conter ele sera executado novamente
         </li>
         <hr>
+        <li><strong>componentWillUmount</strong> - ele é encarregado de limpar, para q nao fique recarregando o
+          component ja finalizado
+          <div class="exemplos">
+            useEffect(()=>{ <br>
+            document.querySelector('h1')?.addEventListener('click', eventFn); <br>
+            <div class="anotacoes">
+              return()=>{ <br>
+              document.querySelector('h1')?.addEventListener('click', eventFn); <br>
+              }
+            </div>
+            },[ ]);
 
+
+          </div>
+        </li>
       </ul>
       <hr>
     </p>
-    <h2>Exemplo criando e limpando </h2>
-    <div class="exemplos">
-      useEffect(()=>{ <br>
-      document.querySelector('h1')?.addEventListener('click', eventFn); <br>
-      <div class="anotacoes">
-        return()=>{ <br>
-        document.querySelector('h1')?.addEventListener('click', eventFn); <br>
-        }
-      </div>
-      },[ ]);
 
-
-    </div>
     <div>
       Existem dois tipos comuns de efeitos colaterais nos componentes React: aqueles que não precisam de limpeza, e
       aqueles que precisam. Vamos ver as suas diferenças mais detalhadamente.
