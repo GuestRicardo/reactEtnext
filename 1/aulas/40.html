@@ -18,6 +18,8 @@
   <section class="container">
 
     <h1>useCallback</h1>
+    <a href="https://react-dev.translate.goog/reference/react/useCallback?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc&_x_tr_hist=true"
+      style="text-decoration: none;">Fonte: useCallBack - React</a>
     <p>
       useCallbacké um React Hook que permite armazenar em cache uma definição de função entre re-renderizações.
       <div class="anotacoes">
@@ -135,6 +137,25 @@
         // ... <br>
         });
       </div>
+    </p>
+    <p>
+      Com esta mudança, ShippingFormpulará a nova renderização se todos os seus adereços forem iguais aos da última
+      renderização. É aí que o cache de uma função se torna importante! Digamos que você definiu handleSubmitsem
+      useCallback:
+      <img src="../../frontend/assets/img/useCallBack/4.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Em JavaScript, um function () {}ou () => {}sempre cria uma função diferente , semelhante a como o {}objeto literal
+      sempre cria um novo objeto. Normalmente, isso não seria um problema, mas significa que ShippingFormos adereços
+      nunca mais serão os mesmos e sua memootimização não funcionará. É aqui useCallbackque é útil:
+      <img src="../../frontend/assets/img/useCallBack/5.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Ao envolver handleSubmit, useCallbackvocê garante que seja a mesma função entre as novas renderizações (até que as
+      dependências mudem). Você não precisa agrupar uma função, useCallbacka menos que faça isso por algum motivo
+      específico. Neste exemplo, o motivo é que você o passa para um componente encapsulado em memo, e isso permite que
+      ele pule a nova renderização. Existem outros motivos pelos quais você pode precisar useCallback, descritos mais
+      adiante nesta página.
     </p>
   </section>
 
