@@ -39,7 +39,8 @@
         renderização. Caso contrário, ele fornecerá a função que você passou durante a renderização atual e a armazenará
         caso possa ser reutilizada posteriormente. React não chamará sua função. A função é retornada para você para que
         você possa decidir quando e se deve chamá-la.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         dependencies: a lista de todos os valores reativos referenciados dentro do fncódigo. Os valores reativos incluem
         adereços, estado e todas as variáveis ​​e funções declaradas diretamente dentro do corpo do seu componente. Se o
@@ -62,7 +63,8 @@
         useCallbacké um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios
         Hooks. Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo componente e mova
         o estado para ele.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         O React não descartará a função em cache, a menos que haja um motivo específico para fazer isso. Por exemplo, no
         desenvolvimento, o React descarta o cache quando você edita o arquivo do seu componente. Tanto no
@@ -90,14 +92,31 @@
       Você precisa passar duas coisas para useCallback:
     </p>
 
-      <ol>
-        <li>
-          Uma definição de função que você deseja armazenar em cache entre novas renderizações.
-        </li>
+    <ol>
+      <li>
+        Uma definição de função que você deseja armazenar em cache entre novas renderizações.
+      </li>
+      <li>
+        Uma lista de dependências incluindo todos os valores do seu componente que são usados ​​na sua função
+      </li>
+    </ol>
+    <p>
+      Na renderização inicial, a função retornada que você obterá useCallbackserá a função que você passou.
+    </p>
+    <p>
+      Nas renderizações a seguir, o React comparará as dependências com as dependências que você passou durante a
+      renderização anterior. Se nenhuma das dependências tiver sido alterada (em comparação com Object.is),
+      useCallbackretornará a mesma função de antes. Caso contrário, useCallbackretornará a função que você passou nesta
+      renderização.
+    </p>
+    <p>
+      Em outras palavras, useCallbackarmazena em cache uma função entre re-renderizações até que suas dependências sejam
+      alteradas.
 
+      Vejamos um exemplo para ver quando isso é útil.
 
-      </ol>
-
+      Digamos que você esteja passando uma handleSubmitfunção do ProductPagepara o ShippingFormcomponente:
+    </p>
   </section>
 
 </body>
