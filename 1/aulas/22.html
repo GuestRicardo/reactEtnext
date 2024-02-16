@@ -77,10 +77,19 @@
     <hr>
     <h1>Regras dos Hooks</h1>
     <div class="lembrete">
-      Hooks são funções JavaScript, mas você precisa seguir duas regras ao utilizá-los. Nós providenciamos um plugin
+      Hooks são funções JavaScript, mas você precisa seguir duas regras ao utilizá-los. Nós providenciamos um <a
+        href="https://www.npmjs.com/package/eslint-plugin-react-hooks"
+        style="text-decoration: none; color: blue;">plugin ESLint</a>
       ESLint para aplicar essas regras automaticamente:
     </div>
     <h3>Use hooks apenas no nivel superor</h3>
+    <p>
+      Não use Hooks dentro de loops, regras condicionais ou funções aninhadas (funções dentro de funções). Em vez disso,
+      sempre use Hooks no nível superior de sua função React, antes de qualquer retorno antecipado. Seguindo essas
+      regras, você garante que os Hooks serão chamados na mesma ordem a cada vez que o componente renderizar. É isso que
+      permite que o React preserve corretamente o estado dos Hooks quando são usadas várias chamadas a useState e
+      useEffect na mesma função. (Se você ficou curioso, iremos explicar isso melhor abaixo.)
+    </p>
   </section>
 </body>
 
