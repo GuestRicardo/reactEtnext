@@ -20,15 +20,60 @@
     <h1>useCallback</h1>
     <p>
       useCallbacké um React Hook que permite armazenar em cache uma definição de função entre re-renderizações.
-    <div class="anotacoes">
-      const cachedFn = useCallback(fn, dependencies)
-    </div>
+      <div class="anotacoes">
+        const cachedFn = useCallback(fn, dependencies)
+      </div>
     </p>
     <h3>useCallback(fn, dependencies)</h3>
     <p>
-      Chame useCallbackno nível superior do seu componente para armazenar em cache uma definição de função entre re-renderizações:
+      Chame useCallbackno nível superior do seu componente para armazenar em cache uma definição de função entre
+      re-renderizações:
       <img src="../../frontend/assets/img/useCallBack/1.png" alt="" class="zoomImg">
     </p>
+    <h3>Parâmetros</h3>
+    <ul>
+      <li>
+        fn: o valor da função que você deseja armazenar em cache. Pode receber qualquer argumento e retornar qualquer
+        valor. O React retornará (não chamará!) sua função para você durante a renderização inicial. Nas próximas
+        renderizações, o React fornecerá a mesma função novamente se dependenciesnão tiver mudado desde a última
+        renderização. Caso contrário, ele fornecerá a função que você passou durante a renderização atual e a armazenará
+        caso possa ser reutilizada posteriormente. React não chamará sua função. A função é retornada para você para que
+        você possa decidir quando e se deve chamá-la.
+      </li>
+      <li>
+        dependencies: a lista de todos os valores reativos referenciados dentro do fncódigo. Os valores reativos incluem
+        adereços, estado e todas as variáveis ​​e funções declaradas diretamente dentro do corpo do seu componente. Se o
+        seu linter estiver configurado para React , ele verificará se cada valor reativo está especificado corretamente
+        como uma dependência. A lista de dependências deve ter um número constante de itens e ser escrita inline como
+        [dep1, dep2, dep3]. O React comparará cada dependência com seu valor anterior usando o Object.isalgoritmo de
+        comparação.
+      </li>
+    </ul>
+    <h3>Devoluções</h3>
+    <p>
+      Na renderização inicial, useCallbackretorna a fnfunção que você passou.
+
+      Durante as renderizações subsequentes, ele retornará uma fn função já armazenada da última renderização (se as
+      dependências não tiverem mudado) ou retornará a fnfunção que você passou durante esta renderização.
+    </p>
+    <h3>Ressalvas</h3>
+    <ul>
+      <li>
+        useCallbacké um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios
+        Hooks. Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo componente e mova
+        o estado para ele.
+      </li>
+      <li>
+        O React não descartará a função em cache, a menos que haja um motivo específico para fazer isso. Por exemplo, no
+        desenvolvimento, o React descarta o cache quando você edita o arquivo do seu componente. Tanto no
+        desenvolvimento quanto na produção, o React descartará o cache se o seu componente for suspenso durante a
+        montagem inicial. No futuro, o React poderá adicionar mais recursos que aproveitem o descarte do cache - por
+        exemplo, se o React adicionar suporte integrado para listas virtualizadas no futuro, faria sentido descartar o
+        cache dos itens que rolam para fora do a janela de visualização da tabela virtualizada. Isso deve corresponder
+        às suas expectativas se você confiar useCallbackna otimização de desempenho. Caso contrário, uma variável de
+        estado ou uma referência pode ser mais apropriada.
+      </li>
+    </ul> <hr>
   </section>
 
 </body>
