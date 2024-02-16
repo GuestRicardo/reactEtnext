@@ -73,7 +73,18 @@
         às suas expectativas se você confiar useCallbackna otimização de desempenho. Caso contrário, uma variável de
         estado ou uma referência pode ser mais apropriada.
       </li>
-    </ul> <hr>
+    </ul>
+    <hr>
+    <h2>Uso</h2>
+    <h3>Ignorando a nova renderização de componentes</h3>
+    <p>
+      Ao otimizar o desempenho de renderização, às vezes será necessário armazenar em cache as funções que você passa
+      para os componentes filhos. Vamos primeiro dar uma olhada na sintaxe de como fazer isso e depois ver em quais
+      casos isso é útil.
+
+      Para armazenar em cache uma função entre re-renderizações do seu componente, coloque sua definição no
+      useCallbackHook:
+    </p>
   </section>
 
 </body>
