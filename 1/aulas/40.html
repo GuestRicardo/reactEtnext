@@ -118,6 +118,24 @@
       Digamos que você esteja passando uma handleSubmitfunção do ProductPagepara o ShippingFormcomponente:
       <img src="../../frontend/assets/img/useCallBack/3.png" alt="" class="zoomImg">
     </p>
+    <p>
+      Você notou que alternar o themesuporte congela o aplicativo por um momento, mas se você removê-lo
+      <ShippingForm />do JSX, parece rápido. Isso indica que vale a pena tentar otimizar o ShippingFormcomponente.
+    </p>
+    <p>
+      Por padrão, quando um componente é renderizado novamente, o React renderiza novamente todos os seus filhos
+      recursivamente. É por isso que, quando ProductPageé renderizado novamente com um theme, o ShippingFormcomponente
+      também é renderizado novamente. Isso é adequado para componentes que não exigem muitos cálculos para serem
+      renderizados novamente. Mas se você verificou que uma nova renderização está lenta, você pode ShippingFormpular a
+      nova renderização quando seus adereços forem os mesmos da última renderização, agrupando-os em memo:
+      <div class="exemplos">
+        import { memo } from 'react'; <br>
+        <br>
+        const ShippingForm = memo(function ShippingForm({ onSubmit }) { <br>
+        // ... <br>
+        });
+      </div>
+    </p>
   </section>
 
 </body>
