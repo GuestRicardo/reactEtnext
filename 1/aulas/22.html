@@ -2,78 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../frontend/assets/css/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
 </head>
 
 <body>
-    <div>
-        <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+    <h1 class="cyber">O que é React Hooks? Como funciona?</h1>
+    <p>
+      Hooks são funções que permitem a você “ligar-se” aos recursos de state e ciclo de vida do React a partir de
+      componentes funcionais. Hooks não funcionam dentro de classes — eles permitem que você use React sem
+      classes.
+      Na versão 16.8 do React, foram lançado os hooks, que permitem o uso de vários recursos de forma simples
+      através de funções. Eles também ajudam a organizar a lógica utilizada dentro dos componentes.
+    </p>
+    <p>
+      React fornece alguns Hooks internos como <strong>useState</strong>. Você também pode criar os seus próprios
+      Hooks para
+      reutilizar o comportamento de state entre componentes diferentes. Vamos dar uma olhada nos Hooks internos
+      primeiramente.
+    </p>
+    <p style="background-color: yellow; padding: 35px;">
+      <strong>Explicação Detalhada</strong> <br>
+      Você pode aprender mais sobre State Hook em sua página dedicada: <a
+        href="https://pt-br.legacy.reactjs.org/docs/hooks-state.html" style="background-color: aquamarine;">Utilizando o
+        State Hook.</a>
+    </p>
+    Segue os dois hooks internos do proprio sistema react mais usados:
+    <ul>
+      <li>useEffect</li>
+      <li>useState</li>
+      <li>useCallback</li>
+    </ul>
+    <p>
+      <strong>Hook useEffect</strong>: nos auxilia a lidar com os side-effects (efeitos colaterais) e podemos
+      usá-los também como ciclo de vida do componente.
+      <div class="exemplos">
+        useEffect(()=>{<br>
+        <mark>Tudo que estiver aq no escopo, sera executado somente uma vez</mark>, <strong>Porque nao tem nenhuma
+          dependencia no array abaixo</strong><br>
+        }[<mark><strong>Aqui é um array de dependencia, ela receberá qualquer variavel, e essa variavel pode
+            mudar ate essa propria função, quando ela for chamada</strong></mark>]);
+        <div class="anotacoes">
+          useEffect(()=>{<br>
+          console.log(o que vc quiser q seja executado); <br>
+          } [quantidade de vez q será executado(re-enderizado) o consolelog acima]);<br>
+          <span class="lembrete">lembrete, sempre quando é chamado essa dependencia, o useEffect sempre mudará</span>
+        </div>
+      </div>
+
+    </p>
+    <p>
+      <strong>Hook useState</strong>: permite a criação de estado no componente através de função e faz o
+      gerenciamento do estado local do componente retorna um array como resultado
+      <br>Exemplo:
+      <div class="exemplos">
+        <span class="lembrete">lembrando q sempre dentro do array será passsado 2 arrays </span> <br>
+        const [<strong>primeiro array é o que deseja passar, no caso estado inicial, agora o segundo array é uma
+          função que vem com o inicial "set"qualquer coisa</strong>] = setState([<strong>o valor qu e deseja
+          passar</strong>]);
+        <br>Então usarei um exemplo abaixo para simular o q esta sendo explicado acima
+        <div class="anotacoes">
+          const [posts, setPosts] = useState(10)
+        </div>
+
+      </div>
+    </p>
+    <hr>
+    <h1>Regras dos Hooks</h1>
+    <div class="lembrete">
+      Hooks são funções JavaScript, mas você precisa seguir duas regras ao utilizá-los. Nós providenciamos um plugin
+      ESLint para aplicar essas regras automaticamente:
     </div>
-    <section class="container">
-        <h1 class="cyber">O que é React Hooks? Como funciona?</h1>
-        <p>
-            Hooks são funções que permitem a você “ligar-se” aos recursos de state e ciclo de vida do React a partir de
-            componentes funcionais. Hooks não funcionam dentro de classes — eles permitem que você use React sem
-            classes.
-            Na versão 16.8 do React, foram lançado os hooks, que permitem o uso de vários recursos de forma simples
-            através de funções. Eles também ajudam a organizar a lógica utilizada dentro dos componentes.
-        </p>
-        <p>
-            React fornece alguns Hooks internos como <strong>useState</strong>. Você também pode criar os seus próprios
-            Hooks para
-            reutilizar o comportamento de state entre componentes diferentes. Vamos dar uma olhada nos Hooks internos
-            primeiramente.
-        </p>
-        <p style="background-color: yellow; padding: 35px;">
-            <strong>Explicação Detalhada</strong> <br>
-            Você pode aprender mais sobre State Hook em sua página dedicada: <a
-                href="https://pt-br.legacy.reactjs.org/docs/hooks-state.html"
-                style="background-color: aquamarine;">Utilizando o State Hook.</a>
-        </p>
-        Segue os dois hooks internos do proprio sistema react mais usados:
-        <ul>
-            <li>useEffect</li>
-            <li>useState</li>
-            <li>useCallback</li>
-        </ul>
-        <p>
-            <strong>Hook useEffect</strong>: nos auxilia a lidar com os side-effects (efeitos colaterais) e podemos
-            usá-los também como ciclo de vida do componente.
-            <div class="exemplos">
-                useEffect(()=>{<br>
-                <mark>Tudo que estiver aq no escopo, sera executado somente uma vez</mark>, <strong>Porque nao tem nenhuma dependencia no array abaixo</strong><br>
-                }[<mark><strong>Aqui é um array de dependencia, ela receberá qualquer variavel, e essa variavel pode
-                        mudar ate essa propria função, quando ela for chamada</strong></mark>]);
-                        <div class="anotacoes">
-                            useEffect(()=>{<br>
-                                console.log(o que vc quiser q seja executado); <br>
-                            } [quantidade de vez q será executado(re-enderizado) o consolelog acima]);<br>
-                            <span class="lembrete">lembrete, sempre quando é chamado essa dependencia, o useEffect sempre mudará</span>
-                        </div>
-            </div>
-
-        </p>
-        <p>
-            <strong>Hook useState</strong>: permite a criação de estado no componente através de função e faz o
-            gerenciamento do estado local do componente retorna um array como resultado
-            <br>Exemplo:
-            <div class="exemplos">
-                <span class="lembrete">lembrando q sempre dentro do array será passsado 2 arrays </span> <br>
-                const [<strong>primeiro array é o que deseja passar, no caso estado inicial, agora o segundo array é uma
-                    função que vem com o inicial "set"qualquer coisa</strong>] = setState([<strong>o valor qu e deseja
-                    passar</strong>]);
-                <br>Então usarei um exemplo abaixo para simular o q esta sendo explicado acima
-                <div class="anotacoes">
-                    const [posts, setPosts] = useState(10)
-                </div>
-
-            </div>
-        </p>
-    </section>
+    <h3>Use hooks apenas no nivel superor</h3>
+  </section>
 </body>
 
 </html>
