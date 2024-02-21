@@ -25,9 +25,12 @@
       re-renderizações;<strong style="color: brown;"> Ele é usado para otimização dos componentes, E é recomendado para
         carregamentos de componentes mais pesados</strong>
       <div class="anotacoes">
-        const cachedFn = useCallback(fn, dependencies);
+        const exemplo = useCallback(função, [dependencias]);
       </div>
-    </p>
+    </p><hr>
+    <h3>Exemplo Real</h3>
+    <img src="../../frontend/assets/img/useCallback/1.png" alt="" class="zoomImg">
+    <hr>
     <h3>useCallback(fn, dependencies)</h3>
     <p>
       Chame useCallbackno nível superior do seu componente para armazenar em cache uma definição de função entre
