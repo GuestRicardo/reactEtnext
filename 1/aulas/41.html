@@ -95,13 +95,24 @@
       Para armazenar em cache um cálculo entre re-renderizações, envolva-o em uma useMemochamada no nível superior do
       seu componente:
       <div class="exemplos">
-      import { useMemo } from 'react'; <br>
-      <br>
-      function TodoList({ todos, tab, theme }) { <br>
-      const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]); <br>
-      // ... <br>
-      }
+        import { useMemo } from 'react'; <br>
+        <br>
+        function TodoList({ todos, tab, theme }) { <br>
+        const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]); <br>
+        // ... <br>
+        }
       </div>
+    </p>
+    <p>
+      Você precisa passar duas coisas para useMemo:
+      <ul>
+        <ol>
+          Uma função de cálculo que não aceita argumentos, como () =>, e retorna o que você deseja calcular.
+        </ol>
+        <ol>
+          Uma lista de dependências , incluindo todos os valores do componente usados ​​no cálculo.
+        </ol>
+      </ul>
     </p>
 
   </section>
