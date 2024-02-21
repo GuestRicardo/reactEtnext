@@ -62,12 +62,14 @@
         useMemoé um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios Hooks.
         Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo componente e mova o
         estado para ele.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         No Modo Estrito, o React chamará sua função de cálculo duas vezes para ajudá-lo a encontrar impurezas
         acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Se sua função de cálculo
         for pura (como deveria ser), isso não deverá afetar sua lógica. O resultado de uma das chamadas será ignorado.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         O React não descartará o valor armazenado em cache, a menos que haja um motivo específico para fazer isso. Por
         exemplo, no desenvolvimento, o React descarta o cache quando você edita o arquivo do seu componente. Tanto no
@@ -78,7 +80,8 @@
         você confiar useMemoapenas na otimização de desempenho. Caso contrário, uma variável de estado ou uma referência
         pode ser mais apropriada.
       </li>
-    </ul> <hr>
+    </ul>
+    <hr>
     <div class="lembrete">
       <h3>Observação</h3>
       <p>
@@ -88,6 +91,19 @@
     </div>
     <h3>Uso</h3>
     <h4>Ignorando recálculos caros</h4>
+    <p>
+      Para armazenar em cache um cálculo entre re-renderizações, envolva-o em uma useMemochamada no nível superior do
+      seu componente:
+      <div class="exemplos">
+      import { useMemo } from 'react'; <br>
+      <br>
+      function TodoList({ todos, tab, theme }) { <br>
+      const visibleTodos = useMemo(() => filterTodos(todos, tab), [todos, tab]); <br>
+      // ... <br>
+      }
+      </div>
+    </p>
+
   </section>
 </body>
 
