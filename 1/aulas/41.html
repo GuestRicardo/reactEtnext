@@ -56,8 +56,39 @@
       Durante as próximas renderizações, ele retornará um valor já armazenado da última renderização (se as dependências
       não tiverem sido alteradas) ou chamará calculateValuenovamente e retornará o resultado calculateValueretornado.
     </p>
+    <h4>Ressalvas</h4>
+    <ul>
+      <li>
+        useMemoé um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios Hooks.
+        Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo componente e mova o
+        estado para ele.
+      </li> <hr>
+      <li>
+        No Modo Estrito, o React chamará sua função de cálculo duas vezes para ajudá-lo a encontrar impurezas
+        acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Se sua função de cálculo
+        for pura (como deveria ser), isso não deverá afetar sua lógica. O resultado de uma das chamadas será ignorado.
+      </li> <hr>
+      <li>
+        O React não descartará o valor armazenado em cache, a menos que haja um motivo específico para fazer isso. Por
+        exemplo, no desenvolvimento, o React descarta o cache quando você edita o arquivo do seu componente. Tanto no
+        desenvolvimento quanto na produção, o React descartará o cache se o seu componente for suspenso durante a
+        montagem inicial. No futuro, o React poderá adicionar mais recursos que aproveitem o descarte do cache - por
+        exemplo, se o React adicionar suporte integrado para listas virtualizadas no futuro, faria sentido descartar o
+        cache dos itens que rolam para fora do a janela de visualização da tabela virtualizada. Isso deve ser bom se
+        você confiar useMemoapenas na otimização de desempenho. Caso contrário, uma variável de estado ou uma referência
+        pode ser mais apropriada.
+      </li>
+    </ul> <hr>
+    <div class="lembrete">
+      <h3>Observação</h3>
+      <p>
+        O armazenamento em cache de valores de retorno como esse também é conhecido como memoização , e é por isso que
+        esse Gancho é chamado useMemo.
+      </p>
+    </div>
+    <h3>Uso</h3>
+    <h4>Ignorando recálculos caros</h4>
   </section>
-
 </body>
 
 </html>
