@@ -39,6 +39,7 @@
         inicial. Nas próximas renderizações, o React retornará o mesmo valor novamente se dependenciesnão tiver mudado
         desde a última renderização. Caso contrário, ele chamará calculateValue, retornará seu resultado e o armazenará
         para que possa ser reutilizado posteriormente.</li>
+      <hr>
       <li>
         dependencies: a lista de todos os valores reativos referenciados dentro do calculateValuecódigo. Os valores
         reativos incluem adereços, estado e todas as variáveis ​​e funções declaradas diretamente dentro do corpo do seu
@@ -48,6 +49,13 @@
         a Object.iscomparação.
       </li>
     </ul>
+    <h4>Devoluções</h4>
+    <p>
+      Na renderização inicial, useMemoretorna o resultado da chamada calculateValuesem argumentos.
+
+      Durante as próximas renderizações, ele retornará um valor já armazenado da última renderização (se as dependências
+      não tiverem sido alteradas) ou chamará calculateValuenovamente e retornará o resultado calculateValueretornado.
+    </p>
   </section>
 
 </body>
