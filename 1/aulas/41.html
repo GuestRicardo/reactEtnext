@@ -133,11 +133,23 @@
       executada novamente:
       <div class="exemplos">
         function TodoList({ todos, tab, theme }) { <br>
-          const visibleTodos = filterTodos(todos, tab); <br>
-          // ... <br>
+        const visibleTodos = filterTodos(todos, tab); <br>
+        // ... <br>
         } <br>
       </div>
     </p>
+    <p>
+      Normalmente, isso não é um problema porque a maioria dos cálculos é muito rápida. No entanto, se você estiver
+      filtrando ou transformando uma matriz grande, ou fazendo algum cálculo caro, talvez você queira pular a tarefa
+      novamente se os dados não tiverem sido alterados. Se ambos todose tabforem iguais aos da última renderização,
+      agrupar o cálculo como useMemoantes permite reutilizar visibleTodoso que você já calculou antes.
+    </p>
+    <p>
+      Esse tipo de cache é chamado de memoização.
+    </p>
+    <div class="lembrete">
+
+    </div>
   </section>
 </body>
 
