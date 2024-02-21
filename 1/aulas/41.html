@@ -32,7 +32,22 @@
       Chame useMemo no nível superior do seu componente para armazenar em cache um cálculo entre re-renderizações:
       <img src="../../frontend/assets/img/useMemo/1.png" alt="" class="zoomImg">
     </p>
-
+    <h4>Parâmetros</h4>
+    <ul>
+      <li>calculateValue: a função que calcula o valor que você deseja armazenar em cache. Deve ser puro, não deve
+        aceitar argumentos e deve retornar um valor de qualquer tipo. O React chamará sua função durante a renderização
+        inicial. Nas próximas renderizações, o React retornará o mesmo valor novamente se dependenciesnão tiver mudado
+        desde a última renderização. Caso contrário, ele chamará calculateValue, retornará seu resultado e o armazenará
+        para que possa ser reutilizado posteriormente.</li>
+      <li>
+        dependencies: a lista de todos os valores reativos referenciados dentro do calculateValuecódigo. Os valores
+        reativos incluem adereços, estado e todas as variáveis ​​e funções declaradas diretamente dentro do corpo do seu
+        componente. Se o seu linter estiver configurado para React , ele verificará se cada valor reativo está
+        especificado corretamente como uma dependência. A lista de dependências deve ter um número constante de itens e
+        ser escrita inline como [dep1, dep2, dep3]. O React irá comparar cada dependência com seu valor anterior usando
+        a Object.iscomparação.
+      </li>
+    </ul>
   </section>
 
 </body>
