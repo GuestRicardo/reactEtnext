@@ -21,7 +21,8 @@
     <a href="https://react-dev.translate.goog/reference/react/useMemo?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc&_x_tr_hist=true"
       style="text-decoration: none;">Fonte: useMemo - React</a>
     <p>
-      useMemo é um React Hook que permite armazenar em cache o resultado de um cálculo entre re-renderizações.
+      <strong>useMemo</strong> é um React Hook que permite armazenar em cache o resultado de um cálculo entre
+      re-renderizações.
     </p>
     <div class="anotacoes">
       const cachedValue = useMemo(calculateValue, dependencies)
@@ -34,14 +35,16 @@
     </p>
     <h4>Parâmetros</h4>
     <ul>
-      <li>calculateValue: a função que calcula o valor que você deseja armazenar em cache. Deve ser puro, não deve
+      <li><strong>calculateValue: </strong>a função que calcula o valor que você deseja armazenar em cache. Deve ser
+        puro, não deve
         aceitar argumentos e deve retornar um valor de qualquer tipo. O React chamará sua função durante a renderização
         inicial. Nas próximas renderizações, o React retornará o mesmo valor novamente se dependenciesnão tiver mudado
         desde a última renderização. Caso contrário, ele chamará calculateValue, retornará seu resultado e o armazenará
         para que possa ser reutilizado posteriormente.</li>
       <hr>
       <li>
-        dependencies: a lista de todos os valores reativos referenciados dentro do calculateValuecódigo. Os valores
+        <strong>dependences: </strong>a lista de todos os valores reativos referenciados dentro do calculateValuecódigo.
+        Os valores
         reativos incluem adereços, estado e todas as variáveis ​​e funções declaradas diretamente dentro do corpo do seu
         componente. Se o seu linter estiver configurado para React , ele verificará se cada valor reativo está
         especificado corretamente como uma dependência. A lista de dependências deve ter um número constante de itens e
@@ -52,14 +55,14 @@
     <h4>Devoluções</h4>
     <p>
       Na renderização inicial, useMemoretorna o resultado da chamada calculateValuesem argumentos.
-
+      <br>
       Durante as próximas renderizações, ele retornará um valor já armazenado da última renderização (se as dependências
       não tiverem sido alteradas) ou chamará calculateValuenovamente e retornará o resultado calculateValueretornado.
     </p>
     <h4>Ressalvas</h4>
     <ul>
       <li>
-        useMemoé um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios Hooks.
+        <strong>useMemo</strong> é um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos seus próprios Hooks.
         Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo componente e mova o
         estado para ele.
       </li>
@@ -104,7 +107,7 @@
       </div>
     </p>
     <p>
-      Você precisa passar duas coisas para useMemo:
+      Você precisa passar duas coisas para <strong>useMemo</strong>:
       <ol>
         <li>
           Uma função de cálculo que não aceita argumentos, como () =>, e retorna o que você deseja calcular.
