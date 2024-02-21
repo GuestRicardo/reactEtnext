@@ -22,7 +22,8 @@
       style="text-decoration: none;">Fonte: useCallBack - React</a>
     <p>
       useCallbacké um React Hook que permite armazenar em cache uma definição de função entre
-      re-renderizações;<strong style="color: brown;"> Ele é usado para otimização dos componentes</strong>
+      re-renderizações;<strong style="color: brown;"> Ele é usado para otimização dos componentes, E é recomendado para
+        carregamentos de componentes mais pesados</strong>
       <div class="anotacoes">
         const cachedFn = useCallback(fn, dependencies);
       </div>
@@ -57,7 +58,7 @@
     <h3>Devoluções</h3>
     <p>
       Na renderização inicial, useCallbackretorna a fnfunção que você passou.
-<br>
+      <br>
       Durante as renderizações subsequentes, ele retornará uma fn função já armazenada da última renderização (se as
       dependências não tiverem mudado) ou retornará a fnfunção que você passou durante esta renderização.
     </p>
