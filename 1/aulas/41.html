@@ -113,8 +113,25 @@
           Uma lista de dependências , incluindo todos os valores do componente usados ​​no cálculo.
         </li>
       </ol>
+      Na renderização inicial, o valor que você obterá useMemoserá o resultado da chamada do seu cálculo .
+    </p>
+    <p>
+      Em cada renderização subsequente, o React comparará as dependências com as dependências que você passou durante a
+      última renderização. Se nenhuma das dependências tiver sido alterada (em comparação com Object.is),
+      useMemoretornará o valor que você já calculou antes. Caso contrário, o React executará novamente o seu cálculo e
+      retornará o novo valor.
+    </p>
+    <p>
+      Em outras palavras, useMemoarmazena em cache um resultado de cálculo entre re-renderizações até que suas
+      dependências sejam alteradas.
     </p>
 
+    <strong>Vejamos um exemplo para ver quando isso é útil.</strong>
+    <p>
+      Por padrão, o React executará novamente todo o corpo do seu componente sempre que ele for renderizado novamente.
+      Por exemplo, se TodoListatualizar seu estado ou receber novos adereços de seu pai, a filterTodosfunção será
+      executada novamente:
+    </p>
   </section>
 </body>
 
