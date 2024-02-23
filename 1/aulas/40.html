@@ -27,9 +27,17 @@
       <div class="anotacoes">
         const exemplo = useCallback(função, [dependencias]);
       </div>
-    </p><hr>
+    </p>
+    <hr>
     <h3>Exemplo Real</h3>
     <img src="../../frontend/assets/img/useCallback/1.png" alt="" class="zoomImg">
+    <hr>
+    <h2>Na pratica.</h2>
+    <p>
+      Ele serve para performace, ele salva funções, ele faz um cash de funções que não mudam, exemplo: se a o que
+      estiver usando nao mudar nao faz sentido fazer com que seja carregada toda vez q for renderizado o componente
+
+    </p>
     <hr>
     <h3>useCallback(fn, dependencies)</h3>
     <p>
