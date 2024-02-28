@@ -35,7 +35,8 @@
         <br>
         function MyComponent() {<br>
         const intervalRef = useRef(0);<br>
-        const inputRef = useRef(null);
+        const inputRef = useRef(null); <br>
+        /......
       </div>
     </p>
     <h4>Parâmetros</h4>
@@ -61,23 +62,92 @@
       <li>
         Você pode alterar a ref.currentpropriedade. Ao contrário do estado, é mutável. No entanto, se ele contiver um
         objeto usado para renderização (por exemplo, uma parte do seu estado), você não deverá alterar esse objeto.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         Quando você altera a ref.currentpropriedade, o React não renderiza novamente seu componente. O React não percebe
         quando você o altera porque um ref é um objeto JavaScript simples.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         Não escreva ou leia ref.current durante a renderização, exceto durante a inicialização. Isso torna o
         comportamento do seu componente imprevisível.
-      </li> <hr>
+      </li>
+      <hr>
       <li>
         No Modo Estrito, o React chamará a função do seu componente duas vezes para ajudá-lo a encontrar impurezas
         acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Cada objeto ref será
         criado duas vezes, mas uma das versões será descartada. Se a função do seu componente for pura (como deveria
         ser), isso não deverá afetar o comportamento.
       </li>
-    </ul><hr>
-
+    </ul>
+    <hr>
+    <h3>Uso</h3>
+    <h4>Referenciando um valor com uma referência</h4>
+    <p>
+      Chame useRefno nível superior do seu componente para declarar uma ou mais referências.
+      <div class="exemplos">
+        import { useRef } from 'react'; <br>
+        <br>
+        function Stopwatch() {<br>
+        const intervalRef = useRef(0);<br>
+        /....
+      </div>
+    </p>
+    <p>
+      useRef retorna um objeto ref com uma única currentpropriedade inicialmente definida com o valor inicial que você
+      forneceu.
+    </p>
+    <p>
+      Nas próximas renderizações, useRefretornará o mesmo objeto. Você pode alterar sua currentpropriedade para
+      armazenar informações e lê-las mais tarde. Isso pode lembrá-lo de state , mas há uma diferença importante.
+    </p>
+    <p>
+      Alterar uma referência não aciona uma nova renderização. Isso significa que as referências são perfeitas para
+      armazenar informações que não afetam a saída visual do seu componente. Por exemplo, se você precisar armazenar um
+      ID de intervalo e recuperá-lo posteriormente, poderá colocá-lo em uma ref. Para atualizar o valor dentro da ref,
+      você precisa alterar manualmente sua currentpropriedade :
+      <div class="exemplos">
+        function handleStartClick() {<br>
+        const intervalId = setInterval(() => {<br>
+        // ...<br>
+        }, 1000);<br>
+        intervalRef.current = intervalId;<br>
+        }<br>
+      </div>
+    </p>
+    <p>
+      Posteriormente, você pode ler o ID do intervalo na referência para poder chamar clear that interval :
+    </p>
+    <div class="exemplos">
+      function handleStopClick() {<br>
+      const intervalId = intervalRef.current;<br>
+      clearInterval(intervalId);<br>
+      }
+    </div>
+    <p>
+      Ao usar uma referência, você garante que:
+      <ul>
+        <li>
+          Você pode armazenar informações entre re-renderizações (ao contrário de variáveis ​​regulares, que são
+          redefinidas a cada renderização).
+        </li>
+        <hr>
+        <li>
+          Alterá-lo não aciona uma nova renderização (ao contrário das variáveis ​​de estado, que acionam uma nova
+          renderização).
+        </li>
+        <hr>
+        <li>
+          A informação é local para cada cópia do seu componente (ao contrário das variáveis ​​externas, que são
+          compartilhadas).
+        </li>
+        <hr>
+        Alterar uma referência não aciona uma nova renderização, portanto as referências não são apropriadas para
+        armazenar informações que você deseja exibir na tela. Use state para isso. Leia mais sobre como escolher entre
+        useRefe useState.
+      </ul>
+    </p>
 
   </section>
 </body>
