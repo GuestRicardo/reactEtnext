@@ -30,6 +30,24 @@
     <h4>useRef(initialValue) </h4>
     <p>
       Chame useRef no nível superior do seu componente para declarar uma ref.
+      <div class="anotacoes">
+        import { useRef } from 'react'; <br>
+        <br>
+        function MyComponent() {<br>
+        const intervalRef = useRef(0);<br>
+        const inputRef = useRef(null);
+      </div>
+    </p>
+    <h4>Parâmetros</h4>
+    <ul>
+      <li>
+        <strong>initial Value:</strong> O valor que você deseja que a propriedade do objeto ref currenttenha inicialmente. Pode ser um
+        valor de qualquer tipo. Este argumento é ignorado após a renderização inicial.
+      </li>
+    </ul>
+    <h4>Devoluções</h4>
+    <p>
+      <strong>useRef</strong> retorna um objeto com uma única propriedade:
     </p>
   </section>
 </body>
