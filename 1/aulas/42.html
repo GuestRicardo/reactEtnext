@@ -41,14 +41,44 @@
     <h4>Parâmetros</h4>
     <ul>
       <li>
-        <strong>initial Value:</strong> O valor que você deseja que a propriedade do objeto ref currenttenha inicialmente. Pode ser um
+        <strong>initial Value:</strong> O valor que você deseja que a propriedade do objeto ref currenttenha
+        inicialmente. Pode ser um
         valor de qualquer tipo. Este argumento é ignorado após a renderização inicial.
       </li>
     </ul>
     <h4>Devoluções</h4>
     <p>
       <strong>useRef</strong> retorna um objeto com uma única propriedade:
+      <ul>
+        <li>current: Inicialmente, está definido como initialValuevocê passou. Mais tarde, você pode configurá-lo para
+          outra coisa. Se você passar o objeto ref para o React como um refatributo para um nó JSX, o React definirá sua
+          currentpropriedade.</li>
+      </ul>
+      Nas próximas renderizações, useRefretornará o mesmo objeto.
     </p>
+    <h4>Ressalvas</h4>
+    <ul>
+      <li>
+        Você pode alterar a ref.currentpropriedade. Ao contrário do estado, é mutável. No entanto, se ele contiver um
+        objeto usado para renderização (por exemplo, uma parte do seu estado), você não deverá alterar esse objeto.
+      </li> <hr>
+      <li>
+        Quando você altera a ref.currentpropriedade, o React não renderiza novamente seu componente. O React não percebe
+        quando você o altera porque um ref é um objeto JavaScript simples.
+      </li> <hr>
+      <li>
+        Não escreva ou leia ref.current durante a renderização, exceto durante a inicialização. Isso torna o
+        comportamento do seu componente imprevisível.
+      </li> <hr>
+      <li>
+        No Modo Estrito, o React chamará a função do seu componente duas vezes para ajudá-lo a encontrar impurezas
+        acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Cada objeto ref será
+        criado duas vezes, mas uma das versões será descartada. Se a função do seu componente for pura (como deveria
+        ser), isso não deverá afetar o comportamento.
+      </li>
+    </ul><hr>
+
+
   </section>
 </body>
 
