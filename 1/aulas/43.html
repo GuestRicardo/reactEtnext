@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+
+    <h1>useContext</h1>
+    <a href="https://react-dev.translate.goog/reference/react/useContext?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc&_x_tr_hist=true"
+      style="text-decoration: none;">Fonte: useRef - React</a>
+    <p>
+      <strong>useContext</strong> é um React Hook que permite ler e assinar o contexto do seu componente.
+    </p>
+    <div class="exemplos">
+      const value = useContext(SomeContext)
+    </div>
+    <h2>Referência</h2>
+    <h4>useContext(SomeContext) </h4>
+    <p>
+      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
+      <div class="anotacoes">
+        import { useContext } from 'react'; <br>
+        <br>
+        function MyComponent() { <br>
+        const theme = useContext(ThemeContext); <br>
+        /......
+      </div>
+    </p>
+    <hr>
+    <h3>Exemplo feito</h3>
+    <p>
+      O exemplo que esta sendo usado aqui, terá como referencia o clique no titulo do artigo carregado. <br>
+      Ele sera automaticamente carredo no input, o react esta atrelando o input com o ref q será usado toda vez que o
+      input muda ele estará em foco para se caso queira digitar algo amais. <br>
+      Tambem esta sendo contado a quatidade de vezes que o elemento esta sendo renderizado, este elemento é o PAI.
+    </p>
+    <img src="../../frontend/assets/img/useRef/1.png" alt="" class="zoomImg">
+    <hr>
+    <h4>Parâmetros</h4>
+    <ul>
+      <li>
+        <strong>SomeContext:</strong> o contexto que você criou anteriormente com createContext. O
+        contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
+        dos componentes.
+      </li>
+    </ul>
+    <h4>Devoluções</h4>
+
+    <ul>
+      <li><strong>useContext:</strong> retorna o valor de contexto do componente de chamada. É determinado como o
+        valuepassado para o componente
+        mais próximo SomeContext.Provideracima do componente de chamada na árvore. Se não existir tal provedor, o
+        valor retornado será o que defaultValuevocê passou createContextpara esse contexto. O valor retornado está
+        sempre atualizado. O React renderiza novamente automaticamente os componentes que leem algum contexto se ele
+        mudar.</li>
+    </ul>
+
+    <h4>Ressalvas</h4>
+    <ul>
+      <li>
+        useContext()a chamada em um componente não é afetada por provedores retornados do mesmo componente. O
+        correspondente <code>
+          <Context.Provider>
+        </code> precisa estar acima do componente que está fazendo a useContext()chamada.
+      </li>
+      <hr>
+      <li>
+        O React renderiza automaticamente todos os filhos que usam um contexto específico, começando pelo provedor que
+        recebe um arquivo value. Os valores anteriores e seguintes são comparados com a Object.iscomparação. Ignorar as
+        novas renderizações memonão impede que os filhos recebam novos valores de contexto.
+      </li>
+      <hr>
+      <li>
+        Se o seu sistema de compilação produzir módulos duplicados na saída (o que pode acontecer com links simbólicos),
+        isso poderá quebrar o contexto. Passar algo via contexto só funciona se SomeContexto que você usa para fornecer
+        o contexto e SomeContexto que você usa para lê-lo são exatamente o mesmo object , conforme determinado por uma
+        ===comparação.
+      </li>
+
+    </ul>
+    <hr>
+    <h3>Uso</h3>
+    <h4>Passando dados profundamente na árvore</h4>
+    <p>
+      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
+      <div class="exemplos">
+        import { useContext } from 'react'; <br>
+        <br>
+        function Button() { <br>
+        const theme = useContext(ThemeContext); <br>
+        // ...
+      </div>
+    </p>
+    <p>
+      useContextretorna o valor do contexto para o contexto que você passou. Para determinar o valor do contexto, o
+      React pesquisa a árvore de componentes e encontra o provedor de contexto mais próximo acima para aquele contexto
+      específico.
+    </p>
+    <p>
+      Para passar o contexto para um Button, envolva-o ou um de seus componentes pai no provedor de contexto
+      correspondente:
+    </p>
+
+    <div class="exemplos">
+      function MyPage() { <br>
+      return ( <br>
+      <code>
+        <ThemeContext.Provider value="dark"> <br>
+          <Form /> <br>
+        </ThemeContext.Provider> <br>
+      </code>
+      ); <br>
+      } <br>
+
+      function Form() { <br>
+      // ... renders buttons inside ... <br>
+      }
+    </div>
+
+    <p>
+      Não importa quantas camadas de componentes existem entre o provedor e o Button. Quando um Button lugar dentro de
+      Formchama useContext(ThemeContext), ele receberá "dark"como valor.
+    </p>
+    <div class="lembretes">
+      useContext()sempre procura o provedor mais próximo acima do componente que o chama. Ele pesquisa para cima e não
+      considera provedores no componente do qual você está ligando useContext().
+    </div>
+
+
+  </section>
+</body>
+
+</html>
