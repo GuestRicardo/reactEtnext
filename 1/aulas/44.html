@@ -115,7 +115,7 @@
       </li>
     </ul>
     <hr>
-    <h3>dispatchfunção</h3>
+    <h3>dispatch função</h3>
     <p>
       A dispatchfunção retornada por useReducerpermite atualizar o estado para um valor diferente e acionar uma nova
       renderização. Você precisa passar a ação como único argumento para a dispatchfunção:
@@ -162,6 +162,42 @@
       </li>
     </ul>
     <hr>
+    <h2>Uso</h2>
+    <h3>Adicionando um redutor a um componente</h3>
+    <p>
+      Chame useReducer no nível superior do seu componente para gerenciar o estado com um redutor.
+    </p>
+    <div class="exemplos">
+      import { useReducer } from 'react'; <br>
+      <br>
+      function reducer(state, action) {<br>
+      // ...<br>
+      }<br>
+      <br>
+      function MyComponent() {<br>
+      const [state, dispatch] = useReducer(reducer, { age: 42 });<br>
+      // ...
+    </div>
+    <p>
+      <strong>useReducer</strong> retorna um array com exatamente dois itens:
+    </p>
+    <ol>
+      <li>
+        O estado atual desta variável de estado, inicialmente definido para o estado inicial que você forneceu.
+      </li>
+      <li>
+        A dispatchfunção que permite alterá-lo em resposta à interação.
+      </li>
+    </ol>
+    <p>
+      Para atualizar o que está na tela, chame dispatchcom um objeto representando o que o usuário fez, chamado action :
+      <div class="exemplos">
+        function handleClick() { <br>
+        dispatch({ type: 'incremented_age' }); <br>
+        }
+      </div>
+    </p>
+
   </section>
 </body>
 
