@@ -197,6 +197,38 @@
         }
       </div>
     </p>
+    <p>
+      O React passará o estado atual e a ação para sua função redutora . Seu redutor calculará e retornará o próximo
+      estado. O React armazenará o próximo estado, renderizará seu componente com ele e atualizará a UI.
+      <div class="exemplos">
+        import { useReducer } from 'react'; <br>
+        <br>
+        function reducer(state, action) {<br>
+        if (action.type === 'incremented_age') {<br>
+        return {<br>
+        age: state.age + 1<br>
+        };<br>
+        }<br>
+        throw Error('Unknown action.');<br>
+        }<br>
+        <br>
+        export default function Counter() {<br>
+        const [state, dispatch] = useReducer(reducer, { age: 42 });<br>
+        <br>
+        return (<br>
+        <><br>
+          <button onClick={()=> {<br>
+            dispatch({ type: 'incremented_age' })<br>
+            }}><br>
+            Increment age<br>
+          </button><br>
+          <p>Hello! You are {state.age}.</p><br>
+        </><br>
+        );<br>
+        }
+
+      </div>
+    </p>
 
   </section>
 </body>
