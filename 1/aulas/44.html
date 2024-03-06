@@ -29,13 +29,17 @@
     <h2>Referência</h2>
     <h4>useReducer(reducer, initialArg, init?) </h4>
     <p>
-      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
+      Chame useReducero nível superior do seu componente para gerenciar seu estado com um redutor.
       <div class="anotacoes">
-        import { useContext } from 'react'; <br>
+        import { useReducer } from 'react'; <br>
         <br>
-        function MyComponent() { <br>
-        const theme = useContext(ThemeContext); <br>
-        /......
+        function reducer(state, action) {<br>
+        // ...<br>
+        }<br>
+        <br>
+        function MyComponent() {<br>
+        const [state, dispatch] = useReducer(reducer, { age: 42 });<br>
+        // ...
       </div>
     </p>
     <hr>
