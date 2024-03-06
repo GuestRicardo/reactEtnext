@@ -76,25 +76,19 @@
         o estado e a ação como argumentos e deve retornar o próximo estado. Estado e ação podem ser de qualquer tipo.
       </li>
       <li>
-        <strong>initialArg:</strong> o contexto que você criou anteriormente com createContext. O
-        contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
-        dos componentes.
+        <strong>initialArg:</strong> O valor a partir do qual o estado inicial é calculado. Pode ser um valor de
+        qualquer tipo. Como o estado inicial é calculado depende do próximo initargumento.
       </li>
       <li>
-        <strong>opcional init:</strong> o contexto que você criou anteriormente com createContext. O
-        contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
-        dos componentes.
+        <strong>opcional init:</strong> init : a função inicializadora que deve retornar o estado inicial. Se não for
+        especificado, o estado inicial será definido como initialArg. Caso contrário, o estado inicial será definido
+        como o resultado da chamada init(initialArg).
       </li>
     </ul>
     <h4>Devoluções</h4>
 
     <ul>
-      <li><strong>useContext:</strong> retorna o valor de contexto do componente de chamada. É determinado como o
-        valuepassado para o componente
-        mais próximo SomeContext.Provideracima do componente de chamada na árvore. Se não existir tal provedor, o
-        valor retornado será o que defaultValuevocê passou createContextpara esse contexto. O valor retornado está
-        sempre atualizado. O React renderiza novamente automaticamente os componentes que leem algum contexto se ele
-        mudar.</li>
+      <li><strong>useReducer:</strong> retorna um array com exatamente dois valores:</li>
     </ul>
 
     <h4>Ressalvas</h4>
