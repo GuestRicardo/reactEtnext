@@ -293,6 +293,34 @@
       array. <br>
 
       Leia extraindo lógica de estado em um redutor para saber mais.
+      <div class="lembrete">
+        <h2>Armadilha</h2>
+        <p>
+          O estado é somente leitura. Não modifique nenhum objeto ou array no estado:
+        </p>
+        <div class="exemplos">
+          function reducer(state, action) { <br>
+          switch (action.type) {<br>
+          case 'incremented_age': {<br>
+          // 🚩 Don't mutate an object in state like this:<br>
+          state.age = state.age + 1;<br>
+          return state;<br>
+          }
+        </div>
+        Em vez disso, sempre retorna novos objetos do seu rodutor:
+        <div class="exemplos">
+          function reducer(state, action) { <br>
+          switch (action.type) { <br>
+          case 'incremented_age': { <br>
+          // ✅ Instead, return a new object <br>
+          return { <br>
+          ...state, <br>
+          age: state.age + 1 <br>
+          }; <br>
+          }
+        </div>
+
+      </div>
     </p>
   </section>
 </body>
