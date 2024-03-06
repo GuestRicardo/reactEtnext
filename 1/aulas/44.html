@@ -86,81 +86,82 @@
       </li>
     </ul>
     <h4>Devoluções</h4>
-
-    <ul>
-      <li><strong>useReducer:</strong> retorna um array com exatamente dois valores:</li>
-    </ul>
+    <p>
+      <strong>useReducer:</strong> retorna um array com exatamente dois valores:
+    </p>
+    <ol>
+      <li>
+        O estado atual. Durante a primeira renderização, é definido como init(initialArg)ou initialArg(se não houver
+        init).
+      </li>
+      <li>
+        A dispatchfunção que permite atualizar o estado para um valor diferente e acionar uma nova renderização.
+      </li>
+    </ol>
 
     <h4>Ressalvas</h4>
     <ul>
       <li>
-        useContext()a chamada em um componente não é afetada por provedores retornados do mesmo componente. O
-        correspondente <code>
-          <Context.Provider>
-        </code> precisa estar acima do componente que está fazendo a useContext()chamada.
+        <strong>useReducer</strong> é um Hook, então você só pode chamá-lo no nível superior do seu componente ou nos
+        seus próprios Hooks. Você não pode chamá-lo dentro de loops ou condições. Se precisar disso, extraia um novo
+        componente e mova o estado para ele.
       </li>
       <hr>
       <li>
-        O React renderiza automaticamente todos os filhos que usam um contexto específico, começando pelo provedor que
-        recebe um arquivo value. Os valores anteriores e seguintes são comparados com a Object.iscomparação. Ignorar as
-        novas renderizações memonão impede que os filhos recebam novos valores de contexto.
+        No modo estrito, o React chamará seu redutor e inicializador duas vezes para ajudá-lo a encontrar impurezas
+        acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Se o seu redutor e
+        inicializador forem puros (como deveriam ser), isso não deverá afetar sua lógica. O resultado de uma das
+        chamadas é ignorado.
       </li>
-      <hr>
-      <li>
-        Se o seu sistema de compilação produzir módulos duplicados na saída (o que pode acontecer com links simbólicos),
-        isso poderá quebrar o contexto. Passar algo via contexto só funciona se SomeContexto que você usa para fornecer
-        o contexto e SomeContexto que você usa para lê-lo são exatamente o mesmo object , conforme determinado por uma
-        ===comparação.
-      </li>
-
     </ul>
     <hr>
-    <h3>Uso</h3>
-    <h4>Passando dados profundamente na árvore</h4>
+    <h3>dispatchfunção</h3>
     <p>
-      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
-      <div class="exemplos">
-        import { useContext } from 'react'; <br>
-        <br>
-        function Button() { <br>
-        const theme = useContext(ThemeContext); <br>
-        // ...
-      </div>
+      A dispatchfunção retornada por useReducerpermite atualizar o estado para um valor diferente e acionar uma nova
+      renderização. Você precisa passar a ação como único argumento para a dispatchfunção:
     </p>
-    <p>
-      useContextretorna o valor do contexto para o contexto que você passou. Para determinar o valor do contexto, o
-      React pesquisa a árvore de componentes e encontra o provedor de contexto mais próximo acima para aquele contexto
-      específico.
-    </p>
-    <p>
-      Para passar o contexto para um Button, envolva-o ou um de seus componentes pai no provedor de contexto
-      correspondente:
-    </p>
-
     <div class="exemplos">
-      function MyPage() { <br>
-      return ( <br>
-      <code>
-        <ThemeContext.Provider value="dark"> <br>
-          <Form /> <br>
-        </ThemeContext.Provider> <br>
-      </code>
-      ); <br>
-      } <br>
-
-      function Form() { <br>
-      // ... renders buttons inside ... <br>
-      }
+      const [state, dispatch] = useReducer(reducer, { age: 42 }); <br>
+      <br>
+      function handleClick() {<br>
+      dispatch({ type: 'incremented_age' });<br>
+      // ...
     </div>
 
     <p>
-      Não importa quantas camadas de componentes existem entre o provedor e o Button. Quando um Button lugar dentro de
-      Formchama useContext(ThemeContext), ele receberá "dark"como valor.
+      O React definirá o próximo estado como o resultado da chamada da reducerfunção que você forneceu com o atual
+      statee a ação para a qual você passou dispatch.
     </p>
-    <div class="lembretes">
-      useContext()sempre procura o provedor mais próximo acima do componente que o chama. Ele pesquisa para cima e não
-      considera provedores no componente do qual você está ligando useContext().
+    <div style="border: solid 3px  rgb(255, 12, 12); padding-left: 25px;">
+      <h4>Parâmetros</h4>
+      <ul>
+        <li>
+          <strong>dispatch</strong>
+          funções não têm um valor de retorno.
+        </li>
+      </ul>
     </div>
+    <h4>Ressalvas</h4>
+    <ul>
+      <li>
+        A dispatch função apenas atualiza a variável de estado para a próxima renderização . Se você ler a variável de
+        estado depois de chamar a dispatchfunção, ainda obterá o valor antigo que estava na tela antes da sua chamada.
+      </li>
+      <hr>
+      <li>
+        Se o novo valor fornecido for idêntico ao current state, conforme determinado por uma Object.is comparação, o
+        React irá pular a nova renderização do componente e seus filhos. Esta é uma otimização. O React ainda pode
+        precisar chamar seu componente antes de ignorar o resultado, mas isso não deve afetar seu código.
+      </li>
+      <hr>
+      <li>
+        Atualizações de estado dos lotes do React . Ele atualiza a tela depois que todos os manipuladores de eventos
+        foram executados e chamaram suas setfunções. Isso evita múltiplas renderizações durante um único evento. No caso
+        raro de você precisar forçar o React a atualizar a tela mais cedo, por exemplo, para acessar o DOM, você pode
+        usar flushSync.
+      </li>
+    </ul>
+    <hr>
   </section>
 </body>
 
