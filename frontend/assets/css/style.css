@@ -87,12 +87,12 @@ form button:hover {
   font-size: medium;
   padding: 5px;
   margin: 5px;
-  padding: 10px;
+  padding: 25px;
 }
 
 .anotacoes {
   color: rgb(43, 114, 78);
-  padding-left: 6px;
+  padding: 25px;
 }
 
 input {
