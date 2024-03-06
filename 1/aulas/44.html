@@ -190,7 +190,8 @@
       </li>
     </ol>
     <p>
-      Para atualizar o que está na tela, chame dispatchcom um objeto representando o que o usuário fez, chamado action :
+      Para atualizar o que está na tela, chame dispatch com um objeto representando o que o usuário fez, chamado action
+      :
       <div class="exemplos">
         function handleClick() { <br>
         dispatch({ type: 'incremented_age' }); <br>
@@ -226,10 +227,73 @@
         </><br>
         );<br>
         }
-
       </div>
     </p>
+    <p>
+      <strong>useReducer</strong> é muito semelhante a useState, mas permite mover a lógica de atualização de estado dos
+      manipuladores de eventos para uma única função fora do seu componente. Leia mais sobre como escolher entre
+      useStatee useReducer.
+    </p>
+    <hr>
+    <h2>Escrevendo a função redutora</h2>
+    <p>
+      uma função redutora é declarada assim:
+      <div class="exemplos">
+        function reducer(state, action) { <br>
+        // ...<br>
+        }
+      </div>
+    </p>
+    <p>
+      Depois você precisa preencher o código que irá calcular e retornar o próximo estado. Por convenção, é comum
+      escrevê-lo como uma switchdeclaração. Para cada um caseno switch, calcule e retorne o próximo estado.
+      <div class="exemplos">
+        function reducer(state, action) {<br>
+        switch (action.type) {<br>
+        case 'incremented_age': {<br>
+        return {<br>
+        name: state.name,<br>
+        age: state.age + 1<br>
+        };<br>
+        }<br>
+        case 'changed_name': {<br>
+        return {<br>
+        name: action.nextName,<br>
+        age: state.age<br>
+        };<br>
+        }<br>
+        }<br>
+        throw Error('Unknown action: ' + action.type);<br>
+        }
+      </div>
+    </p>
+    <p>
+      As ações podem ter qualquer formato. Por convenção, é comum passar objetos com uma typepropriedade que identifica
+      a ação. Deve incluir as informações mínimas necessárias que o redutor precisa para calcular o próximo estado.
+      <div class="exemplos">
+        function Form() {<br>
+        const [state, dispatch] = useReducer(reducer, { name: 'Taylor', age: 42 });<br>
+        <br>
+        function handleButtonClick() {<br>
+        dispatch({ type: 'incremented_age' });<br>
+        }<br>
+        <br>
+        function handleInputChange(e) {<br>
+        dispatch({<br>
+        type: 'changed_name',<br>
+        nextName: e.target.value<br>
+        });<br>
+        }<br>
+        // ...
+      </div>
+    </p>
+    <p>
+      Os nomes dos tipos de ação são locais para o seu componente. Cada ação descreve uma única interação, mesmo que
+      isso leve a diversas alterações nos dados. A forma do estado é arbitrária, mas geralmente será um objeto ou um
+      array. <br>
 
+      Leia extraindo lógica de estado em um redutor para saber mais.
+    </p>
   </section>
 </body>
 
