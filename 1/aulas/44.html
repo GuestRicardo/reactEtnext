@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+
+    <h1>useContext</h1>
+    <a href="https://react-dev.translate.goog/reference/react/useContext?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc&_x_tr_hist=true"
+      style="text-decoration: none;">Fonte: useRef - React</a>
+    <p>
+      <strong>useContext</strong> é um React Hook que permite ler e assinar o contexto do seu componente.
+    </p>
+    <div class="exemplos">
+      const value = useContext(SomeContext)
+    </div>
+    <h2>Referência</h2>
+    <h4>useContext(SomeContext) </h4>
+    <p>
+      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
+      <div class="anotacoes">
+        import { useContext } from 'react'; <br>
+        <br>
+        function MyComponent() { <br>
+        const theme = useContext(ThemeContext); <br>
+        /......
+      </div>
+    </p>
+    <hr>
+    <h3>Exemplo feito sem o useContext</h3>
+    <p>
+      Para entender primeiro sobre esse hook sera preciso entender o q é contexto; quando tem um componente com
+      varios outros dentro, para especificar filhos ou irmãos, entã e 8 o seria varias propriedades descendo de niveis e
+      por isso se torna inviavel usar dessa forma, pois todos seram instanciados como numa escada(cadeia, o pai
+      instancia no filho, o filho 1 instancia no 2 e assim por diante) passando varias props ate chegar no componente
+      que deseja exibir. Para evitar essa situação será criado o estado global,onde apartir dele possa se transitar em
+      qualquer lugar do codigo atravez do contexto sera passado o estado inicial, usando a propriedade Provider.
+    </p>
+    <p>
+      Com isso os componentes podem ver o contexto para controlar sera o value(valor), que será passado via contexto.
+      Entao em resulmo, o contexto recebe o estado inicial para q o componente possa o ver e com useContext esta sendo
+      pegado elementos do filho sem precisar de props de forma direta, sendo a vantagem do useContext.
+    </p>
+    <img src="../../frontend/assets/img/useContext/1.png" alt="" class="zoomImg">
+    <div class="lembrete">
+      esse exemplo esta sem o useContext
+    </div>
+    <hr>
+    <h3>Exemplo feito com useContext</h3>
+    <img src="../../frontend/assets/img/useContext/2.png" alt="" class="zoomImg">
+    <img src="../../frontend/assets/img/useContext/3.png" alt="" class="zoomImg">
+    <p>
+
+    </p>
+    <hr>
+    <h4>Parâmetros</h4>
+    <ul>
+      <li>
+        <strong>SomeContext:</strong> o contexto que você criou anteriormente com createContext. O
+        contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
+        dos componentes.
+      </li>
+    </ul>
+    <h4>Devoluções</h4>
+
+    <ul>
+      <li><strong>useContext:</strong> retorna o valor de contexto do componente de chamada. É determinado como o
+        valuepassado para o componente
+        mais próximo SomeContext.Provideracima do componente de chamada na árvore. Se não existir tal provedor, o
+        valor retornado será o que defaultValuevocê passou createContextpara esse contexto. O valor retornado está
+        sempre atualizado. O React renderiza novamente automaticamente os componentes que leem algum contexto se ele
+        mudar.</li>
+    </ul>
+
+    <h4>Ressalvas</h4>
+    <ul>
+      <li>
+        useContext()a chamada em um componente não é afetada por provedores retornados do mesmo componente. O
+        correspondente <code>
+          <Context.Provider>
+        </code> precisa estar acima do componente que está fazendo a useContext()chamada.
+      </li>
+      <hr>
+      <li>
+        O React renderiza automaticamente todos os filhos que usam um contexto específico, começando pelo provedor que
+        recebe um arquivo value. Os valores anteriores e seguintes são comparados com a Object.iscomparação. Ignorar as
+        novas renderizações memonão impede que os filhos recebam novos valores de contexto.
+      </li>
+      <hr>
+      <li>
+        Se o seu sistema de compilação produzir módulos duplicados na saída (o que pode acontecer com links simbólicos),
+        isso poderá quebrar o contexto. Passar algo via contexto só funciona se SomeContexto que você usa para fornecer
+        o contexto e SomeContexto que você usa para lê-lo são exatamente o mesmo object , conforme determinado por uma
+        ===comparação.
+      </li>
+
+    </ul>
+    <hr>
+    <h3>Uso</h3>
+    <h4>Passando dados profundamente na árvore</h4>
+    <p>
+      Chame useContextno nível superior do seu componente para ler e assinar o contexto.
+      <div class="exemplos">
+        import { useContext } from 'react'; <br>
+        <br>
+        function Button() { <br>
+        const theme = useContext(ThemeContext); <br>
+        // ...
+      </div>
+    </p>
+    <p>
+      useContextretorna o valor do contexto para o contexto que você passou. Para determinar o valor do contexto, o
+      React pesquisa a árvore de componentes e encontra o provedor de contexto mais próximo acima para aquele contexto
+      específico.
+    </p>
+    <p>
+      Para passar o contexto para um Button, envolva-o ou um de seus componentes pai no provedor de contexto
+      correspondente:
+    </p>
+
+    <div class="exemplos">
+      function MyPage() { <br>
+      return ( <br>
+      <code>
+        <ThemeContext.Provider value="dark"> <br>
+          <Form /> <br>
+        </ThemeContext.Provider> <br>
+      </code>
+      ); <br>
+      } <br>
+
+      function Form() { <br>
+      // ... renders buttons inside ... <br>
+      }
+    </div>
+
+    <p>
+      Não importa quantas camadas de componentes existem entre o provedor e o Button. Quando um Button lugar dentro de
+      Formchama useContext(ThemeContext), ele receberá "dark"como valor.
+    </p>
+    <div class="lembretes">
+      useContext()sempre procura o provedor mais próximo acima do componente que o chama. Ele pesquisa para cima e não
+      considera provedores no componente do qual você está ligando useContext().
+    </div>
+  </section>
+</body>
+
+</html>
