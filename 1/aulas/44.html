@@ -72,7 +72,16 @@
     <h4>Parâmetros</h4>
     <ul>
       <li>
-        <strong>SomeContext:</strong> o contexto que você criou anteriormente com createContext. O
+        <strong>reducer:</strong> a função redutora que especifica como o estado é atualizado. Deve ser puro, deve tomar
+        o estado e a ação como argumentos e deve retornar o próximo estado. Estado e ação podem ser de qualquer tipo.
+      </li>
+      <li>
+        <strong>initialArg:</strong> o contexto que você criou anteriormente com createContext. O
+        contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
+        dos componentes.
+      </li>
+      <li>
+        <strong>opcional init:</strong> o contexto que você criou anteriormente com createContext. O
         contexto em si não contém as informações, apenas representa o tipo de informação que você pode fornecer ou ler
         dos componentes.
       </li>
