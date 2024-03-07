@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+    <h1>O que é Payload</h1>
+    <p>
+
+      Payload é uma informação adicional que é carregada junto com uma solicitação ou mensagem. É comumente usado em
+      comunicações de rede, onde o payload é a parte útil dos dados transmitidos, enquanto o cabeçalho e o trailer são
+      usados para controlar a transmissão dos dados. Em desenvolvimento de software, o payload pode ser usado em
+      diferentes contextos, como em requisições HTTP, mensagens em filas de mensagens, entre outros.
+    </p>
+    <h2>A importância do Payload na passagem de informações em uma requisição</h2>
+    <p>
+      Resumidamente ele é importante para a passagem de informações, pois ele permite que você envie dados adicionais
+      com uma solicitação ou mensagem. Isso é especialmente útil em aplicações em que você precisa enviar informações
+      além dos cabeçalhos de uma requisição HTTP, como dados de formulário, imagens ou arquivos.
+    </p>
+    <p>
+      Ao usar o payload, você pode enviar informações adicionais que são necessárias para o processamento da solicitação
+      pelo servidor, sem precisar incluí-las como parte da URL da requisição. Isso é importante porque as informações
+      contidas no payload podem ser grandes e complexas, e incluí-las na URL pode tornar a requisição inválida devido a
+      limitações de tamanho.
+      Além disso, o payload também pode ser usado para enviar informações sensíveis ou confidenciais, pois ele pode ser
+      codificado ou criptografado para garantir a privacidade dos dados. Isso é especialmente importante em aplicações
+      financeiras ou em que as informações pessoais dos usuários são enviadas ao servidor.
+    </p>
+    <h2>Exemplo com Fetch API</h2>
+    <p>
+      Aqui está um exemplo de como você pode enviar um payload usando a Fetch API, que é uma interface padrão do
+      JavaScript para realizar solicitações HTTP:
+      <div class="exemplos">
+        const <span style="color: yellow;">payload</span> = { <br>
+        name: 'John Doe',<br>
+        email: 'johndoe@example.com',<br>
+        message: 'Hello, server!'<br>
+        };<br>
+        <br>
+        fetch('/send-message', {<br>
+        method: 'POST',<br>
+        headers: {<br>
+        'Content-Type': 'application/json'<br>
+        },<br>
+        body: JSON.stringify(<span style="color: yellow;">payload</span>)<br>
+        })<br>
+        .then(response => response.json())<br>
+        .then(data => console.log(data))<br>
+        .catch(error => console.error(error));
+      </div>
+    </p>
+  </section>
+</body>
+
+</html>
