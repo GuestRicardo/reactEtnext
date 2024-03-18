@@ -62,7 +62,7 @@
       definir o tipo da ação.
       <div class="exemplos">
         <span style="color: yellowgreen;">
-         <ins> Função para manipular seu estado como reducer:</ins>
+          <ins> Função para manipular seu estado como reducer:</ins>
         </span> <br>
         const reducer =(state, action) =>{ <br>
           return {...state}; <br>
@@ -71,6 +71,10 @@
       </div>
     </p>
     <img src="../../frontend/assets/img/useReducer/useReducer.png" alt="" class="zoomImg">
+    Quando clicar no botão(action), ele vai chamar a função reducer que dará acesso ao estado anterior e a ação que foi
+    disparada,
+    Foi criada uma condicional, para comparar o type, se caso estiver diferente será voltado para o estado anterior, ao
+    contrario o titulo irá passar para mudou!, como esta definido abaixo.
 
     <p>
 
