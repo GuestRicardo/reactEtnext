@@ -45,26 +45,26 @@
     <hr>
     <h3>Exemplo feito sem o useContext</h3>
     <p>
-      Para entender primeiro sobre esse hook sera preciso entender o q é contexto; quando tem um componente com
-      varios outros dentro, para especificar filhos ou irmãos, entã e 8 o seria varias propriedades descendo de niveis e
-      por isso se torna inviavel usar dessa forma, pois todos seram instanciados como numa escada(cadeia, o pai
-      instancia no filho, o filho 1 instancia no 2 e assim por diante) passando varias props ate chegar no componente
-      que deseja exibir. Para evitar essa situação será criado o estado global,onde apartir dele possa se transitar em
-      qualquer lugar do codigo atravez do contexto sera passado o estado inicial, usando a propriedade Provider.
+      useReducer é um React Hook que permite adicionar um redutor ao seu componente.
+
+      Ele é muito similar ao useState só que foi projetado para trabalhar com estados complexos que requerem alguma
+      logica, em nosso exemplo usamos a condicional switch.
+      Reducer é uma função que vai manipular seu estado, lembrando sempre; que usar uma função reducer será preciso
+      retornar um estado. A função reducer recebe duas propriedades sendo: o estado atual e o action.
+      A função recebe o estado atual e retorna o novo estado. <br>
+      <span class="lembrete">
+        observação o context geralmente se mais organizado com reduce
+      </span> <br>
     </p>
     <p>
-      Com isso os componentes podem ver o contexto para controlar sera o value(valor), que será passado via contexto.
-      Entao em resulmo, o contexto recebe o estado inicial para q o componente possa o ver e com useContext esta sendo
-      pegado elementos do filho sem precisar de props de forma direta, sendo a vantagem do useContext.
+      <strong>Dispatch</strong> serve para dispachar coisas(disparar ações, que será feito em nosso exemplo) é comum usar objetos e
+      definir o tipo da ação.
+      <div class="exemplos">
+
+      </div>
     </p>
-    <img src="../../frontend/assets/img/useContext/1.png" alt="" class="zoomImg">
-    <div class="lembrete">
-      esse exemplo esta sem o useContext
-    </div>
-    <hr>
-    <h3>Exemplo feito com useContext</h3>
-    <img src="../../frontend/assets/img/useContext/2.png" alt="" class="zoomImg">
-    <img src="../../frontend/assets/img/useContext/3.png" alt="" class="zoomImg">
+    <img src="../../frontend/assets/img/useReducer/useReducer.png" alt="" class="zoomImg">
+
     <p>
 
     </p>
