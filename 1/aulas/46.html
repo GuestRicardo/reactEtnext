@@ -23,7 +23,7 @@
     </p>
     <p>
       A ideia do exemplo abaixo é contruir um <strong>Hook</strong> que faça um intervalo.
-      <div class="exemplos">n>
+      <div class="exemplos">
         <div class="lembrete">//esse prop-types é um react node</div>
         import P from 'prop-types';<br>
         import { useReducer, createContext, useContext, useRef, useEffect, useState } from 'react';<br>
@@ -37,25 +37,36 @@
             //esta função stInterval esta na API do proprio node <br>
             //para nao depender de dependencia sera usado o saveCallback, q sempre retornara essa função.<br>
             //tambem esta sendo passado um deley que unicia depois de 1 segundo</div>
-            const savedCallback = useRef();<br>
-            useEffect(() => {<br>
-            savedCallback.current = callback;<br>
-            }, [callback]);<br>
-            <br>
-            useEffect(() => {<br>
-            const interval = setInterval(() => {<br>
-            savedCallback.current()<br>
-            }, delay);<br>
-            <div class="lembrete">
-              //lembrando q é sempre certo limpar o lixo da memoria, para isso usa o clearInterval
-            </div>
-            return () => clearInterval(interval); <br>
-            }, [delay]); <br>
+          const savedCallback = useRef();<br>
+          useEffect(() => {<br>
+          savedCallback.current = callback;<br>
+          }, [callback]);<br>
+          <br>
+          useEffect(() => {<br>
+          const interval = setInterval(() => {<br>
+          savedCallback.current()<br>
+          }, delay);<br>
+          <div class="lembrete">
+            //lembrando q é sempre certo limpar o lixo da memoria, para isso usa o clearInterval
           </div>
-          };
+          return () => clearInterval(interval); <br>
+          }, [delay]); <br>
         </div>
-        } <br>
-        export default App;
+        <div class="anotacoes">
+          <div class="lembrete">
+            //App.jsx
+          </div>
+          function App() { <br>
+            <div class="lembrete">
+              //estado
+            </div>
+          const [counter, setCounter] = useState(0); <br>
+          const [delay, setDelay] = useState(100); <br>
+          const [incrementor, setIncrementor] = useState(1000); <br>
+        </div>
+      } <br>
+      export default App;
+      </div>
       </div>
     </p>
   </section>
