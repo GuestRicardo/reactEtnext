@@ -52,20 +52,47 @@
           return () => clearInterval(interval); <br>
           }, [delay]); <br>
         </div>
+      };
         <div class="anotacoes">
           <div class="lembrete">
             //App.jsx
           </div>
           function App() { <br>
-            <div class="lembrete">
-              //estado
-            </div>
+          <div class="lembrete">
+            //estado
+          </div>
           const [counter, setCounter] = useState(0); <br>
           const [delay, setDelay] = useState(100); <br>
           const [incrementor, setIncrementor] = useState(1000); <br>
         </div>
-      } <br>
-      export default App;
+        <div class="anotacoes">
+          function App() {
+          //estado
+          const [counter, setCounter] = useState(0);
+          const [delay, setDelay] = useState(100);
+          const [incrementor, setIncrementor] = useState(1000);
+
+          //usando o hook
+          useMyHook(() => setCounter((c) => c + 1), delay);
+          return (
+          <div>
+            <-h1>Contador:{counter}</-h1> <br>
+            <-h1>Deley:{delay}</-h1><br>
+            {/* //quando clicar no botao sera incrementado um novo valor */}<br>
+            <-button onClick={()=>{setDelay((d)=>d + incrementor)}}>-{incrementor}</-button>
+            <-button onClick={()=>{setDelay((d)=>d - incrementor)}}>+{incrementor}</-button> <br />
+            <-p>Adicione o valor no input para q se incremente <br>
+              {/* ideia do input e mudar o valor do increment */}<br>
+              {/* onchange esta setando o valor do input no incremento, q no caso e o set incrementor, q e o estado
+              atualizado*/}<br>
+              <-input value={incrementor} onChange={(e)=> setIncrementor(Number (e.target.value))} type="number" name=""
+              id="" /></p>
+          </div>
+          );
+          }
+        </div>
+        <br>
+        export default App;
       </div>
       </div>
     </p>
