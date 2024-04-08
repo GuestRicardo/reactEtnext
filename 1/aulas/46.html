@@ -78,7 +78,9 @@
           <div>
             <-h1>Contador:{counter}</-h1> <br>
             <-h1>Deley:{delay}</-h1><br>
-            {/* //quando clicar no botao sera incrementado um novo valor */}<br>
+            <div class="lembrete">
+              {/* //quando clicar no botao sera incrementado um novo valor */}<br>
+            </div>
             <-button onClick={()=>{setDelay((d)=>d + incrementor)}}>-{incrementor}</-button>
             <-button onClick={()=>{setDelay((d)=>d - incrementor)}}>+{incrementor}</-button> <br />
             <-p>Adicione o valor no input para q se incremente <br>
