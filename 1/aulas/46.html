@@ -23,7 +23,7 @@
     </p>
     <p>
       A ideia do exemplo abaixo é contruir um <strong>Hook</strong> que faça um intervalo.
-      <div class="exemplos"><span class="lembretes"></span>
+      <div class="exemplos">n>
         <div class="lembrete">//esse prop-types é um react node</div>
         import P from 'prop-types';<br>
         import { useReducer, createContext, useContext, useRef, useEffect, useState } from 'react';<br>
@@ -32,6 +32,27 @@
           <div class="lembrete">
             //ele vai simular o setInterval
           </div>
+          const useMyHook = (callback, delay = 1000) => { <br>
+          <div class="lembrete">
+            //esta função stInterval esta na API do proprio node <br>
+            //para nao depender de dependencia sera usado o saveCallback, q sempre retornara essa função.<br>
+            //tambem esta sendo passado um deley que unicia depois de 1 segundo</div>
+            const savedCallback = useRef();<br>
+            useEffect(() => {<br>
+            savedCallback.current = callback;<br>
+            }, [callback]);<br>
+            <br>
+            useEffect(() => {<br>
+            const interval = setInterval(() => {<br>
+            savedCallback.current()<br>
+            }, delay);<br>
+            <div class="lembrete">
+              //lembrando q é sempre certo limpar o lixo da memoria, para isso usa o clearInterval
+            </div>
+            return () => clearInterval(interval); <br>
+            }, [delay]); <br>
+          </div>
+          };
         </div>
         } <br>
         export default App;
