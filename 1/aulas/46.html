@@ -83,10 +83,12 @@
             </div>
             <-button onClick={()=>{setDelay((d)=>d + incrementor)}}>-{incrementor}</-button>
             <-button onClick={()=>{setDelay((d)=>d - incrementor)}}>+{incrementor}</-button> <br />
-            <-p>Adicione o valor no input para q se incremente <br>
+            <div class="lembrete">
               {/* ideia do input e mudar o valor do increment */}<br>
               {/* onchange esta setando o valor do input no incremento, q no caso e o set incrementor, q e o estado
               atualizado*/}<br>
+            </div>
+            <-p>Adicione o valor no input para q se incremente <br>
               <-input value={incrementor} onChange={(e)=> setIncrementor(Number (e.target.value))} type="number" name=""
               id="" /></p>
           </div>
