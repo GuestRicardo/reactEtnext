@@ -51,13 +51,13 @@
           </div>
           return () => clearInterval(interval); <br>
           }, [delay]); <br>
-        };
+          };
         </div>
         <div class="anotacoes">
           <div class="lembrete">
             //App.jsx
           </div>
-          function App() { <br>
+         <span style="color: yellowgreen;">function App() {</span><br>
           <div class="lembrete">
             //estado
           </div>
@@ -66,13 +66,9 @@
           const [incrementor, setIncrementor] = useState(1000); <br>
         </div>
         <div class="anotacoes">
-          function App() {
-          //estado
-          const [counter, setCounter] = useState(0);
-          const [delay, setDelay] = useState(100);
-          const [incrementor, setIncrementor] = useState(1000);
-
-          //usando o hook
+          <div class="lembrete">
+            //usando o hook
+          </div>
           useMyHook(() => setCounter((c) => c + 1), delay);
           <hr>
           return (
@@ -91,10 +87,10 @@
             </div>
             <-p>Adicione o valor no input para q se incremente <br>
               <-input value={incrementor} onChange={(e)=> setIncrementor(Number (e.target.value))} type="number" name=""
-              id="" /> <br>
-              ); <br>
+                id="" /> <br>
+                ); <br>
           </div>
-          }
+          <span style="color: yellowgreen;">}</span>
         </div>
         <br>
         export default App;
