@@ -24,13 +24,19 @@
     <p>
       Será criado um <strong>hook</strong> que faça essa função..
     </p>
-    <div class="exemplos">
-      const useCarregador = (url, options) =>{ <br>
+    <div class="anotacoes">
+      <div class="exemplos">
+        const useCarregador = (url, options) =>{ <br>
         console.log( 'Aqui é o que o hook vai fazer' ) <br>
-      } <br>
+        } <br>
+      </div>
+      export const Home =() =>{ <br>
+        useCarregador(); <br>
+      }
     </div>
     <div class="lembrete">
-      <strong style="color: black;">useCarregador = </strong>(objeto de request ou url e a segunda sempre objeto ) isso é muito importante pois ira afetar totalmente nosso hook
+      <strong style="color: black;">useCarregador = </strong>(objeto de request ou url e a segunda sempre objeto ) isso
+      é muito importante pois ira afetar totalmente nosso hook
     </div>
   </section>
 </body>
