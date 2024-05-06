@@ -49,11 +49,17 @@
           <code style="color: blue; border: solid blue 2px; margin-left: 10px;"><ins>Aqui é onde esta sendo carregado os
               dados</ins></code> <br>
           const fetchData = async () => { <br>
-            const response = await fetch(url, options); <br>
-            const jsonResult = await response.json(); <br>
-            setResultado(jsonResult); <br>
-            setResult(jsonResult); <br>
-          }<br>
+           <span style="color: blue;">try{</span><br>
+              const response = await fetch(url, options); <br>
+              const jsonResult = await response.json(); <br>
+              setResultado(jsonResult); <br>
+              setResult(jsonResult); <br>
+              setLoading(false); <br>
+            }<span style="color: blue;">catch(e){</span><br>
+              throw e; <br>
+           <span style="color: blue;">}</span><br>
+
+          }<br> <br>
           },[url]);
         </div>
         <ins>return <span style="color: yellowgreen;">[result, loading]</span></ins>; <br>
