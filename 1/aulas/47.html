@@ -45,6 +45,7 @@
               API</ins></code> <br>
           <h3>useEffect</h3>
           useEffect(() =>{ <br>
+            setLoading(true); <br>
           <code style="color: blue; border: solid blue 2px; margin-left: 10px;"><ins>Aqui é onde esta sendo carregado os
               dados</ins></code> <br>
           const fetchData = async () => { <br>
@@ -55,7 +56,7 @@
           }<br>
           },[url]);
         </div>
-        <ins>return [<span style="color: yellowgreen;">1,2]</span></ins>; <br>
+        <ins>return <span style="color: yellowgreen;">[result, loading]</span></ins>; <br>
         } <br>
       </div>
       <h3>Renderização</h3>
