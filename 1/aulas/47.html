@@ -55,8 +55,9 @@
               setResultado(jsonResult); <br>
               setResult(jsonResult); <br>
               setLoading(false); <br>
-            }<span style="color: blue;">catch(e){</span><br>
-              throw e; <br>
+              <span style="color: blue;">} catch(e){</span><br>
+                setLoading(false); <br>
+                throw e; <br>
            <span style="color: blue;">}</span><br>
 
           }<br> <br>
