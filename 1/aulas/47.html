@@ -45,20 +45,25 @@
               API</ins></code> <br>
           <h3>useEffect</h3>
           useEffect(() =>{ <br>
-            setLoading(true); <br>
+          setLoading(true); <br>
           <code style="color: blue; border: solid blue 2px; margin-left: 10px;"><ins>Aqui é onde esta sendo carregado os
               dados</ins></code> <br>
           const fetchData = async () => { <br>
-           <span style="color: blue;">try{</span><br>
-              const response = await fetch(url, options); <br>
-              const jsonResult = await response.json(); <br>
-              setResultado(jsonResult); <br>
-              setResult(jsonResult); <br>
-              setLoading(false); <br>
-              <span style="color: blue;">} catch(e){</span><br>
-                setLoading(false); <br>
-                throw e; <br>
-           <span style="color: blue;">}</span><br>
+          <div>
+            <code style="color: blue; border: solid blue 2px; margin-left: 10px;"><ins>Aqui é onde esta sendo criado uma
+                promise, o carregamento da API demorará 3 segunds</ins></code> <br>
+          </div>
+          await new Promise(resposta => setTimeout(resposta, 3000)); <br> <br>
+          <span style="color: blue;">try{</span><br>
+          const response = await fetch(url, options); <br>
+          const jsonResult = await response.json(); <br>
+          setResultado(jsonResult); <br>
+          setResult(jsonResult); <br>
+          setLoading(false); <br>
+          <span style="color: blue;">} catch(e){</span><br>
+          setLoading(false); <br>
+          throw e; <br>
+          <span style="color: blue;">}</span><br>
 
           }<br> <br>
           },[url]);
