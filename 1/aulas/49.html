@@ -47,6 +47,53 @@
       return { loading, error, value }<br>
       }
     </div>
+    <p>
+      O gancho useAsync usa uma função de retorno de chamada que executa a operação assíncrona e uma matriz opcional de
+      dependências. Ele retorna um objeto com três propriedades: carregamento, erro e valor. A propriedade loading
+      indica se a operação está em andamento, enquanto a propriedade error contém todas as mensagens de erro encontradas
+      durante o processo. Finalmente, a propriedade value contém o valor resolvido da operação assíncrona.
+    </p>
+    <p>
+      Uma das vantagens significativas de useAsync é sua capacidade de memorizar a função de retorno de chamada usando
+      useCallback. Isso garante que o retorno de chamada só seja recriado quando as dependências forem alteradas,
+      evitando rerenderizações desnecessárias e otimizando o desempenho. Além disso, o gancho emprega os ganchos
+      useState e useEffect para gerenciar o estado de carregamento e invocar a função de retorno de chamada memorizada
+      quando necessário.
+    </p>
+    <p>
+      UseAsync pode ser empregado em uma ampla gama de cenários. Não importa se você está buscando dados de uma API,
+      executando cálculos ou manipulando envios de formulários, esse gancho personalizado simplifica o gerenciamento de
+      operações assíncronas em todos os componentes do React. Sua flexibilidade e facilidade de uso o tornam uma adição
+      valiosa a qualquer projeto React.
+    </p>
+
+    <div class="exemplos">
+      import useAsync from "./useAsync" <br>
+      <br>
+      export default function AsyncComponent() {<br>
+      const { loading, error, value } = useAsync(() => {<br>
+      return new Promise((resolve, reject) => {<br>
+      const success = false<br>
+      setTimeout(() => {<br>
+      success ? resolve("Hi") : reject("Error")<br>
+      }, 1000)<br>
+      })<br>
+      })<br>
+      <br>
+      return (<br>
+      <div>
+        <div>Loading: {loading.toString()}</div>
+        <div>{error}</div>
+        <div>{value}</div>
+      </div>
+      )
+      }
+    </div>
+    <p>
+      Ao utilizar useAsync, você pode simplificar sua base de código, aprimorar a reutilização e manter uma experiência
+      de usuário consistente e confiável. Experimente em seu próximo projeto React e testemunhe o poder das operações
+      assíncronas simplificadas.
+    </p>
   </section>
 
 </body>
