@@ -18,11 +18,35 @@
   <section class="container">
     <h1>useAsync</h1>
     <p>
-      Segue abaixo o codigo feito na aula passada, este hook carrega posts quando é clicado na tela.
-      <div class="">
-        <object data="../../frontend/assets/img/proprioHook.PDF" type="application/pdf"></object>
-      </div>
+      Nesta série de artigos, embarcamos em uma jornada pelo reino dos ganchos React personalizados, descobrindo seu
+      imenso potencial para elevar seus projetos de desenvolvimento. Nosso foco hoje está no gancho "useAsync", um dos
+      muitos ganchos cuidadosamente criados disponíveis na coleção de ganchos personalizados React.
     </p>
+    <div class="exemplos">
+      import { useCallback, useEffect, useState } from "react" <br>
+      <br>
+      export default function useAsync(callback, dependencies = []) {<br>
+      const [loading, setLoading] = useState(true)<br>
+      const [error, setError] = useState()<br>
+      const [value, setValue] = useState()<br>
+      <br>
+      const callbackMemoized = useCallback(() => {<br>
+      setLoading(true)<br>
+      setError(undefined)<br>
+      setValue(undefined)<br>
+      callback()<br>
+      .then(setValue)<br>
+      .catch(setError)<br>
+      .finally(() => setLoading(false))<br>
+      }, dependencies)<br>
+      <br>
+      useEffect(() => {<br>
+      callbackMemoized()<br>
+      }, [callbackMemoized])<br>
+      <br>
+      return { loading, error, value }<br>
+      }
+    </div>
   </section>
 
 </body>
