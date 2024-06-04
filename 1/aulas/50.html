@@ -18,8 +18,14 @@
   <section class="container">
     <h1>useLayoutEffect</h1>
     <p>
-      É o Hook menos usado, da familia do React, ele é basicamente a mesma coisa do <strong>useEffect</strong>, a
-      diferença é quando ele é chamado, ele foca na modificação da <strong>DOM</strong> e terá maior controle nela.
+      Existem dois hooks no React useEffect e useLayoutEffect, que parecem funcionar praticamente da mesma forma. <br>
+      A maneira como você os chama parece a mesma:
+      <hr>
+      <img src="../../frontend/assets/img/useLayoutEffect/1.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Mas eles não são exatamente iguais. Vamos ver o que os torna diferentes e quando usar cada um. (tl; dr: na maioria
+      das vezes você quer o useEffect)
     </p>
     <hr>
     <h3>A diferença entre o <span style="color: brown;">useEffect</span> e <span
@@ -90,6 +96,8 @@
       novamente. <br>
 
       O resultado é que duas renderizações acontecem em rápida sucessão.
+      <hr>
+      <img src="../../frontend/assets/img/useLayoutEffect/2.png" alt="" class="zoomImg">
     </p>
   </section>
 </body>
