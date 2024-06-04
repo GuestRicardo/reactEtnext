@@ -45,10 +45,53 @@
       </ol>
     </p>
     <p>
+      <strong>useLayoutEffect</strong>, por outro lado, é executado de forma síncrona após uma renderização, mas antes
+      da atualização da
+      tela. Significa:
+      <ol class="decimal">
+        <li>Você causa uma renderização de alguma forma (altera o estado ou o componente pai é renderizado novamente)
+        </li>
+        <li>React renderiza seu componente (chama seu componente)</li>
+        <li>useLayoutEffect é executado e o React aguarda seu término</li>
+        <li>A tela é visualmente atualizada</li>
+      </ol>
+    </p>
+    <h2>99% do tempo, useEffect</h2>
+    <p>
+      Na maioria das vezes, seu efeito está sincronizando algum estado ou objeto com algo que não precisa acontecer
+      IMEDIATAMENTE ou que não afeta visualmente a página.
+    </p>
+    <p>
+      Por exemplo, se você estiver buscando dados em um servidor, isso não resultará em uma alteração imediata.
+    </p>
+    <p>
+      Ou se você estiver configurando um manipulador de eventos.
+    </p>
+    <p>
+      Ou se você estiver redefinindo algum estado quando uma caixa de diálogo modal aparecer ou desaparecer.
+    </p>
+    <p>
+      Na maioria das vezes, useEffect é o caminho certo a percorrer.
+    </p>
+    <h2>Quando usar useLayoutEffect</h2>
+    <p>
+      Qual é o momento certo para usar useLayoutEffect? Você saberá quando ver. Literalmente ;)
+    </p>
+    <p>
+      Se o seu componente pisca quando o estado é atualizado — como em, ele é processado primeiro em um estado
+      parcialmente pronto e depois é renderizado novamente em seu estado final — essa é uma boa pista de que é hora de
+      trocar useLayoutEffect. <br>
 
+      Aqui está um exemplo (artificial) para que você possa entender o que quero dizer.
+    </p>
+    <p>
+      Quando você clica na página([A]), o estado muda imediatamente (value é redefinido para 0), que renderiza novamente
+      o componente e, em seguida, o efeito é executado — que define o valor para algum número aleatório e é renderizado
+      novamente. <br>
+
+      O resultado é que duas renderizações acontecem em rápida sucessão.
     </p>
   </section>
-
 </body>
 
 </html>
