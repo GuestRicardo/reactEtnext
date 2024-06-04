@@ -376,3 +376,6 @@ a:active {
   margin-left: 58%;
 }
 /*##################################-lista numerada decimal-#########################################*/
+.decimal {
+  list-style-type: decimal;
+}
