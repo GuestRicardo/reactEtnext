@@ -99,6 +99,30 @@
       <hr>
       <img src="../../frontend/assets/img/useLayoutEffect/2.png" alt="" class="zoomImg">
     </p>
+    <p>
+      [A]: Em geral, colocar manipuladores onClick em divs é ruim para acessibilidade (use botões!), esta é uma
+      demonstração descartável. Eu só queria mencionar isso!
+    </p>
+    Experinte as duas versões:
+    <ul>
+      <li><a href="">Versão com useLayoutEffect — Renderização não pisca</a></li>
+      <li><a href="">Versão com useEffect — Renderização pisca</a></li>
+    </ul>
+    <p>
+      Observe como a versão useLayoutEffect atualiza visualmente apenas uma vez, mesmo que o componente tenha sido
+      renderizado duas vezes. A versão useEffect, por outro lado, é renderizada visualmente duas vezes, onde você pode
+      ver o valor é 0 brevemente.
+    </p>
+    <h1>Devo usar o <strong style="color: brown;">useEffect</strong> ou use o <strong style="color: brown;">useLayoutEffect</strong>?</h1>
+    <p>
+      Na maioria das vezes, useEffect é a escolha certa. Se o seu código estiver causando oscilações na renderização,
+      mude para useLayoutEffect e veja se isso ajuda.
+    </p>
+    <p>
+      Como useLayoutEffect é síncrono (bloqueia a renderização), o aplicativo não será atualizado visualmente até que o
+      efeito termine de executar … isso pode causar problemas de desempenho se você tiver um código lento no seu efeito.
+      Juntamente com o fato de que a maioria dos efeitos não precisam que o mundo faça uma pausa enquanto acontecem.
+    </p>
   </section>
 </body>
 
