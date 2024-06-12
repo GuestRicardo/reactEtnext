@@ -27,6 +27,33 @@
       Chame no nível superior do seu componente para personalizar a alça ref que ele expõe <strong
         style="color: brown;">useImperativeHandle</strong>
     </p>
+    <div class="exemplos">
+      import { forwardRef, useImperativeHandle } from 'react'; <br>
+      <br>
+      const MyInput = forwardRef(function MyInput(props, ref) { <br>
+      useImperativeHandle(ref, () => { <br>
+      return { <br>
+      <strong style="color: rgb(42, 165, 69);">// ... your methods ...</strong> <br>
+      }; <br>
+      }, []); <br>
+    </div>
+    <hr>
+    <h3>Parâmetros:</h3>
+    <ul>
+      <li>ref: O que você recebeu como o segundo argumento da função de renderização forwardRef.ref</li> <br>
+      <li>createHandle: Uma função que não usa argumentos e retorna o identificador ref que você deseja expor. Esse
+        identificador ref pode ter qualquer tipo. Normalmente, você retornará um objeto com os métodos que deseja expor.
+      </li> <br>
+      <li>opcional: A lista de todos os valores reativos referenciados dentro do código. Os valores reativos incluem
+        props, state e todas as variáveis e funções declaradas diretamente no corpo do componente. Se o linter estiver
+        configurado para React, ele verificará se cada valor reativo está especificado corretamente como uma
+        dependência. A lista de dependências deve ter um número constante de itens e ser escrita embutida como . O React
+        comparará cada dependência com seu valor anterior usando a comparação Object.is. Se uma nova renderização
+        resultou em uma alteração em alguma dependência, ou se você omitiu esse argumento, sua função será executada
+        novamente e o identificador recém-criado será atribuído à ref.dependenciescreateHandle[dep1, dep2,
+        dep3]createHandle</li>
+    </ul>
+
     <img src="../../frontend/assets/img/useEffect/comuseEffect.png" alt="" class="zoomImg">
     <img src="../../frontend/assets/img/useEffect/useLayoutEffect.png" alt="" class="zoomImg">
 
