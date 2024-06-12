@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../frontend/assets/css/style.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <div>
+    <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
+  </div>
+  <section class="container">
+    <h1>useLayoutEffect</h1>
+    <p>
+      Existem dois hooks no React useEffect e useLayoutEffect, que parecem funcionar praticamente da mesma forma. <br>
+      A maneira como você os chama parece a mesma:
+      <hr>
+      <img src="../../frontend/assets/img/useLayoutEffect/1.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Mas eles não são exatamente iguais. Vamos ver o que os torna diferentes e quando usar cada um. (tl; dr: na maioria
+      das vezes você quer o useEffect)
+    </p>
+    <hr>
+    <h3>A diferença entre o <span style="color: brown;">useEffect</span> e <span
+        style="color: brown;">useLayoutEffect</span></h3>
+    <p>
+      É tudo sobre o tempo certo de execução. <br>
+
+      useEffect é executado de forma assíncrona e depois que uma renderização é pintada na tela.
+    </p>
+    <p>
+      Então isso se parece com:
+
+      <ol class="decimal">
+        <li>Você causa uma renderização de alguma forma (altera o estado ou o componente pai é renderizado novamente)
+        </li>
+        <li>React renderiza seu componente (chama seu componente)</li>
+        <li>
+          A tela é visualmente atualizada
+        </li>
+        <li>
+          SÓ ENTÃO useEffect é executado
+        </li>
+      </ol>
+    </p>
+    <p>
+      <strong>useLayoutEffect</strong>, por outro lado, é executado de forma síncrona após uma renderização, mas antes
+      da atualização da
+      tela. Significa:
+      <ol class="decimal">
+        <li>Você causa uma renderização de alguma forma (altera o estado ou o componente pai é renderizado novamente)
+        </li>
+        <li>React renderiza seu componente (chama seu componente)</li>
+        <li>useLayoutEffect é executado e o React aguarda seu término</li>
+        <li>A tela é visualmente atualizada</li>
+      </ol>
+    </p>
+    <h2>99% do tempo, useEffect</h2>
+    <p>
+      Na maioria das vezes, seu efeito está sincronizando algum estado ou objeto com algo que não precisa acontecer
+      IMEDIATAMENTE ou que não afeta visualmente a página.
+    </p>
+    <p>
+      Por exemplo, se você estiver buscando dados em um servidor, isso não resultará em uma alteração imediata.
+    </p>
+    <p>
+      Ou se você estiver configurando um manipulador de eventos.
+    </p>
+    <p>
+      Ou se você estiver redefinindo algum estado quando uma caixa de diálogo modal aparecer ou desaparecer.
+    </p>
+    <p>
+      Na maioria das vezes, useEffect é o caminho certo a percorrer.
+    </p>
+    <h2>Quando usar useLayoutEffect</h2>
+    <p>
+      Qual é o momento certo para usar useLayoutEffect? Você saberá quando ver. Literalmente ;)
+    </p>
+    <p>
+      Se o seu componente pisca quando o estado é atualizado — como em, ele é processado primeiro em um estado
+      parcialmente pronto e depois é renderizado novamente em seu estado final — essa é uma boa pista de que é hora de
+      trocar useLayoutEffect. <br>
+
+      Aqui está um exemplo (artificial) para que você possa entender o que quero dizer.
+    </p>
+    <p>
+      Quando você clica na página([A]), o estado muda imediatamente (value é redefinido para 0), que renderiza novamente
+      o componente e, em seguida, o efeito é executado — que define o valor para algum número aleatório e é renderizado
+      novamente. <br>
+
+      O resultado é que duas renderizações acontecem em rápida sucessão.
+      <hr>
+      <img src="../../frontend/assets/img/useLayoutEffect/2.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      [A]: Em geral, colocar manipuladores onClick em divs é ruim para acessibilidade (use botões!), esta é uma
+      demonstração descartável. Eu só queria mencionar isso!
+    </p>
+    Experinte as duas versões:
+    <ul>
+      <li><a href="">Versão com useLayoutEffect — Renderização não pisca</a></li>
+      <li><a href="">Versão com useEffect — Renderização pisca</a></li>
+    </ul>
+    <p>
+      Observe como a versão useLayoutEffect atualiza visualmente apenas uma vez, mesmo que o componente tenha sido
+      renderizado duas vezes. A versão useEffect, por outro lado, é renderizada visualmente duas vezes, onde você pode
+      ver o valor é 0 brevemente.
+    </p>
+    <h1>Devo usar o <strong style="color: brown;">useEffect</strong> ou use o <strong style="color: brown;">useLayoutEffect</strong>?</h1>
+    <p>
+      Na maioria das vezes, useEffect é a escolha certa. Se o seu código estiver causando oscilações na renderização,
+      mude para useLayoutEffect e veja se isso ajuda.
+    </p>
+    <p>
+      Como useLayoutEffect é síncrono (bloqueia a renderização), o aplicativo não será atualizado visualmente até que o
+      efeito termine de executar … isso pode causar problemas de desempenho se você tiver um código lento no seu efeito.
+      Juntamente com o fato de que a maioria dos efeitos não precisam que o mundo faça uma pausa enquanto acontecem.
+    </p>
+    <hr>
+    <h1>Exemplos na pratica</h1>
+    <img src="../../frontend/assets/img/useEffect/comuseEffect.png" alt="" class="zoomImg">
+    <img src="../../frontend/assets/img/useEffect/useLayoutEffect.png" alt="" class="zoomImg">
+
+  </section>
+</body>
+
+</html>
