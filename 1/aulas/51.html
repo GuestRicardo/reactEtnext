@@ -203,8 +203,17 @@
       </div>
     </p>
     <div class="lembrete">
-      <svg class="inline me-3 mb-1 text-lg text-yellow-50 dark:text-yellow-40" width="2em" height="2em" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">…</svg>
       <h2 style="color: yellow;">Armadilha</h2>
+      <strong style="color: chartreuse;">Não use refs em excesso.</strong>
+       Você só deve usar refs para comportamentos imperativos que você não pode expressar como
+      adereços: por exemplo, rolar para um nó, focar um nó, disparar uma animação, selecionar texto e assim por diante.
+      <br>
+      Se você pode expressar algo como um adereço, você não deve usar uma ref. Por exemplo, em vez de expor uma alça
+      imperativa como de um componente, é melhor tomar como adereço como . Os efeitos podem ajudá-lo a expor
+      comportamentos imperativos por meio de adereços.
+      <br>
+      { open, close }ModalisOpen
+      < Modal isOpen={isOpen} />
     </div>
   </section>
 </body>
