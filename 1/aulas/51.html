@@ -56,10 +56,152 @@
     <h4>Retorna</h4>
     <p><strong>useImperativeHandle</strong>Retorna.undefined</p>
     <hr>
+    <h2>Uso</h2>
+    <h3>Expondo um identificador ref personalizado ao componente pai </h3>
+    <p>
+      Por padrão, os componentes não expõem seus nós DOM a componentes pai. Por exemplo, se você quiser que o componente
+      pai de tenha acesso ao nó DOM, será necessário aceitar com forwardRef:MyInput<input>
+      <div class="exemplos">
+        import { forwardRef } from 'react'; <br>
+        <br>
+        const MyInput = forwardRef(function MyInput(props, ref) {<br>
+        return
+        < input {...props} ref={ref} />; <br>
+        });
+      </div>
+      Com o código acima, uma ref para MyInput receberá o nó DOM < input>. No entanto, você pode expor um valor
+        personalizado. Para personalizar o identificador exposto, chame no nível superior do
+        componente:useImperativeHandle
+        <div class="exemplos">
+          import { forwardRef, useImperativeHandle } from 'react';<br>
+          <br>
+          const MyInput = forwardRef(function MyInput(props, ref) {<br>
+          useImperativeHandle(ref, () => {<br>
+          return {<br>
+          <strong style="color: chartreuse;">// ... your methods ...</strong> <br>
+          };<br>
+          }, []);<br>
 
-    <img src="../../frontend/assets/img/useEffect/comuseEffect.png" alt="" class="zoomImg">
-    <img src="../../frontend/assets/img/useEffect/useLayoutEffect.png" alt="" class="zoomImg">
+          return
+          < input {...props} />;<br>
+          });
+        </div>
+        Observe que no código acima, o não é mais encaminhado para o .ref< input> <br>
+          <br>
+          Por exemplo, suponha que você não queira expor todo o nó DOM, mas queira expor dois de seus métodos: e . Para
+          fazer isso, mantenha o DOM do navegador real em uma ref separada. Em seguida, use para expor um identificador
+          com apenas os métodos que você deseja que o componente pai chame: <br>
+          < input>
+            focusscrollIntoViewuseImperativeHandle
+            <div class="exemplos">
+              import { forwardRef, useRef, useImperativeHandle } from 'react'; <br>
+              <br>
+              const MyInput = forwardRef(function MyInput(props, ref) {<br>
+              const inputRef = useRef(null);<br>
+              <br>
+              useImperativeHandle(ref, () => {<br>
+              return {<br>
+              focus() {<br>
+              inputRef.current.focus();<br>
+              },<br>
+              scrollIntoView() {<br>
+              inputRef.current.scrollIntoView();<br>
+              },<br>
+              };<br>
+              }, []);<br>
+              <br>
+              return
+              < input {...props} ref={inputRef} />;<br>
+              });
+            </div>
+            Agora, se o componente pai receber uma ref para , ele poderá chamar os métodos e nele. No entanto, ele não
+            terá acesso total ao nó DOM subjacente.MyInputfocusscrollIntoView< input>
+    </p>
+    <div class="anotacoes">
+      <h2>App.js</h2>
+      import { useRef } from 'react'; <br>
+      import MyInput from './MyInput.js';<br>
+      <br>
+      export default function Form() {<br>
+      const ref = useRef(null);<br>
+      <br>
+      function handleClick() {<br>
+      ref.current.focus();<br>
+      <strong style="color: chartreuse;">
+        // This won't work because the DOM node isn't exposed: <br>
+        // ref.current.style.opacity = 0.5;<br>
+      </strong>
+      }<br>
+      <br>
+      return (<br>
+      < form><br>
+        < MyInput placeholder="Enter your name" ref={ref} /><br>
+        < button type="button" onClick={handleClick}><br>
+          Edit<br>
+        </><br>
+        < /form> <br>
+          );<br>
+          }
+    </div>
+    <div class="anotacoes">
+      <h2>Meu Input</h2>
 
+      import { forwardRef, useRef, useImperativeHandle } from 'react';<br>
+      <br>
+      const MyInput = forwardRef(function MyInput(props, ref) {<br>
+      const inputRef = useRef(null);<br>
+      <br>
+      useImperativeHandle(ref, () => {<br>
+      return {<br>
+      focus() {<br>
+      inputRef.current.focus();<br>
+      },<br>
+      scrollIntoView() {<br>
+      inputRef.current.scrollIntoView();<br>
+      },<br>
+      };<br>
+      }, []);<br>
+      <br>
+      return
+      < input {...props} ref={inputRef} />;<br>
+      });<br>
+      <br>
+      export default MyInput;
+
+    </div>
+    <h2>Resultado</h2>
+    <div class="exemplos">
+      <input type="text" placeholder="exemplo dos 2 exemplos acima"> <button>Edit</button>
+    </div>
+    <hr>
+    <h2>Expor seus próprios métodos imperativos </h2>
+    <p>
+      Os métodos que você expõe por meio de um identificador imperativo não precisam corresponder exatamente aos métodos
+      DOM. Por exemplo, esse componente expõe um método por meio de um identificador imperativo. Isso permite que o pai
+      role a lista de comentários e concentre o campo de entrada quando você clicar no
+      botão:PostscrollAndFocusAddCommentPage
+      <div class="anotacoes">
+        import { useRef } from 'react';<br>
+        import Post from './Post.js';<br>
+        <br>
+        export default function Page() {<br>
+        const postRef = useRef(null);<br>
+        <br>
+        function handleClick() {<br>
+        postRef.current.scrollAndFocusAddComment();<br>
+        }<br>
+        <br>
+        return (<br>
+        <><br>
+          < button onClick={handleClick}><br>
+            Write a comment<br>
+          </><br>
+          < Post ref={postRef} /><br>
+          < /><br>
+          );<br>
+          }
+      </div>
+    </p>
   </section>
 </body>
 
