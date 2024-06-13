@@ -352,14 +352,37 @@
           < MyInput label="Enter your name:" ref={ref} /><br>
           < button type="button" onClick={handleClick}><br>
             Edit<br>
-          < /button><br>
-        < /form><br>
-        );<br>
-        }
+            < /button> <br>
+              < /form> <br>
+                );<br>
+                }
       </div>
     </p>
-
-
+    <p>
+      Este Formcomponente passa uma referência para MyInput. O MyInputcomponente encaminha essa referência para a
+      < input>tag do navegador. Como resultado, o Formcomponente pode acessar esse <strong style="color: chartreuse;">
+          < input>
+        </strong> nó DOM e chamá <strong style="color: chartreuse;">focus()</strong>-lo.
+    </p>
+    <p>
+      Tenha em mente que expor uma referência ao nó DOM dentro do seu componente torna mais difícil alterar os
+      componentes internos do seu componente posteriormente. Normalmente, você exporá nós DOM a partir de componentes
+      reutilizáveis ​​de baixo nível, como botões ou entradas de texto, mas não fará isso para componentes em nível de
+      aplicativo, como um avatar ou um comentário.
+    </p>
+    <div class="anotacoes">
+      <h2>Armadilha</h2>
+      <p>
+        <strong style="color: chartreuse;">Não abuse das referências.</strong>
+        Você só deve usar refs para comportamentos imperativos que não podem ser expressos como adereços: por exemplo,
+        rolar até um nó, focar um nó, acionar uma animação, selecionar texto e assim por diante.
+      </p>
+      <p>
+        Se você pode expressar algo como um adereço, não deve usar uma ref. Por exemplo, em vez de expor um
+        identificador imperativo como { open, close }o de um Modalcomponente, é melhor usar isOpenum suporte como
+        < Modal isOpen={isOpen} />. Os efeitos podem ajudá-lo a expor comportamentos imperativos por meio de acessórios.
+      </p>
+    </div>
   </section>
 </body>
 
