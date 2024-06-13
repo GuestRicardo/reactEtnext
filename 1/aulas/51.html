@@ -299,6 +299,67 @@
     </p>
     <hr>
     <h1>Uso</h1>
+    <h2>
+      Expondo um nó DOM ao componente pai
+    </h2>
+    <p>
+      Por padrão, os nós DOM de cada componente são privados. No entanto, às vezes é útil expor um nó DOM ao pai — por
+      exemplo, para permitir focalizá-lo. Para aceitar, envolva sua definição de componente em forwardRef():
+      <div class="anotacoes">
+        import { forwardRef } from 'react'; <br>
+        <br>
+        const MyInput = forwardRef(function MyInput(props, ref) {<br>
+        const { label, ...otherProps } = props;<br>
+        return (<br>
+        < label><br>
+          {label}<br>
+          < input {...otherProps} /><br>
+          < /label> <br>
+            );<br>
+            });
+      </div>
+    </p>
+    <p>
+      Você receberá um ref como segundo argumento após os adereços. Passe-o para o nó DOM que você deseja expor:
+    </p>
+    <p>
+      <div class="anotacoes">
+        import { forwardRef } from 'react'; <br>
+
+        const MyInput = forwardRef(function MyInput(props, ref) {
+        const { label, ...otherProps } = props;<br>
+        return (<br>
+        < label><br>
+          {label}<br>
+          < input {...otherProps} ref={ref} /><br>
+          < /label> <br>
+            );<br>
+            });
+      </div>
+      Isso permite que o Formcomponente pai acesse o <span style="color: yellow;">
+        < input> nó DOM
+      </span> exposto por MyInput:
+      <div class="anotacoes">
+        function Form() {
+        const ref = useRef(null);
+
+        function handleClick() {
+        ref.current.focus();
+        }
+
+        return (
+        <form>
+          <MyInput label="Enter your name:" ref={ref} />
+          <button type="button" onClick={handleClick}>
+            Edit
+          </button>
+        </form>
+        );
+        }
+      </div>
+    </p>
+
+
   </section>
 </body>
 
