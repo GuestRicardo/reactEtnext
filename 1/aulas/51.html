@@ -282,10 +282,23 @@
     <h2>Parâmetros</h2>
     <p>
       <ul>
-        <li></li>
-        <li></li>
+        <li><strong style="color: blue;">props</strong>: os adereços passados ​​pelo componente pai.</li>
+        <li>
+          <strong style="color: blue;">ref</strong>: O<span style="color: chartreuse;"> ref</span> atributo passado pelo
+          componente pai. O refpode ser um objeto ou uma função. Se o componente pai não tiver passado por uma
+          referência, será null. Você deve passar o refque recebeu para outro componente ou passá-lo para
+          <span style="color: chartreuse;">useImperativeHandle</span>.
+        </li>
       </ul>
     </p>
+    <h3>Devoluções</h3>
+    <p>
+      <strong style="color: blue;">forwardRef</strong> retorna um componente React que você pode renderizar em JSX. Ao
+      contrário dos componentes React
+      definidos como funções simples, o componente retornado por forwardRefé capaz de receber um refsuporte.
+    </p>
+    <hr>
+    <h1>Uso</h1>
   </section>
 </body>
 
