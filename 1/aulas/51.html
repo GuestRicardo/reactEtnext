@@ -205,7 +205,7 @@
     <div class="lembrete">
       <h2 style="color: yellow;">Armadilha</h2>
       <strong style="color: chartreuse;">Não use refs em excesso.</strong>
-       Você só deve usar refs para comportamentos imperativos que você não pode expressar como
+      Você só deve usar refs para comportamentos imperativos que você não pode expressar como
       adereços: por exemplo, rolar para um nó, focar um nó, disparar uma animação, selecionar texto e assim por diante.
       <br>
       Se você pode expressar algo como um adereço, você não deve usar uma ref. Por exemplo, em vez de expor uma alça
@@ -215,6 +215,55 @@
       { open, close }ModalisOpen
       < Modal isOpen={isOpen} />
     </div>
+    <hr>
+    <h1>encaminhamento Ref</h1>
+    <p>
+      forwardRefpermite que seu componente exponha um nó DOM ao componente pai com uma ref.
+      <div class="exemplos">
+        const SomeComponent = forwardRef(render)
+      </div>
+    </p>
+    <hr>
+    <h2>Referência</h2>
+    <h3>forwardRef(render)</h3>
+    <p>
+      Chame forwardRef()para permitir que seu componente receba uma referência e encaminhe-a para um componente filho:
+
+      <div class="anotacoes">
+        import { forwardRef } from 'react'; <br>
+        <strong style="color: chartreuse;">
+          const MyInput = forwardRef(function MyInput(props, ref) {
+          // ...
+        </strong> <br>
+        });
+      </div>
+    </p>
+    <h3>Parâmetros</h3>
+    <p>
+      <ul>
+        <li>
+          render: a função de renderização do seu componente. O React chama essa função com os adereços e refque seu
+          componente recebeu de seu pai. O JSX que você retornar será a saída do seu componente.
+        </li>
+      </ul>
+    </p>
+    <h3>Devoluções</h3>
+    <p>
+      forwardRefretorna um componente React que você pode renderizar em JSX. Ao contrário dos componentes React
+      definidos como funções simples, um componente retornado por forwardReftambém pode receber um refsuporte.
+    </p>
+    <h3>Ressalvas</h3>
+    <p>
+      <ul>
+        <li>
+          No Modo Estrito, o React chamará sua função de renderização duas vezes para ajudá-lo a encontrar impurezas
+          acidentais. Este é um comportamento apenas de desenvolvimento e não afeta a produção. Se sua função de
+          renderização for pura (como deveria ser), isso não deverá afetar a lógica do seu componente. O resultado de
+          uma das chamadas será ignorado.
+        </li>
+      </ul>
+    </p>
+    <hr>
   </section>
 </body>
 
