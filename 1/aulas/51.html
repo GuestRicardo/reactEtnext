@@ -340,21 +340,21 @@
         < input> nó DOM
       </span> exposto por MyInput:
       <div class="anotacoes">
-        function Form() {
-        const ref = useRef(null);
+        function Form() { <br>
+        const ref = useRef(null);<br>
+        <br>
+        function handleClick() {<br>
+        ref.current.focus();<br>
+        }<br>
 
-        function handleClick() {
-        ref.current.focus();
-        }
-
-        return (
-        <form>
-          <MyInput label="Enter your name:" ref={ref} />
-          <button type="button" onClick={handleClick}>
-            Edit
-          </button>
-        </form>
-        );
+        return (<br>
+        < form><br>
+          < MyInput label="Enter your name:" ref={ref} /><br>
+          < button type="button" onClick={handleClick}><br>
+            Edit<br>
+          < /button><br>
+        < /form><br>
+        );<br>
         }
       </div>
     </p>
