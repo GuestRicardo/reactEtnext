@@ -16,13 +16,44 @@
     <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
   </div>
   <section class="container">
-    <h1>useImperativeHandle</h1>
+    <h1>useDebugValue</h1>
     <p>
-      <strong>useImperativeHandle</strong> é um HOOK React que permite personalizar a alça exposta como uma ref.
-      <div class="exemplos">useImperativeHandle(ref, createHandle, dependencies?)</div>
+      <strong>useDebugValue</strong> é um gancho do React que permite adicionar um rótulo a um gancho personalizado no
+      ReactDevTools
+      <div class="exemplos">
+        useDebugValue(value, format?)
+      </div>
     </p>
     <hr>
-
+    <h1>Referência</h1>
+    <h2>useDebugValue(value, format?)</h2>
+    <p>
+      Chame no nível superior do gancho personalizado para exibir um valor de depuração legível: useDebugValue
+      <div class="exemplos">
+        import { useDebugValue } from 'react'; <br>
+        <br>
+        function useOnlineStatus() {<br>
+        // ...<br>
+        useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+        // ...<br>
+        }
+      </div>
+    </p>
+    <h3>Parâmetros</h3>
+    <ul>
+      <li>
+        value: O valor que você deseja exibir no React DevTools. Pode ter qualquer tipo.
+      </li>
+      <li>
+        opcional: Uma função de formatação. Quando o componente é inspecionado, o React DevTools chamará a função de
+        formatação com o como o argumento e, em seguida, exibirá o valor formatado retornado (que pode ter qualquer
+        tipo). Se você não especificar a função de formatação, o próprio original será exibido.formatvaluevalue
+      </li>
+    </ul>
+    <h4>Retorna</h4>
+    <p>useDebugValue não devolve nada.</p>
+    <h2>Uso</h2>
+    <h3>Adicionando um rótulo a um gancho personalizado</h3>
   </section>
 </body>
 
