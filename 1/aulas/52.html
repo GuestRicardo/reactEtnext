@@ -74,19 +74,25 @@
       import { useSyncExternalStore, useDebugValue } from 'react';<br>
       <br>
       export function useOnlineStatus() {<br>
-        const isOnline = useSyncExternalStore(subscribe, () => navigator.onLine, () => true);<br>
-        useDebugValue(isOnline ? 'Online' : 'Offline');<br>
-        return isOnline;<br>
+      const isOnline = useSyncExternalStore(subscribe, () => navigator.onLine, () => true);<br>
+      useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+      return isOnline;<br>
       }<br>
       <br>
       function subscribe(callback) {<br>
-        window.addEventListener('online', callback);<br>
-        window.addEventListener('offline', callback);<br>
-        return () => {<br>
-          window.removeEventListener('online', callback);<br>
-          window.removeEventListener('offline', callback);<br>
-        };<br>
+      window.addEventListener('online', callback);<br>
+      window.addEventListener('offline', callback);<br>
+      return () => {<br>
+      window.removeEventListener('online', callback);<br>
+      window.removeEventListener('offline', callback);<br>
+      };<br>
       }
+    </div>
+    <div class="lembrete">
+      <h3>Nota</h3>
+      Não adicione valores de depuração a cada gancho personalizado. É mais valioso para ganchos personalizados que
+      fazem parte de bibliotecas compartilhadas e que têm uma estrutura de dados interna complexa que é difícil de
+      inspecionar.
     </div>
   </section>
 </body>
