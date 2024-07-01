@@ -77,7 +77,7 @@
       Isso dá aos componentes que chamam um rótulo como quando você os inspeciona:<span style="color: yellow;">useOnlineStatusOnlineStatus: "Online"</span>
     </p>
     <div class="exemplos">
-      <h3>useOnlineStatus.js</h3>
+      <h3 style="color: yellowgreen;">useOnlineStatus.js</h3>
 
       import { useSyncExternalStore, useDebugValue } from 'react';<br>
       <br>
@@ -95,6 +95,20 @@
       window.removeEventListener('offline', callback);<br>
       };<br>
       }
+    </div>
+    <div class="exemplos">
+      <h3 style="color: yellowgreen;">App.js</h3>
+      import { useOnlineStatus } from './useOnlineStatus.js';<br>
+      <br>
+      function StatusBar() {<br>
+        const isOnline = useOnlineStatus();<br>
+        return < h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</ h1>;<br>
+      }<br>
+      <br>
+      export default function App() {<br>
+        return < StatusBar />;
+      }
+
     </div>
     <div class="lembrete">
       <h3>Nota</h3>
