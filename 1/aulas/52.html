@@ -74,7 +74,10 @@
       }
     </div>
     <p>
-      Isso dá aos componentes que chamam um rótulo como quando você os inspeciona:<span style="color: yellow;">useOnlineStatusOnlineStatus: "Online"</span>
+      Isso dá aos componentes que chamam um rótulo como quando você os inspeciona:<span
+        style="color: yellow;">useOnlineStatusOnlineStatus: "Online"</span>
+      <img src="../../frontend/assets/img/useBugValue/react-devtools-usedebugvalue.png" alt="" class="zoomImg">
+      Sem a chamada, somente os dados subjacentes (neste exemplo, ) seriam exibidos.useDebugValuetrue
     </p>
     <div class="exemplos">
       <h3 style="color: yellowgreen;">useOnlineStatus.js</h3>
@@ -101,12 +104,13 @@
       import { useOnlineStatus } from './useOnlineStatus.js';<br>
       <br>
       function StatusBar() {<br>
-        const isOnline = useOnlineStatus();<br>
-        return < h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</ h1>;<br>
+      const isOnline = useOnlineStatus();<br>
+      return < h1>{isOnline ? '✅ Online' : '❌ Disconnected'}</ h1>;<br>
       }<br>
       <br>
       export default function App() {<br>
-        return < StatusBar />;
+      return
+      < StatusBar />;
       }
 
     </div>
