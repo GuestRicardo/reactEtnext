@@ -95,13 +95,20 @@
       inspecionar.
     </div>
     <hr>
-   <h2>Adiando a formatação de um valor de depuração </h2>
-   <p>
-    Você também pode passar uma função de formatação como o segundo argumento para:useDebugValue
-    <div class="anotacoes">
-      useDebugValue(date, date => date.toDateString());
-    </div>
-   </p>
+    <h2>Adiando a formatação de um valor de depuração </h2>
+    <p>
+      Você também pode passar uma função de formatação como o segundo argumento para:useDebugValue
+      <div class="anotacoes">
+        useDebugValue(date, date => date.toDateString());
+      </div>
+      Sua função de formatação receberá o valor de depuração como um parâmetro e deve retornar um valor de exibição
+      formatado. Quando o componente for inspecionado, o React DevTools chamará essa função e exibirá seu resultado.
+    </p>
+    <p>
+      Isso permite que você evite executar lógica de formatação potencialmente cara, a menos que o componente seja
+      realmente inspecionado. Por exemplo, se for um valor de Data, isso evita chamá-lo para cada
+      renderização.datetoDateString()
+    </p>
   </section>
 </body>
 
