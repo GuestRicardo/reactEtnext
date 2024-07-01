@@ -54,6 +54,40 @@
     <p>useDebugValue não devolve nada.</p>
     <h2>Uso</h2>
     <h3>Adicionando um rótulo a um gancho personalizado</h3>
+    <p>
+      Ligue no nível superior do seu gancho personalizado para exibir um gancho legível useDebugValuevalor de depuração
+      para React DevTools.
+    </p>
+    <div class="exemplos">
+      import { useDebugValue } from 'react'; <br>
+      <br>
+      function useOnlineStatus() {<br>
+      // ...<br>
+      useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+      // ...<br>
+      }
+    </div>
+    <p>
+      Isso dá aos componentes que chamam um rótulo como quando você os inspeciona:useOnlineStatusOnlineStatus: "Online"
+    </p>
+    <div class="exemplos">
+      import { useSyncExternalStore, useDebugValue } from 'react';<br>
+      <br>
+      export function useOnlineStatus() {<br>
+        const isOnline = useSyncExternalStore(subscribe, () => navigator.onLine, () => true);<br>
+        useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+        return isOnline;<br>
+      }<br>
+      <br>
+      function subscribe(callback) {<br>
+        window.addEventListener('online', callback);<br>
+        window.addEventListener('offline', callback);<br>
+        return () => {<br>
+          window.removeEventListener('online', callback);<br>
+          window.removeEventListener('offline', callback);<br>
+        };<br>
+      }
+    </div>
   </section>
 </body>
 
