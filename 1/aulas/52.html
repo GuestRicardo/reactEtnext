@@ -16,27 +16,27 @@
     <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
   </div>
   <section class="container">
-    <h1>useDebugValue</h1>
+    <h1><strong style="color: aqua;">useDebugValue</strong></h1>
     <p>
-      <strong style="color: yellow;">useDebugValue</strong> é um <span style="color: yellow;">HOOK</span> do React que
+      <strong style="color: yellow;"><strong style="color: aqua;">useDebugValue</strong></strong> é um <span style="color: yellow;">HOOK</span> do React que
       permite adicionar um rótulo a um <span style="color: yellow;">HOOK</span> personalizado no
       ReactDevTools
       <div class="exemplos">
-        useDebugValue(value, format?)
+        <strong style="color: aqua;">useDebugValue</strong>(value, format?)
       </div>
     </p>
     <hr>
     <h1>Referência</h1>
-    <h2>useDebugValue(value, format?)</h2>
+    <h2><strong style="color: aqua;">useDebugValue</strong>(value, format?)</h2>
     <p>
       Chame no nível superior do <span style="color: yellow;">HOOK</span> personalizado para exibir um valor de
-      depuração legível: useDebugValue
+      depuração legível: <strong style="color: aqua;">useDebugValue</strong>
       <div class="exemplos">
-        import { useDebugValue } from 'react'; <br>
+        import { <strong style="color: aqua;">useDebugValue</strong> } from 'react'; <br>
         <br>
         function useOnlineStatus() {<br>
         // ...<br>
-        useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+        <strong style="color: aqua;">useDebugValue</strong>(isOnline ? 'Online' : 'Offline');<br>
         // ...<br>
         }
       </div>
@@ -56,37 +56,37 @@
       </li>
     </ul>
     <h4>Retorna</h4>
-    <p><span style="color: yellow;">useDebugValue</span> não devolve nada.</p>
+    <p><span style="color: yellow;"><strong style="color: aqua;">useDebugValue</strong></span> não devolve nada.</p>
     <h2>Uso</h2>
     <h3>Adicionando um rótulo a um <span style="color: yellow;">HOOK</span> personalizado</h3>
     <p>
       Ligue no nível superior do seu <span style="color: yellow;">HOOK</span> personalizado para exibir um <span
-        style="color: yellow;"><span style="color: yellow;">HOOK</span></span> legível useDebugValuevalor de depuração
+        style="color: yellow;"><span style="color: yellow;">HOOK</span></span> legível <strong style="color: aqua;">useDebugValue</strong>valor de depuração
       para React DevTools.
     </p>
     <div class="exemplos">
-      import { useDebugValue } from 'react'; <br>
+      import { <strong style="color: aqua;">useDebugValue</strong> } from 'react'; <br>
       <br>
       function useOnlineStatus() {<br>
       // ...<br>
-      useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+      <strong style="color: aqua;">useDebugValue</strong>(isOnline ? 'Online' : 'Offline');<br>
       // ...<br>
       }
     </div>
     <p>
       Isso dá aos componentes que chamam um rótulo como quando você os inspeciona:<span
         style="color: yellow;">useOnlineStatusOnlineStatus: "Online"</span>
-      <img src="../../frontend/assets/img/useBugValue/react-devtools-usedebugvalue.png" alt="" class="zoomImg">
-      Sem a chamada, somente os dados subjacentes (neste exemplo, ) seriam exibidos.useDebugValuetrue
+      <img src="../../frontend/assets/img/useBugValue/react-devtools-useDebugValue.png" alt="" class="zoomImg">
+      Sem a chamada, somente os dados subjacentes (neste exemplo, ) seriam exibidos.<strong style="color: aqua;">useDebugValue</strong>true
     </p>
     <div class="exemplos">
       <h3 style="color: yellowgreen;">useOnlineStatus.js</h3>
 
-      import { useSyncExternalStore, useDebugValue } from 'react';<br>
+      import { useSyncExternalStore, <strong style="color: aqua;">useDebugValue</strong> } from 'react';<br>
       <br>
       export function useOnlineStatus() {<br>
       const isOnline = useSyncExternalStore(subscribe, () => navigator.onLine, () => true);<br>
-      useDebugValue(isOnline ? 'Online' : 'Offline');<br>
+      <strong style="color: aqua;">useDebugValue</strong>(isOnline ? 'Online' : 'Offline');<br>
       return isOnline;<br>
       }<br>
       <br>
@@ -124,9 +124,9 @@
     <hr>
     <h2>Adiando a formatação de um valor de depuração </h2>
     <p>
-      Você também pode passar uma função de formatação como o segundo argumento para:useDebugValue
+      Você também pode passar uma função de formatação como o segundo argumento para:<strong style="color: aqua;">useDebugValue</strong>
       <div class="anotacoes">
-        useDebugValue(date, date => date.toDateString());
+        <strong style="color: aqua;">useDebugValue</strong>(date, date => date.toDateString());
       </div>
       Sua função de formatação receberá o valor de depuração como um parâmetro e deve retornar um valor de exibição
       formatado. Quando o componente for inspecionado, o React DevTools chamará essa função e exibirá seu resultado.
@@ -134,7 +134,7 @@
     <p>
       Isso permite que você evite executar lógica de formatação potencialmente cara, a menos que o componente seja
       realmente inspecionado. Por exemplo, se for um valor de Data, isso evita chamá-lo para cada
-      renderização.datetoDateString()
+      <strong style="color: brown;">renden.datetoDateString()</strong>
     </p>
   </section>
 </body>
