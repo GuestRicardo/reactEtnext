@@ -63,39 +63,74 @@
     </div>
     <div class="exemplos">
       <h3 style="color: yellowgreen;">Largura minima</h3>
-      const Example = () => {
-      const [isSmallScreen] = useMediaQuery({
-      minWidth: 280
-      });
-      return <Center w="100%">
-        {isSmallScreen ? <HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400"
-          p="4">
-          <VStack flex="3" space="4">
-            <Skeleton />
-            <Skeleton.Text />
-            <HStack space="2" alignItems="center">
-              <Skeleton size="5" rounded="full" />
-              <Skeleton h="3" flex="2" rounded="full" />
-              <Skeleton h="3" flex="1" rounded="full" />
-            </HStack>
-          </VStack>
-        </HStack> : <HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400" p="4">
-          <Skeleton flex="1" h="150" rounded="md" />
-          <VStack flex="3" space="4">
-            <Skeleton />
-            <Skeleton.Text />
-            <HStack space="2" alignItems="center">
-              <Skeleton size="5" rounded="full" />
-              <Skeleton h="3" flex="2" rounded="full" />
-              <Skeleton h="3" flex="1" rounded="full" />
-            </HStack>
-          </VStack>
-        </HStack>}
-      </Center>;
+      const Example = () => {<br>
+      const [isSmallScreen] = useMediaQuery({<br>
+      minWidth: 280<br>
+      });<br>
+      return < Center w="100%"><br>
+        {isSmallScreen ? < HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400"
+          p="4"><br>
+          < VStack flex="3" space="4"><br>
+            < Skeleton /><br>
+            < Skeleton.Text /><br>
+            < HStack space="2" alignItems="center"><br>
+              < Skeleton size="5" rounded="full" /><br>
+              < Skeleton h="3" flex="2" rounded="full" /><br>
+              < Skeleton h="3" flex="1" rounded="full" /><br>
+            </><br>
+          </ HStack><br>
+        </ HStack> : < HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400"
+          p="4"><br>
+          < Skeleton flex="1" h="150" rounded="md" /><br>
+          < VStack flex="3" space="4"><br>
+            < Skeleton /><br>
+            < Skeleton.Text /><br>
+            < HStack space="2" alignItems="center"><br>
+              < Skeleton size="5" rounded="full" /><br>
+              < Skeleton h="3" flex="2" rounded="full" /><br>
+              < Skeleton h="3" flex="1" rounded="full" /><br>
+            </ HStack><br>
+          </ VStack><br>
+        </>}<br>
+      </ Center>;<br>
       };
     </div>
     <div class="exemplos">
       <h3 style="color: yellowgreen;">Orientação</h3>
+      const Example = () => {<br>
+      const [isLandScape, isPortrait] = useMediaQuery([{<br>
+      orientation: "landscape"<br>
+      }, {<br>
+      orientation: "portrait"<br>
+      }]);<br>
+      return < Center w="100%"><br>
+        {isPortrait && < HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400"
+          p="4"><br>
+          < VStack flex="3" space="4"><br>
+            < Skeleton /><br>
+            < Skeleton.Text /><br>
+            < HStack space="2" alignItems="center"><br>
+              < Skeleton size="5" rounded="full" /><br>
+              < Skeleton h="3" flex="2" rounded="full" /><br>
+              < Skeleton h="3" flex="1" rounded="full" /><br>
+            </><br>
+          </><br>
+        </>}<br>
+        {isLandScape && < HStack w="90%" maxW="400" borderWidth="1" space={8} rounded="md" borderColor="coolGray.400"
+          p="4"><br>
+          < Skeleton flex="1" h="150" rounded="md" /><br>
+          < VStack flex="3" space="4"><br>
+            < Skeleton /><br>
+            < Skeleton.Text /><br>
+            < HStack space="2" alignItems="center"><br>
+              < Skeleton size="5" rounded="full" /><br>
+              < Skeleton h="3" flex="2" rounded="full" /><br>
+              < Skeleton h="3" flex="1" rounded="full" /><br>
+            </><br>
+          </><br>
+        </>}<br>
+      </>;<br>
+      };
     </div>
   </section>
 </body>
