@@ -53,6 +53,62 @@
       fallback após um erro ter sido lançado. Use para registrar informações de erro.static
       getDerivedStateFromError()componentDidCatch()
     </p>
+    <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/1.png" alt="" class="zoomImg">
+    <p>
+      Então você pode usá-lo como um componente regular:
+    </p>
+    <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/2.png" alt="" class="zoomImg">
+    <p>
+      Os limites de erro funcionam como um bloco JavaScript, mas para componentes. Somente componentes de classe podem
+      ser limites de erro. Na prática, na maioria das vezes, você desejará declarar um componente de limite de erro uma
+      vez e usá-lo em todo o aplicativo.catch {}
+
+      Observe que os limites de erro capturam apenas erros nos componentes abaixo deles na árvore. Um limite de erro não
+      pode capturar um erro dentro de si mesmo. Se um limite de erro falhar ao tentar renderizar a mensagem de erro, o
+      erro se propagará para o limite de erro mais próximo acima dele. Isso também é semelhante a como o bloco funciona
+      em JavaScript.catch {}
+    </p>
+    <hr>
+    <h2>Demonstralção ao VIVO</h2>
+    <p>
+      Confira este <a href="https://codepen.io/gaearon/pen/wqvxGa?editors=0010" style="text-decoration: none;">exemplo
+        de declaração e uso de um limite de erro.</a>
+    </p>
+    <hr>
+    <h2>Onde colocar limites de erro</h2>
+    <p>
+      A granularidade dos limites de erro depende de você. Você pode encapsular componentes de rota de nível superior
+      para exibir uma mensagem "Algo deu errado" para o usuário, assim como as estruturas do lado do servidor geralmente
+      lidam com falhas. Você também pode encapsular widgets individuais em um limite de erro para protegê-los de travar
+      o resto do aplicativo.
+    </p>
+    <hr>
+    <h2>Novo comportamento para erros não detectados</h2>
+    <p>
+      Essa mudança tem uma implicação importante. A partir do React 16, os erros que não foram detectados por nenhum
+      limite de erro resultarão na desmontagem de toda a árvore de componentes do React.
+    </p>
+    <p>
+      Debatemos essa decisão, mas em nossa experiência é pior deixar a interface corrompida no lugar do que removê-la
+      completamente. Por exemplo, em um produto como o Messenger, deixar a interface do usuário quebrada visível pode
+      levar alguém a enviar uma mensagem para a pessoa errada. Da mesma forma, é pior para um aplicativo de pagamentos
+      exibir um valor errado do que renderizar nada.
+    </p>
+    <p>
+      Essa alteração significa que, ao migrar para o React 16, você provavelmente descobrirá falhas existentes em seu
+      aplicativo que passaram despercebidas antes. Adicionar limites de erro permite que você forneça uma melhor
+      experiência do usuário quando algo dá errado.
+    </p>
+    <p>
+      Por exemplo, o Facebook Messenger encapsula o conteúdo da barra lateral, do painel de informações, do registro de
+      conversa e da entrada de mensagens em limites de erro separados. Se algum componente em uma dessas áreas da
+      interface do usuário falhar, o restante deles permanecerá interativo.
+    </p>
+    <p>
+      Também recomendamos que você use os serviços de relatório de erros JS (ou crie seus próprios) para que você possa
+      aprender sobre exceções não tratadas à medida que elas acontecem na produção e corrigi-las.
+    </p>
+    <hr>
   </section>
 </body>
 
