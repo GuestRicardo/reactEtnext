@@ -130,6 +130,43 @@
       exemplo, IE 11), considere incluir um polyfill em seu aplicativo empacotado, como function.name-polyfill. Como
       alternativa, você pode definir explicitamente a propriedade displayName em todos os seus componentes.Function.name
     </div>
+    <hr>
+    <h2>Que tal tentar/pegar?</h2>
+    <p>
+      try / catch é ótimo, mas só funciona para código imperativo:
+      <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/3.png" alt="" class="zoomImg">
+      No entanto, os componentes do React são declarativos e especificam o que deve ser renderizado:
+      <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/4.png" alt="" class="zoomImg">
+    </p>
+    <p>
+      Os limites de erro preservam a natureza declarativa do React, e se comportam como você esperaria. Por exemplo,
+      mesmo que ocorra um erro em um método causado por um lugar profundo na árvore, ele ainda se propagará corretamente
+      para o limite de erro mais próximo.componentDidUpdatesetState
+    </p>
+    <hr>
+    <h2>E os manipuladores de eventos?</h2>
+    <p>
+      Os limites de erro não detectam erros dentro de manipuladores de eventos.
+      <br>
+      O React não precisa de limites de erro para se recuperar de erros em manipuladores de eventos. Ao contrário do
+      método de renderização e dos métodos de ciclo de vida, os manipuladores de eventos não acontecem durante a
+      renderização. Então, se eles lançarem, o React ainda sabe o que exibir na tela.
+    </p>
+    <p>
+      Se você precisar capturar um erro dentro de um manipulador de eventos, use a instrução JavaScript / regular: try
+      catch
+      <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/5.png" alt="" class="zoomImg">
+      Observe que o exemplo acima está demonstrando o comportamento JavaScript regular e não usa limites de erro.
+    </p>
+    <hr>
+    <h2>Alterações de nomenclatura do React 15</h2>
+    <p>
+      O React 15 incluía um suporte muito limitado para limites de erro sob um nome de método diferente: . Esse método
+      não funciona mais, e você precisará alterá-lo para em seu código a partir da primeira versão beta
+      16.unstable_handleErrorcomponentDidCatch
+
+      Para essa alteração, fornecemos um codemod para migrar automaticamente seu código.
+    </p>
 </body>
 
 </html>
