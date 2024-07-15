@@ -109,7 +109,27 @@
       aprender sobre exceções não tratadas à medida que elas acontecem na produção e corrigi-las.
     </p>
     <hr>
-  </section>
+    <h2>Rastreamentos de pilha de componentes</h2>
+    <p>
+      O React 16 imprime todos os erros que ocorreram durante a renderização no console em desenvolvimento, mesmo que o
+      aplicativo os engula acidentalmente. Além da mensagem de erro e da pilha JavaScript, ele também fornece
+      rastreamentos de pilha de componentes. Agora você pode ver onde exatamente na árvore de
+    </p>
+    <p>
+      Você também pode ver os nomes de arquivos e números de linha no rastreamento de pilha de componentes. Isso
+      funciona por padrão em projetos <a href="https://github.com/facebook/create-react-app">Criar aplicativo React:</a>
+    </p>
+    <p>
+      Se você não usa o Create React App, você pode adicionar este plugin manualmente à sua configuração Babel. Observe
+      que ele é destinado apenas para desenvolvimento e deve ser desativado na produção.
+    </p>
+    <div class="lembrete">
+      <h3>Nota</h3>
+      Os nomes de componentes exibidos nos rastreamentos de pilha dependem da propriedade Function.name. Se você
+      oferecer suporte a navegadores e dispositivos mais antigos que talvez ainda não forneçam isso nativamente (por
+      exemplo, IE 11), considere incluir um polyfill em seu aplicativo empacotado, como function.name-polyfill. Como
+      alternativa, você pode definir explicitamente a propriedade displayName em todos os seus componentes.Function.name
+    </div>
 </body>
 
 </html>
