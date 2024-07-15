@@ -18,8 +18,41 @@
   <section class="container">
     <h1>ERROR Boundaries</h1>
     <P>
-
+      No passado, erros de JavaScript dentro de componentes usados para corromper o estado interno do React e fazer com
+      que ele emitisse erros enigmáticos nas próximas renderizações. Esses erros sempre foram causados por um erro
+      anterior no código do aplicativo, mas o React não forneceu uma maneira de manipulá-los normalmente em componentes
+      e não pôde recuperá-los.
     </P>
+    <hr>
+    <h2>Introduzindo limites de erro</h2>
+    <p>
+      Um erro JavaScript em uma parte da interface do usuário não deve interromper todo o aplicativo. Para resolver esse
+      problema para os usuários do React, o React 16 introduz um novo conceito de "limite de erro".
+    </p>
+    <p>
+      Os limites de erro são componentes do React que capturam erros JavaScript em qualquer lugar da árvore de
+      componentes filho, registram esses erros e exibem uma interface do usuário de fallback em vez da árvore de
+      componentes que travou. Os limites de erro detectam erros durante a renderização, em métodos de ciclo de vida e em
+      construtores de toda a árvore abaixo deles.
+    </p>
+    <div class="lembrete">
+      <strong>Nota</strong>
+      Os limites de erri <strong>NÂO</strong> detectam erros para:
+      <ul>
+        <li>Manipuladores de eventos <a
+            href="https://legacy.reactjs.org/docs/error-boundaries.html#how-about-event-handlers"
+            style="text-decoration: none;"> (saiba mais)</a></li>
+        <li>Código assíncrono (por exemplo, ou retornos de chamada)setTimeoutrequestAnimationFrame</li>
+        <li>Renderização do lado do servidor</li>
+        <li>Erros lançados no próprio limite de erro (em vez de seus filhos)</li>
+      </ul>
+    </div>
+    <p>
+      Um componente de classe se torna um limite de erro se ele define um (ou ambos) dos métodos de ciclo de vida
+      estáticos getDerivedStateFromError() ou componentDidCatch(). Use para renderizar uma interface do usuário de
+      fallback após um erro ter sido lançado. Use para registrar informações de erro.static
+      getDerivedStateFromError()componentDidCatch()
+    </p>
   </section>
 </body>
 
