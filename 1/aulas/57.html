@@ -23,11 +23,36 @@
         const mappedChildren = Children.map(children, child => <br>
         < div className="Row"><br>
           {child}<br>
-        </ div ><br>
+        </ div><br>
         );
       </div>
     </p>
+    <hr>
+    <h2>Referência</h2>
+    <h3>Children.count(children) </h3>
+    <p>
+      Chame Children.count(children)para contar o número de filhos na childrenestrutura de dados.
+      <div class="exemplos">
+        import { Children } from 'react';<br>
 
+        function RowList({ children }) {<br>
+        return (<br>
+        <><br>
+          Total rows: {Children.count(children)}<br>
+          ...<br>
+        < /><br>
+        );<br>
+        }
+      </div>
+    </p>
+    <h2>Parâmetros</h2>
+    <ul>
+      <li>children: O valor da children prop recebida pelo seu componente.</li>
+    </ul>
+    <h3>Devoluções</h3>
+    <p>
+      O número de nós dentro destes children.
+    </p>
 </body>
 
 </html>
