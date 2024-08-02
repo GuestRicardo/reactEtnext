@@ -16,13 +16,18 @@
     <iframe src="../../frontend/assets/pages/menu.html" frameborder="0" class="flame"></iframe>
   </div>
   <section class="container">
-    <h1>ERROR Boundaries</h1>
+    <h1>Children</h1>
     <P>
-
+      Childrenpermite manipular e transformar o JSX que você recebeu como childrensuporte.
+      <div class="exemplos">
+        const mappedChildren = Children.map(children, child => <br>
+        < div className="Row"><br>
+          {child}<br>
+        </ div ><br>
+        );
+      </div>
     </p>
-    <hr>
-    <h2>Exemplo explicado a mão</h2>
-    <img src="../../frontend/assets/img/controlandoErros/errorBoundaries/6.png" alt="" class="zoomImg">
+
 </body>
 
 </html>
