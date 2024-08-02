@@ -156,6 +156,64 @@
     </ul>
     <hr>
     <h2>Uso</h2>
+    <h3>Transformando childrens</h3>
+    <p>
+      Para transformar o JSX filho que seu componente recebe como childrenprop, chame Children.map:
+    </p>
+    <img src="../../frontend/assets/img/children4.png" alt="" class="imgZoom">
+    <p>
+      No exemplo acima, RowListenvolve cada filho que recebe em um < div className="Row">contêiner. Por exemplo, digamos
+        que o componente pai passe três < p>tags como childrensuporte para RowList:
+          <p /p> <img src="../../frontend/assets/img/children5.png" alt="" class="imgZoom">
+            <p>
+              Então, com a RowListimplementação acima, o resultado final renderizado ficará assim:
+            </p>
+            <img src="../../frontend/assets/img/children6.png" alt="" class="imgZoom">
+            <p>
+              Children.mapé semelhante a transformar matrizes com map(). A diferença é que a childrenestrutura de dados
+              é considerada opaca. Isso significa que mesmo que às vezes seja um array, você não deve assumir que é um
+              array ou qualquer outro tipo de dados específico. É por isso que você deve usar Children.mapse precisar
+              transformá-lo.
+            </p>
+            <div class="anotacoes">
+              <h1>RowList.js</h1>
+              import { Children } from 'react'; <br>
+              <br>
+              export default function RowList({ children }) {<br>
+              return (<br>
+              < div className="RowList"><br>
+                {Children.map(children, child =><br>
+                < div className="Row"><br>
+                  {child}<br>
+                  < /div> <br>
+                    )} <br>
+                    < /div> <br>
+                      ); <br>
+                      }
+            </div>
+            <div class="anotacoes">
+              <h1>App.js</h1>
+              import RowList from './RowList.js'; <br>
+              <br>
+              export default function App() {<br>
+              return (<br>
+              < RowList><br>
+                <p>This is the first item.</p>
+                <p>This is the second item.</p>
+                <p>This is the third item.</p>
+                < /RowList> <br>
+                  ); <br>
+                  }
+            </div>
+
+            <div class="lembrete">
+              <h2>Armadilha</h2>
+              <p>
+                A childrenestrutura de dados não inclui a saída renderizada dos componentes que você passa como JSX. No
+                exemplo acima, o childrenrecebido por RowListcontém apenas dois itens em vez de três:
+                
+              </p>
+            </div>
 </body>
 
 </html>
