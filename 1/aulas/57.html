@@ -112,6 +112,31 @@
       Chame Children.only(children)para afirmar que childrenrepresenta um único elemento React.
       <img src="../../frontend/assets/img/children2.png" alt="" class="imgZoom">
     </p>
+    <h3>Parâmetros</h3>
+    <ul>
+      <li>
+        children: O valor da childrenprop recebida pelo seu componente.
+      </li>
+    </ul>
+    <h3>Devoluções</h3>
+    <p>
+      Se children for um elemento válido, retorna esse elemento. <br>
+
+      Caso contrário, gera um erro.
+    </p>
+    <h3>Ressalvas</h3>
+    <ul>
+      <li>Este método sempre é lançado se você passar um array (como o valor de retorno de Children.map) como children.
+        Em outras palavras, ele impõe que childrenseja um único elemento React, não que seja um array com um único
+        elemento.</li>
+    </ul>
+    <hr>
+    <h2>Children.toArray(children) </h2>
+    <p>
+      Chame Children.toArray(children)para criar uma matriz fora da childrenestrutura de dados.
+    </p>
+    <img src="../../frontend/assets/img/children3.jpeg" alt="" class="imgZoom">
+
 </body>
 
 </html>
