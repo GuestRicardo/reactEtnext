@@ -40,9 +40,9 @@
         <><br>
           Total rows: {Children.count(children)}<br>
           ...<br>
-        < /><br>
-        );<br>
-        }
+          < /><br>
+          );<br>
+          }
       </div>
     </p>
     <h2>Parâmetros</h2>
@@ -53,6 +53,14 @@
     <p>
       O número de nós dentro destes children.
     </p>
+    <h3>Ressalvas</h3>
+    <ul>
+      <li>
+        Nós vazios ( null, undefinede booleanos), strings, números e elementos React contam como nós individuais.
+        Matrizes não contam como nós individuais, mas seus filhos sim. A travessia não é mais profunda do que os
+        elementos React: eles não são renderizados e seus filhos não são percorridos. Fragmentos não são percorridos.
+      </li>
+    </ul>
 </body>
 
 </html>
