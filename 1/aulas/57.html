@@ -211,7 +211,16 @@
               <p>
                 A childrenestrutura de dados não inclui a saída renderizada dos componentes que você passa como JSX. No
                 exemplo acima, o childrenrecebido por RowListcontém apenas dois itens em vez de três:
-                
+                <ol>
+                  <li>
+                    < p>This is the first item.< /p> </li> <li>
+                        < MoreRows />
+                  </li>
+                </ol>
+                É por isso que apenas dois wrappers de linha são gerados neste exemplo acima: <br>
+               <strong>Não há como obter a saída renderizada de um componente interno</strong>  como
+                < MoreRows />ao manipular arquivos children. É por isso que geralmente é melhor usar uma das soluções alternativas
+                alternativas.
               </p>
             </div>
 </body>
