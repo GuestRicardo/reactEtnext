@@ -61,6 +61,57 @@
         elementos React: eles não são renderizados e seus filhos não são percorridos. Fragmentos não são percorridos.
       </li>
     </ul>
+    <hr>
+    <h2>Children.forEach(children, fn, thisArg?)</h2>
+    <p>
+      Chame Children.forEach(children, fn, thisArg?)para executar algum código para cada filho na childrenestrutura de
+      dados.
+      <img src="../../frontend/assets/img/children1.jpeg" alt="" class="imgZoom">
+    </p>
+    <h3>Parametros</h3>
+    <ul>
+      <li>
+        children: O valor da childrenprop recebida pelo seu componente.
+      </li>
+      <li>
+        fn: a função de mapeamento, semelhante ao retorno de chamada do método arraymap . Ele será chamado com o filho
+        como primeiro argumento e seu índice como segundo argumento. O índice começa 0e aumenta a cada chamada. Você
+        precisa retornar um nó React desta função. Pode ser um nó vazio ( null, undefinedou um booleano), uma string, um
+        número, um elemento React ou uma matriz de outros nós React.
+      </li>
+      <li>
+        <strong>opcional</strong> thisArg : o thisvalor com o qual a fnfunção deve ser chamada. Se omitido, é undefined.
+      </li>
+    </ul>
+    <h3>Devoluções</h3>
+    <p>
+      Se childrenfor nullou undefined, retorna o mesmo valor.
+    </p>
+    <p>
+      Caso contrário, retorna uma matriz simples que consiste nos nós que você retornou da fn função. A matriz retornada
+      conterá todos os nós retornados, exceto null e undefined.
+    </p>
+    <h3>
+      Ressalvas
+    </h3>
+    <ul>
+      <li>
+        Nós vazios ( null, undefinede booleanos), strings, números e elementos React contam como nós individuais.
+        Matrizes não contam como nós individuais, mas seus filhos sim. A travessia não é mais profunda do que os
+        elementos React: eles não são renderizados e seus filhos não são percorridos. Fragmentos não são percorridos.
+      </li>
+      <li>
+        Se você retornar um elemento ou uma matriz de elementos com chaves from fn, as chaves dos elementos retornados
+        serão automaticamente combinadas com a chave do item original correspondente from children. Quando você retorna
+        vários elementos de fnuma matriz, suas chaves só precisam ser exclusivas localmente entre si.
+      </li>
+    </ul>
+    <hr>
+    <h2>Children.only(children)</h2>
+    <p>
+      Chame Children.only(children)para afirmar que childrenrepresenta um único elemento React.
+      <img src="../../frontend/assets/img/children2.png" alt="" class="imgZoom">
+    </p>
 </body>
 
 </html>
